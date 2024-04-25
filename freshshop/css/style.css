@@ -338,6 +338,7 @@
      font-weight: 700;
      color: #ffffff;
 }
+
  @media (min-width: 1024px) {
     /* Navbar General ------*/
      nav.navbar ul.nav > li > a{
@@ -636,6 +637,7 @@
  ul.cart-list p .price{
      font-weight: normal;
 }
+
 .side-menu p{
 	display: inline-block;
 }
@@ -756,7 +758,7 @@
      height: 100vh;
 }
  .slides-navigation a {
-     background: #C2E9C8;
+     /* background: #C2E9C8; */
      position: absolute;
      height: 70px;
      width: 70px;
@@ -772,7 +774,8 @@
      font-size: 40px;
 }
  .slides-navigation a:hover {
-     background: #000000;
+     background: #C2E9C8;
+     border-radius: 50%;
 }
  .cover-slides .container{
      height: 100%;
@@ -1036,6 +1039,7 @@
      padding: 10px 20px;
      font-weight: 700;
      color: #ffffff;
+     border-top-right-radius: 10px;
 }
  .mask-icon a.cart:hover{
      background: #000000;
@@ -1275,14 +1279,14 @@
      transition: all 0.3s ease;
 }
  .main-instagram.owl-carousel .owl-nav button.owl-next:hover, .main-instagram.owl-carousel .owl-nav button.owl-prev:hover{
-     background: #b0b435;
+     background: #C2E9C8;
 }
  .ins-inner-box{
      position: relative;
 }
  .hov-in{
      opacity: 0;
-     background: rgba(211,59,51, 0.5);
+     background: rgba(252, 146, 192, 0.5);
      bottom: -100%;
      position: absolute;
      width: 100%;
