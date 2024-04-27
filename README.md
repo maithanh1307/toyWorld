@@ -1,1 +1,5 @@
-tui xong shop.html ròi nha giờ tui edit trang cart.html có gì thúy xong about.html thì edit trang checkout.html á 
+không edit những link sau:
+- shop detail
+- my account
+- wishtlist (đang si nghĩ nên bỏ hong)
+- gallery
