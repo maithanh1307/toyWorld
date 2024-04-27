@@ -3,3 +3,4 @@ không edit những link sau:
 - my account
 - wishtlist (đang si nghĩ nên bỏ hong)
 - gallery
+mai tui sẽ edit trang contact us á
