@@ -1646,6 +1646,9 @@ a[data-toggle="collapse"] {
     top: 0;
     opacity: 1;
 }
+.img-fluid {
+    border-radius: 10px;
+}
 
 #testimonial_slider.carousel .carousel-control i {
     font-size: 20px;
@@ -3259,9 +3262,11 @@ table.projects tr td:first-child {
 }
 
 .table.projects thead.thead-dark th {
-    background: #15283c;
+    background: #F3C76C;
     font-weight: 300;
     padding: 15px 15px;
+    color: #000;
+    font-weight: 700
 }
 
 .table.projects tbody td {
