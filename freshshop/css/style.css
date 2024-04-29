@@ -3557,7 +3557,7 @@ box-shadow: none;
     margin-bottom: 1rem;
   }
   
-  input {
+  input1 {
     display: block;
     width: 100%;
     padding: 0.75rem;
@@ -3643,7 +3643,7 @@ box-shadow: none;
     padding: 1.5rem;
   }
   
-  .form-step01 {
+  .form-step01   {
     display: none;
     transform-origin: top;
     animation: animate 0.5s;
@@ -3685,6 +3685,7 @@ box-shadow: none;
     border-radius: 0.25rem;
     cursor: pointer;
     transition: 0.3s;
+    width: 100px;
   }
   .btn001:hover {
     box-shadow: 0 0 0 2px #fff, 0 0 0 3px var(--primary-color);
