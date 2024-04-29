@@ -3101,7 +3101,7 @@ ul.labels-category li p {
     float: left;
     width: 100%;
     border: solid #ddd 1px;
-    border-radius: 3px;
+    border-radius: 15px;
     padding: 30px;
 }
 
