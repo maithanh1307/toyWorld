@@ -5,3 +5,5 @@ Edit:
 - contact.html (là trang hiển thị người dùng đăng nhập và đăng kí)
 
 tui edit trang index, thúy edit trang table nhen
+
+tui xong index.html nhen, h tui edit trang project.html
