@@ -12,7 +12,7 @@
 			labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
 			datasets: [{
 				type: 'bar',
-				label: 'Dataset 1',
+				label: 'Toys',
 			backgroundColor: [
                 'rgba(255, 152, 0, 1)',
                 'rgba(33, 150, 243, 1)',
@@ -42,7 +42,7 @@
 			]
 			}, {
 				type: 'line',
-				label: 'Dataset 2',
+				label: 'Revenue Number',
 				backgroundColor: [
                      'rgba(30, 208, 133, 0.3)',
                 ],
@@ -60,7 +60,7 @@
 				]
 			}, {
 				type: 'bar',
-				label: 'Dataset 3',
+				label: 'Customers',
 				backgroundColor: [
                      'rgba(255, 87, 34, 1)',
                      'rgba(103, 58, 183, 1)',

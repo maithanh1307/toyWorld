@@ -517,6 +517,9 @@ a:focus {
 .red_color {
     color: #e91e63 !important;
 }
+.black_color {
+    color: #000 !important;
+}
 
 .red_bg {
     background: #e91e63 !important;
@@ -626,7 +629,7 @@ a:focus {
     width: 100%;
     padding-left: 280px;
     z-index: 2;
-    background: #15283c;
+    background: #C2E9C8;
     top: 0;
     transition: ease all 0.3s;
     left: 0;
@@ -720,7 +723,7 @@ a:focus {
 .icon_info ul.user_profile_dd>li {
     width: auto;
     border-radius: 0;
-    background: #ff5722;
+    background: #FBB0D3;
     margin: 0;
     padding: 12px 0 12px 20px;
     height: auto;
@@ -730,7 +733,7 @@ a:focus {
     border: none;
     padding: 14px 26px 14px;
     font-size: 21px;
-    background: #ff5722;
+    background: #FBB0D3;
     margin-right: 0;
     cursor: pointer;
     float: left;
@@ -743,7 +746,7 @@ a:focus {
     position: absolute;
     right: -2px;
     top: -7px;
-    background: #ff5722;
+    background: #F3C76C;
     border-radius: 100%;
     color: #fff;
     font-weight: 600;
@@ -770,8 +773,8 @@ a:focus {
 
 .icon_info ul.user_profile_dd li div a:hover,
 .icon_info ul.user_profile_dd li div a:focus {
-    background: #243147;
-    color: #fff;
+    background: #C2E9C8;
+    /* color: #000; */
 }
 
 .icon_info ul.user_profile_dd li div a:hover span,
@@ -823,7 +826,7 @@ span {
 #sidebar {
     min-width: 280px;
     max-width: 280px;
-    background-color: #15283c;
+    background-color: #C2E9C8;
     color: #fff;
     transition: all 0.3s;
     position: relative;
@@ -864,8 +867,8 @@ span {
     padding: 15px 25px;
     display: block;
     font-size: 14px;
-    color: rgba(255, 255, 255, 0.9);
-    font-weight: 300;
+    color: #000;
+    font-weight: 600;
 }
 
 #sidebar ul li a:hover,
@@ -878,13 +881,13 @@ span {
 }
 
 #sidebar ul.components ul {
-    background: #214162;
+    background: #C2E9C8;
     padding: 20px 0;
 }
 
 #sidebar ul.components ul li a {
     font-size: 13px;
-    color: rgba(255, 255, 255, .7);
+    color: #000;
     padding: 7px 35px;
 }
 
@@ -943,7 +946,7 @@ a[data-toggle="collapse"] {
 
 .topbar .navbar {
     padding: 0;
-    background: #15283c;
+    background: #C2E9C8;
     border: none;
     border-radius: 0;
 }
@@ -954,7 +957,7 @@ a[data-toggle="collapse"] {
 
 .sidebar_user_info {
     padding: 15px 25px;
-    background: #214162;
+    background: #C2E9C8;
 }
 
 .user_img img {
@@ -969,7 +972,7 @@ a[data-toggle="collapse"] {
 .online_animation {
     width: 12px;
     height: 12px;
-    background: #1ed085;
+    background: #16ad6e;
     border-radius: 100%;
     margin-top: 0;
     position: relative;
@@ -1003,14 +1006,14 @@ a[data-toggle="collapse"] {
 .user_info p {
     font-size: 13px;
     font-weight: 500;
-    color: #1ed085;
+    color: #16ad6e;
     margin: 0;
 }
 
 .user_info h6 {
     font-size: 17px;
-    font-weight: 500;
-    color: #fff;
+    font-weight: 700;
+    color: #000;
     letter-spacing: 0;
 }
 
@@ -1048,13 +1051,13 @@ a[data-toggle="collapse"] {
 }
 
 #sidebar h4 {
-    background: #15283c;
+    background: #C2E9C8;
     margin: 0;
     padding: 21px 25px 19px;
-    font-weight: 500;
+    font-weight: 700;
     font-size: 18px;
-    color: #fff;
-    border-bottom: solid #ff5722 1px;
+    color: #000;
+    border-bottom: solid #FBB0D3 3px;
 }
 
 
@@ -1107,7 +1110,7 @@ a[data-toggle="collapse"] {
     border: 0px solid #e7e7e7;
     padding: 30px 35px;
     background: #fff;
-    border-radius: 5px;
+    border-radius: 15px;
     min-height: 125px;
     display: flex;
 }
@@ -1419,14 +1422,14 @@ a[data-toggle="collapse"] {
 .white_shd {
     background: #fff;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-    border-radius: 5px;
+    border-radius: 15px;
     margin-top: 0;
 }
 
 .dark_bg {
     background: #214162;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-    border-radius: 5px;
+    border-radius: 15px;
     margin-top: 0;
 }
 
@@ -1437,6 +1440,24 @@ a[data-toggle="collapse"] {
 .dark_bg h2 {
     color: #fff;
 }
+
+.dark_bg10 {
+    background: #FBB0D3;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    border-radius: 15px;
+    margin-top: 0;
+}
+
+.dark_bg10 .graph_head {
+    border-bottom: solid #fff 3px;
+}
+
+.dark_bg10 h2 {
+    color: #fff;
+    font-weight: 800;
+    color: #000
+}
+
 
 
 /*------------------------------------------------------------------
@@ -1588,7 +1609,7 @@ a[data-toggle="collapse"] {
 
 #testimonial_slider.carousel .testimonial {
     padding: 30px 0 10px;
-    color: rgba(255, 255, 255, .7);
+    color: #000;
     font-size: 15px;
     line-height: 24px;
 }
@@ -1597,7 +1618,7 @@ a[data-toggle="collapse"] {
     text-align: center;
     padding-bottom: 5px;
     font-size: 14px;
-    color: #1ed085;
+    color: #15ae6e;
     font-weight: 500;
     line-height: 14px;
 }
