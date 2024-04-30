@@ -3738,6 +3738,22 @@ box-shadow: none;
     cursor: pointer;
     transition: 0.3s;
     width: 100px;
+    margin-left:auto ;
+
+  }
+  .btn0001 {
+    padding: 0.75rem;
+    display: block;
+    text-decoration: none;
+    background-color: var(--primary-color);
+    color: #f3f3f3;
+    text-align: center;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 110px;
+    margin-left:150px ;
+
   }
   .btn001:hover {
     box-shadow: 0 0 0 2px #fff, 0 0 0 3px var(--primary-color);
@@ -3746,7 +3762,182 @@ box-shadow: none;
 
 
 
+/* feddback */
+  @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap");
 
-
+  :root {
+    --bg-clr: #eaedf5;
+    --white: #fff;
+    --text-clr: #130e24;
+    --close-bg-clr: #ededed;
+    --icon-clr: #ededed;
+    --icon-hvr: #ffba44;
+    --btn-send-clr: #3b70ff;
+    --btn-send-hvr: #133bc8;
+    --btn-cancel-clr: #d4d9e5;
+    --border-clr: #ededed;
+    --border-hvr: #3b70ff;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    outline: none;
+    resize: none;
+    font-family: "Open Sans", sans-serif;
+  }
+  
+  /* body {
+    background: var(--bg-clr);
+    color: var(--text-clr);
+    font-size: 13px;
+  } */
+  
+  .wrapper01{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  .wrapper01 button {
+    border: 0;
+    padding: 12px 20px;
+    background: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background 0.5s ease;
+  }
+  
+  .wrapper01 button.send_btn01 {
+    border: 1px solid var(--btn-send-clr);
+    background: var(--btn-send-clr);
+    color: var(--white);
+  }
+  
+  .wrapper01 button.send_btn01:hover {
+    background: var(--btn-send-hvr);
+  }
+  
+  .wrapper01 button.cancel_btn01 {
+    border: 1px solid var(--btn-cancel-clr);
+    color: var(--btn-cancel-clr);
+    margin-left: 20px;
+  }
+  
+  .wrapper01 button.cancel_btn01:hover {
+    background: var(--btn-cancel-clr);
+    color: var(--white);
+  }
+  
+  .modal_wrapper01 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    transition: all 0.2s ease;
+  }
+  
+  .modal_wrapper01 .shadow01 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: all 0.5s ease;
+  }
+  
+  .modal_wrapper01 .modal01 {
+    width: 400px;
+    max-width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--white);
+    border-radius: 5px;
+    padding: 60px 40px 40px;
+  }
+  
+  .modal01 .close_btn01{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 40px;
+    height: 40px;
+    background: var(--close-bg-clr);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.5s ease;
+  }
+  
+  .modal01 .close_btn01:hover{
+    background: var(--btn-send-clr);
+    color: var(--white)
+  }
+  
+  .header01 p{
+    margin-top: 5px;
+  }
+  
+  .header01 ul{
+   margin: 20px 0;
+   display: flex;
+   justify-content: space-between;
+  }
+  
+  .header01 ul li{
+    font-size: 32px;
+    color: var(--icon-clr);
+    cursor: pointer;
+    transition: color 0.5s ease;
+  }
+  
+  .header01 ul li:hover,
+  .header01 ul li.active{
+    color: var(--icon-hvr);
+  }
+  
+  .body01 .textarea01{
+    width: 100%;
+    border: 2px solid var(--border-clr);
+    margin: 8px 0 20px;
+    border-radius: 5px;
+    padding: 10px;
+    height: 100px;
+    transition: border-color 0.5s ease;
+  }
+  
+  .body01 .textarea01:focus{
+    border-color: var(--border-hvr);
+  }
+  
+  .footer01{
+    display: flex;
+  }
+  
+  .footer01 button{
+    width: 50%;
+  }
+  
+  .wrapper01.active01 .modal_wrapper01 {
+    visibility: visible;
+    transition: all 0.5s ease;
+  }
+  
+  .wrapper01.active01 .modal_wrapper01 .shadow01 {
+    opacity: 1;
+    transition: all 0.2s ease;
+  }
 
 
