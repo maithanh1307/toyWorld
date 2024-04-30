@@ -205,6 +205,30 @@ a,
     -o-transition: all .3s ease-in-out;
     transition: all .3s ease-in-out;
 }
+.btnAdd {
+    background-color: #C2E9C8;
+    color: #000;
+    font-weight: 500;
+    border: none;
+    border-radius: 15px;
+    padding: 10px;
+}
+.btnAdd:hover {
+    background-color: #000;
+    color: #C2E9C8;
+}
+.btnUser {
+    background-color: #F3C76C;
+    color: #000;
+    font-weight: 500;
+    border: none;
+    border-radius: 15px;
+    padding: 10px;
+}
+.btnUser:hover {
+    background-color: #000;
+    color: #F3C76C;
+}
 
 .btn-custom {
     margin-top: 20px;
@@ -3091,6 +3115,20 @@ ul.labels-category li p {
     border-top: solid #ddd 1px;
     padding-top: 35px;
 }
+
+.addInput {
+    width: 49%;
+    border-radius: 5px;
+    padding: 5px;
+    margin-bottom: 10px;
+    display: flex;
+    border: solid 1px;
+}
+.labelProduct {
+    font-weight: 600;
+    color: #000;
+}
+
 
 
 /*------------------------------------------------------------------
