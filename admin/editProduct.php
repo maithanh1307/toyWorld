@@ -375,7 +375,7 @@ if (isset($_POST['submit'])) {
                                     </div>
                                     <div>
                                        <label class="mr-2 labelProduct">Description</label>
-                                       <input name="Description" class="addInput" type="text" id="Description" placeholder="Enter your description" required value="<?php echo $row_up['Description']; ?>">
+                                       <input name="Description" class="addInput" type="text" id="Description" placeholder="Enter your description" required  value="<?php echo $row_up['Description']; ?>">
                                     </div>
                                     <div>
                                        <label class="mr-2 labelProduct">Price</label>
