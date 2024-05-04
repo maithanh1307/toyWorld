@@ -29,7 +29,7 @@
                     <p class="mt-4">'.$row['price'].'</p>
                 </td>
                 <td>
-                    <a href="#">
+                    <a href="../phpConnect/deleteProduct.php?productID='.$row['productID'].'">
                         <i class="fa-light fa-trash-o fa-xl yellow_color"></i>
                     </a>
                     <i class="fa-light fa-pipe fa-xl"></i>
