@@ -290,29 +290,8 @@
                             <div class="tab-content">
                                 <div role="tabpanel" class="tab-pane fade show active" id="grid-view">
                                     <div class="row">
-                                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
-                                            <div class="products-single fix">
-                                                <div class="box-img-hover">
-                                                    <div class="type-lb">
-                                                        <p class="sale">Sale</p>
-                                                    </div>
-                                                    <img src="images/cartoy1.jpg" class="img-fluid1" alt="Image">
-                                                    <div class="mask-icon">
-                                                        <ul>
-                                                            <!-- <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li> -->
-                                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
-                                                        </ul>
-                                                        <a class="cart" href="#">Add to Cart</a>
-                                                    </div>
-                                                </div>
-                                                <div class="why-text">
-                                                    <h4>Taxi cart</h4>
-                                                    <h5> $9.79</h5>
-                                                </div>
-                                            </div>
-                                        </div>
                                         <?php
+                                            include ("../phpConnect/searchProduct.php");
                                             include ("../phpConnect/productShop.php");
                                         ?>
                                     </div>
@@ -321,6 +300,7 @@
                                     <div class="list-view-box">
                                         <div class="row">
                                             <?php
+                                                include ("../phpConnect/searchProduct1.php");
                                                 include ("../phpConnect/productShop1.php");
                                             ?>
                                         </div>
@@ -332,12 +312,57 @@
                 </div>
 				<div class="col-xl-3 col-lg-3 col-sm-12 col-xs-12 sidebar-shop-left">
                     <div class="product-categori">
+                        <!-- <div class="search-product">
+                            <form method="post" id="searchData">
+                                <input class="form-control" name="search" id="search" placeholder="Search here..." type="text">
+                                <button type="submit" name="submit" type="submit" onchange="searchInfor()"> <i class="fa fa-search"></i> </button>
+                            </form>
+                        </div>
+                        
+                        <script>
+                            function searchInfor() {
+                                var searchValue = document.getElementById("search").value.toLowerCase(); 
+                                var products = document.querySelectorAll(".toy"); 
+
+                                products.forEach(function(toy) { 
+                                    var productName = toy.textContent.toLowerCase(); 
+
+                                    if (productName.includes(searchValue)) { 
+                                        toy.style.display = "block"; 
+                                    } else {
+                                        toy.style.display = "none"; 
+                                    }
+                                });
+                            }
+                        </script> -->
+
                         <div class="search-product">
-                            <form action="#">
-                                <input class="form-control" placeholder="Search here..." type="text">
+                            <form method="post" id="searchData">
+                                <input class="form-control" name="search" id="search" placeholder="Search here..." type="text">
                                 <button type="submit"> <i class="fa fa-search"></i> </button>
                             </form>
                         </div>
+
+                        <script>
+                            document.getElementById("searchData").addEventListener("submit", function(event) {
+                                event.preventDefault(); 
+
+                                var searchValue = document.getElementById("search").value.toLowerCase();
+                                var toys = document.querySelectorAll(".toy"); 
+
+                                toys.forEach(function(toy) { 
+                                    var toyName = toy.textContent.toLowerCase();
+
+                                    if (toyName.includes(searchValue)) {
+                                        toy.style.display = "block"; // hiển thị 
+                                    } else {
+                                        toy.style.display = "none"; //  ẩn 
+                                    }
+                                });
+                            });
+                        </script>
+
+
                         <!-- <div class="filter-sidebar-left">
                             <div class="title-left">
                                 <h3>Categories</h3>
