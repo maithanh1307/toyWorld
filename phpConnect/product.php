@@ -33,7 +33,7 @@
                         <i class="fa-light fa-trash-o fa-xl yellow_color"></i>
                     </a>
                     <i class="fa-light fa-pipe fa-xl"></i>
-                    <a href="#">
+                    <a href="../admin/editProduct.php?productID='.$row['productID']. '">
                         <i class="fa-light fa-pencil fa-xl yellow_color"></i>
                     </a>
                 </td>
