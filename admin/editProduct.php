@@ -78,7 +78,7 @@ if (isset($_POST['submit'])) {
 
        if ($stmt_update) {
            // Ràng buộc tham số
-           mysqli_stmt_bind_param($stmt_update, "ssdsi", $toyName, $typeOfToy, $Description, $price, $productID);
+           mysqli_stmt_bind_param($stmt_update, "ssssi", $toyName, $typeOfToy, $Description, $price, $productID);
 
            // Thực thi câu lệnh UPDATE
            if (mysqli_stmt_execute($stmt_update)) {
@@ -375,7 +375,7 @@ if (isset($_POST['submit'])) {
                                     </div>
                                     <div>
                                        <label class="mr-2 labelProduct">Description</label>
-                                       <input name="Description" class="addInput" type="text" id="Description" placeholder="Enter your description" required  value="<?php echo $row_up['Description']; ?>">
+                                       <input name="Description" class="addInput" type="text" id="Description" placeholder="Enter your description" required value="<?php echo $row_up['Description']; ?>">
                                     </div>
                                     <div>
                                        <label class="mr-2 labelProduct">Price</label>
