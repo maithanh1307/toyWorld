@@ -116,7 +116,7 @@
                <div class="sidebar_blog_1">
                   <div class="sidebar-header">
                      <div class="logo_section">
-                        <a href="index.html"><img class="logo_icon img-responsive" src="../freshshop/images/logo.png" alt="#" /></a>
+                        <a href="index.php"><img class="logo_icon img-responsive" src="../freshshop/images/logo.png" alt="#" /></a>
                      </div>
                   </div>
                   <div class="sidebar_user_info">
@@ -154,7 +154,7 @@
                            <li><a href="invoice.html">> <span>Invoice</span></a></li>
                         </ul>
                      </li>
-                     <li><a href="tables.html"><i class="fa fa-table purple_color2"></i> <span>Tables</span></a></li>
+                     <li><a href="tables.php"><i class="fa fa-table purple_color2"></i> <span>Tables</span></a></li>
                      <li>
                         <a href="#apps" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-object-group blue2_color"></i> <span>Apps</span></a>
                         <ul class="collapse list-unstyled" id="apps">
@@ -165,8 +165,8 @@
                      </li>
                      <li><a href="price.html"><i class="fa fa-briefcase blue1_color"></i> <span>Pricing Tables</span></a></li>
                      <li>
-                        <a href="contact.html">
-                        <i class="fa fa-paper-plane red_color"></i> <span>Users</span></a>
+                        <a href="contact.php">
+                        <i class="fa fa-paper-plane red_color"></i> <span>Get in touch</span></a>
                      </li>
                      <li class="active">
                         <a href="#additional_page" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-clone yellow_color"></i> <span>Additional Pages</span></a>
@@ -175,7 +175,7 @@
                               <a href="profile.html">> <span>Profile</span></a>
                            </li>
                            <li>
-                              <a href="products.html">> <span>Products</span></a>
+                              <a href="products.php">> <span>Products</span></a>
                            </li>
                            <li>
                               <a href="login.html">> <span>Login</span></a>
