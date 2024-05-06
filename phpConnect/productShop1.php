@@ -21,7 +21,7 @@
                             <img src="../admin/images/layout_img/'.$row['imageProducts'].'" class="img-fluid2" alt="Image">
                             <div class="mask-icon">
                                 <ul>
-                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+                                    <li><a href="../phpConnect/addWishlistShop.php?productID='.$row['productID'].'" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
                                 </ul>
 
                             </div>

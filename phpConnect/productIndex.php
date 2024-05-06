@@ -12,6 +12,7 @@
         while ($row = $result->fetch_assoc()) {
             echo '
             <div class="col-lg-3 col-md-6 special-grid best-seller">
+                <form method="post">
                     <div class="products-single fix">
                         <div class="box-img-hover">
                             <div class="type-lb">
@@ -20,7 +21,7 @@
                             <img src="../admin/images/layout_img/'.$row['imageProducts'].'" class="img-fluid1" alt="Image">
                             <div class="mask-icon">
                                 <ul>
-                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+                                    <li><a href="../phpConnect/addWishlist.php?productID='.$row['productID'].'" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
                                 </ul>
                                 <a class="cart" href="#">Add to Cart</a>
                             </div>
@@ -30,7 +31,8 @@
                             <h5>'.$row['price'].'</h5>
                         </div>
                     </div>
-                </div>';
+                </form>
+            </div>';
         }
     }
 ?>
