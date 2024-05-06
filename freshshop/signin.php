@@ -2,10 +2,10 @@
 require_once('../phpConnect/signin_db.php');
 require_once('../phpConnect/signup_db.php');
 session_start();
-if (isset($_SESSION['email'])) {
-    header('Location:index.php');
-    die();
-}
+// if (isset($_SESSION['email'])) {
+//     header('Location:index.php');
+//     die();
+// }
 $email = '';
 $password = '';
 $error = ''; 
