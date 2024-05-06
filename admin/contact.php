@@ -1,6 +1,5 @@
 <?php
    require_once ('../phpConnect/connectData.php');
-
    $sql = "SELECT * from getintouch";
    $query = mysqli_query($conn, $sql);
 ?>
