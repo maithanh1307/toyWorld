@@ -12,7 +12,7 @@
         if ($result) {
             while ($row = $result->fetch_assoc()) {
             echo '
-            <div class="toy">
+            <div class="row toy">
                 <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
                     <div class="products-single1 fix">
                         <div class="box-img-hover">
@@ -22,7 +22,7 @@
                             <img src="../admin/images/layout_img/'.$row['imageProducts'].'" class="img-fluid2" alt="Image">
                             <div class="mask-icon">
                                 <ul>
-                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+                                    <li><a href="../phpConnect/addWishlistShop.php?productID='.$row['productID'].'" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
                                 </ul>
 
                             </div>

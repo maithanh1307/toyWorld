@@ -28,7 +28,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-6 col-lg-8 col-xl-8">
+                <div class="col-sm-6 col-md-6 col-lg-8 col-xl-8 mb-3">
                     <div class="why-text full-width whytext1">
                         <h4>'.$row['toyName'].'</h4>
                         <h5> '.$row['price'].'</h5>

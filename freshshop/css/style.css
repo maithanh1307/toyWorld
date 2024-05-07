@@ -651,6 +651,9 @@
 .side-menu p{
 	display: inline-block;
 }
+.row1 {
+    display:inline-block;
+}
  .col-menu .title{
      font-size: 20px;
      font-weight: 700;
@@ -3158,9 +3161,9 @@
      color: #b0b435;
 }
 /* contact-info-left1 */
-.contact-info-left1{
+.contact-info-left1 {
     padding: 20px;
-    background: url(../images/contactMessage.png) no-repeat center;
+    /* background: url(../images/nenContact.png) no-repeat center; */
     background-size: cover;
     border-radius: 10px;
 }
