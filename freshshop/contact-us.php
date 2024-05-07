@@ -285,7 +285,7 @@
     <div class="contact-box-main">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8 col-sm-12">
+                <div class="col-lg-7 col-sm-12">
                     <div class="contact-form-right">
                         <h2>GET IN TOUCH</h2>
                         <p>Whether you have a burning question about a specific toy, need a helping hand picking out the ideal gift, or just want to chat about all things toys, we're here for you!</p>
@@ -324,7 +324,7 @@
                         </form>
                     </div>
                 </div>
-				<div class="col-lg-4 col-sm-12">
+				<div class="col-lg-5 col-sm-12">
                     <div class="contact-info-left1">
                         <h2 class="headcomment">CONTACT INFO</h2>
                         <p>At Miniature World, we're passionate about bringing joy and wonder to children of all ages. We're here to help you find the perfect toys to spark their imaginations and fuel their playtime adventures. Whether you have a question about a specific product, need help finding the right gift, or simply want to learn more about Toy's World, we'd love to hear from you!</p>
