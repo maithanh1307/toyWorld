@@ -167,7 +167,7 @@
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
                         <i class="fa fa-bars"></i>
                     </button>
-                    <a class="navbar-brand" href="index.php"><img src="images/logo01.png" class="logo" alt="logo"></a>
+                    <a class="navbar-brand" href="index.php"><img src="images/logo01.png" class="logo" alt="logo"><b>Miniature World</b></a>
                 </div>
                 <!-- End Header Navigation -->
 
@@ -343,7 +343,7 @@
 			</div>
 		</div>
 	</div> -->
-    <div class="instagram-box">
+    <!-- <div class="instagram-box">
         <div class="main-instagram owl-carousel owl-theme">
             <div class="item">
                 <div class="ins-inner-box">
@@ -395,6 +395,12 @@
             </div>
             
         </div>
+    </div> -->
+    <div class="card01">
+        <div class=">
+            
+        </div>
+
     </div>
 
     <!-- Start Products  -->
@@ -632,7 +638,7 @@
     </div>
     <!-- End copyright  -->
 
-    <a href="#" id="back-to-top" title="Back to top" style="display: none;"><i class="fa-solid fa-arrow-up fa-beat"></i></a>
+    <a href="#" id="back-to-top" title="Back to top" style="display: none;"><i class="fa-solid fa-circle-up fa-shake"></i></a>
 
     <!-- ALL JS FILES -->
     <script src="js/jquery-3.2.1.min.js"></script>
