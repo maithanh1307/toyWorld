@@ -68,10 +68,10 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
         <div class="form-box login">
             <div class="form-details ">
                 <h2>Welcome Back</h2>
-                <p>Please log in using your personal information to stay connected with us.</p>
+                <p>Please login using your personal information to stay connected with us.</p>
             </div>
             <div class="form-content">
-                <h2>LOGIN</h2>
+                <h2 class="headcomment">LOGIN</h2>
                 <form action="" method = "post">
                     <div class="input-field">
                         <input type="text" required name="email">
@@ -104,7 +104,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
                 <p>To become a part of our community, please sign up using your personal information.</p>
             </div>
             <div class="form-content">
-                <h2>SIGNUP</h2>
+                <h2 class="headcomment">SIGNUP</h2>
                 <form action="#" method = "post">
                     <div class="input-field">
                         <input type="text" required name="email_signup">

@@ -88,16 +88,16 @@ header {
 }
 
 .navbar .links a:hover {
-    color: #4fff19;
+    color: #000;
 }
 
 .navbar .login-btn {
     border: none;
     outline: none;
     background: #000;
-    color: #55b047;
+    color: #e82969;
     font-size: 1rem;
-    font-weight: 600;
+    font-weight: 700;
     padding: 10px 18px;
     border-radius: 10px;
     cursor: pointer;
@@ -106,6 +106,7 @@ header {
 
 .navbar .login-btn:hover {
     background: #ddd;
+    color: #000;
 }
 
 .form-popup {
@@ -117,7 +118,7 @@ header {
     opacity: 0;
     pointer-events: none;
     max-width: 720px;
-    background-image: linear-gradient(#99FFCC,#66FF66,#ffff);
+    background-image: linear-gradient(#EE9BB6, #F4C3DF,#ffff);
     border: 2px solid #fff;
     transform: translate(-50%, -70%);
     border-radius: 41px;
@@ -170,7 +171,8 @@ header {
     flex-direction: column;
     justify-content: baseline;
     align-items: center;
-    border-radius: 39.5px;
+    border-top-left-radius: 39.5px;
+    border-bottom-left-radius: 39.5px;
 }
 
 .login .form-details {
@@ -211,12 +213,12 @@ form .input-field {
     outline: none;
     font-size: 0.95rem;
     padding: 0 15px;
-    border: 1px solid #717171;
+    border: 1px solid #000;
     border-radius: 3px;
 }
 
 .input-field input:focus {
-    border: 1px solid #008800;
+    border: 1px solid #000;
 }
 
 .input-field label {
@@ -235,17 +237,19 @@ form .input-field {
 
 .input-field input:is(:focus, :valid)~label {
     transform: translateY(-120%);
-    color: #008800;
+    color: #000;
     font-size: 0.75rem;
 }
 
 .form-box a {
-    color: #080;
+    color: #fa0053;
     text-decoration: none;
+    font-weight: 500;
 }
 
 .form-box a:hover {
     text-decoration: underline;
+    color: #000;
 }
 
 form :where(.forgot-pass-link, .policy-text) {
@@ -262,15 +266,17 @@ form button {
     padding: 14px 0;
     font-size: 1rem;
     font-weight: 500;
-    border-radius: 3px;
+    border-radius: 10px;
     cursor: pointer;
     margin: 25px 0;
-    background: #080;
+    background: #000;
     transition: 0.2s ease;
 }
 
 form button:hover {
-    background: #878484;
+    background: #e82969;
+    color: #000;
+    font-weight: 700;
 }
 
 .form-content .bottom-link {
@@ -341,7 +347,7 @@ form button:hover {
     }
 
     .navbar .links a:hover {
-        color: #00BCD4;
+        color: #e82969;
     }
 
     .navbar .login-btn {
@@ -370,4 +376,98 @@ form button:hover {
 .form-details h2 {
     margin-top: 50px;
 }
+
+@keyframes bounceY {
+    0% {
+        transform: translateY(-205px);
+   }
+    40% {
+        transform: translateY(-100px);
+   }
+    65% {
+        transform: translateY(-52px);
+   }
+    82% {
+        transform: translateY(-25px);
+   }
+    92% {
+        transform: translateY(-12px);
+   }
+    55%, 75%, 87%, 97%, 100% {
+        transform: translateY(0px);
+   }
+}
+@-moz-keyframes bounceY {
+    0% {
+        -moz-transform: translateY(-205px);
+   }
+    40% {
+        -moz-transform: translateY(-100px);
+   }
+    65% {
+        -moz-transform: translateY(-52px);
+   }
+    82% {
+        -moz-transform: translateY(-25px);
+   }
+    92% {
+        -moz-transform: translateY(-12px);
+   }
+    55%, 75%, 87%, 97%, 100% {
+        -moz-transform: translateY(0px);
+   }
+}
+@-webkit-keyframes bounceY {
+    0% {
+        -webkit-transform: translateY(-205px);
+   }
+    40% {
+        -webkit-transform: translateY(-100px);
+   }
+    65% {
+        -webkit-transform: translateY(-52px);
+   }
+    82% {
+        -webkit-transform: translateY(-25px);
+   }
+    92% {
+        -webkit-transform: translateY(-12px);
+   }
+    55%, 75%, 87%, 97%, 100% {
+        -webkit-transform: translateY(0px);
+   }
+}
+
+.headcomment {
+   font-family:'Poppins', sans-serif;
+   font-weight: 700;
+   color: #000;
+   text-align: center;
+   margin-top: 5px;
+   margin-bottom: 10px;
+   -webkit-animation: my 1000ms infinite;
+   -moz-animation: my 1000ms infinite;
+   -o-animation: my 1000ms infinite;
+   animation: my 1000ms infinite;
+ }
+ @-webkit-keyframes my {
+   0% { color: #FBB0D3; }
+   50% { color: #d91456; }
+   100% { color: #000; }
+   }
+   @-moz-keyframes my {
+   0% { color: #FBB0D3; }
+   50% { color: #d91456; }
+   100% { color: #000; }
+   }
+   @-o-keyframes my {
+   0% { color: #FBB0D3; }
+   50% { color: #d91456; }
+   100% { color: #000; }
+   }
+   @keyframes my {
+   0% { color: #FBB0D3; }
+   50% { color: #d91456; }
+   100% { color: #000; }
+   }
 
