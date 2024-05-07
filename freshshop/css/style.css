@@ -149,18 +149,20 @@
      bottom: 40px;
      right: 40px;
      z-index: 9999;
-     width: 32px;
-     height: 30px;
+     width: 70px;
+     height: 72px;
      text-align: center;
      line-height: 5px;
-     background: #C2E9C8;
-     color: #ffffff;
+     /* background: #303030; */
+     color: #C8E2B1;
      cursor: pointer;
      border: 0;
      border-radius: 0px;
      text-decoration: none;
      transition: opacity 0.2s ease-out;
-     font-size: 28px;
+     font-size: 30px;
+     border-radius: 90px;
+
 }
 /*------------------------------------------------------------------ HEADER -------------------------------------------------------------------*/
  .main-top{
@@ -176,6 +178,7 @@
      background: none;
      border: none;
 }
+/* tien */
  .custom-select-box .bootstrap-select .btn-light{
      padding: 4px;
      font-size: 14px;
@@ -241,6 +244,7 @@
  .offer-box li {
      font-weight: 600;
 }
+
  .offer-box li i{
      margin-right: 15px;
      color: #C2E9C8;
@@ -323,7 +327,7 @@
      color: #C2E9C8;
 }
  .attr-nav > ul > li > a:hover{
-     color: #C2E9C8;
+     color: #367517;
 }
  nav.navbar.bootsnav ul.nav > li > a{
      margin: 0px;
@@ -528,11 +532,12 @@
  nav.navbar.bootsnav ul.nav li.active > a{
      color: #000;
 }
+/* home */
  nav.navbar.bootsnav ul.nav li.active > a:hover{
-     color: #C2E9C8;
+     color: #367517;
 }
  nav.navbar.bootsnav ul.nav li > a:hover{
-     color: #C2E9C8;
+     color: #367517;
 }
  nav.navbar.bootsnav ul.nav li.megamenu-fw > a:hover{
      color: #C2E9C8;
@@ -3246,7 +3251,7 @@
  .help-block.with-errors{
      position: absolute;
      right: 0;
-     background: red;
+     background: #C2E9C8;
      color: #fff;
      padding: 0px 15px;
 }
@@ -3940,4 +3945,6 @@ box-shadow: none;
     transition: all 0.2s ease;
   }
 
-
+  .color01 ::after .hvr-hover{
+    color:#133bc8;
+  }

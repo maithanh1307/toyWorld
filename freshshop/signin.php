@@ -36,6 +36,10 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
     <link rel="stylesheet" href="css/signin.css">
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <!-- Site Icons -->
+    <link rel="shortcut icon" href="images/logo01.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
 
     <script src="js/scriptS.js" defer></script>
 </head>
@@ -44,7 +48,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
         <nav class="navbar">
             <span class="hamburger-btn material-symbols-rounded">menu</span>
             <a href="#" class="logo">
-                <img src="images/logo.png" alt="logo">
+                <img src="images/logo01.png" alt="logo">
                 <h2>Miniature World</h2>
             </a>
             <ul class="links">
@@ -53,7 +57,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
                 <li><a href="#">About us</a></li>
                 <li><a href="#">Contact us</a></li>
             </ul>
-            <button href="index.html " class="login-btn">LOG IN</button>
+            <button href="index.php " class="login-btn">LOG IN</button>
         </nav>
     </header>
 
@@ -61,7 +65,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
     <div class="form-popup">
          <span class="close-btn material-symbols-rounded">close</span>
         <div class="form-box login">
-            <div class="form-details">
+            <div class="form-details ">
                 <h2>Welcome Back</h2>
                 <p>Please log in using your personal information to stay connected with us.</p>
             </div>
