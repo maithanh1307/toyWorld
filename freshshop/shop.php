@@ -291,6 +291,7 @@
                                 <div role="tabpanel" class="tab-pane fade show active" id="grid-view">
                                     <div class="row">
                                         <?php
+                                            include ("../phpConnect/filterProduct.php");
                                             include ("../phpConnect/searchProduct.php");
                                             include ("../phpConnect/productShop.php");
                                         ?>
@@ -399,48 +400,49 @@
                             </div>
                         </div> -->
                         <div class="right-col ">
-                            <div class="sidebar border-top6">
-                                <h2 style="font-weight: 900;">Select Filters<i class="fad fa-heart fa-bounce ml-2" style="color: #f77ab4;"></i></h2>                                </h2>
-                                <h3>Property Type</h3>
-                                <div class="filter">
-                                    <input type="radio" name="propertyType" value="Collective" onchange="getSelectedValue()">
-                                    <p>Collective</p><br>
+                        <form method="post" id="formFilter">
+                                <div class="sidebar border-top6 " name="typeOfToy">
+                                    <h2 style="font-weight: 900;">Select Filters<i class="fad fa-heart fa-bounce ml-2" style="color: #f77ab4;"></i></h2>                                </h2>
+                                    <h3>Property Type</h3>
+                                    <div class="filter">
+                                        <input type="submit" id="propertyType" name="propertyType" value="collective" onchange="getSelectedValue()">
+                                        <p></p><br>
+                                    </div>
+                                    <div class="filter">
+                                        <input type="submit" id="propertyType" name="propertyType" value="doll" onchange="getSelectedValue()">
+                                        <p>Doll</p> <br>
+                                    </div>
+                                    <div class="filter">
+                                        <input type="submit" id="propertyType" name="propertyType" value="lego" onchange="getSelectedValue()">
+                                        <p>Lego</p>
+                                    </div>
+                                    <div class="filter">
+                                        <input type="submit" id="propertyType" name="propertyType" value="vehicle" onchange="getSelectedValue()">
+                                        <p>Vehicle</p>
+                                    </div>
+                                    <div class="filter">
+                                        <input type="submit" id="propertyType" name="propertyType" value="teddy" onchange="getSelectedValue()">
+                                        <p>Teddy Bear</p>
+                                    </div>
+                                    <div class="filter">
+                                        <input type="submit" id="propertyType" name="propertyType" value="robot" onchange="getSelectedValue()">
+                                        <p>Robot</p>
+                                    </div>
+                                    <h3>Ages</h3>
+                                    <div class="filter">
+                                        <input type="submit" id="propertyType" name="propertyType" value="1year" onchange="getSelectedValue()">
+                                        <p>Under 1 year old</p><br>
+                                    </div>
+                                    <div class="filter">
+                                        <input type="submit" id="propertyType" name="propertyType" value="1to3" onchange="getSelectedValue()">
+                                        <p>1 to 3 years old</p><br>
+                                    </div>
+                                    <div class="filter">
+                                        <input type="submit" id="propertyType" name="propertyType" value="above4" onchange="getSelectedValue()">
+                                        <p>Above 4 years old</p><br>
+                                    </div>
                                 </div>
-                                <div class="filter">
-                                    <input type="radio" name="propertyType" value="Doll" onchange="getSelectedValue()">
-                                    <p>Doll</p> <br>
-                                </div>
-                                <div class="filter">
-                                    <input type="radio" name="propertyType" value="Lego" onchange="getSelectedValue()">
-                                    <p>Lego</p>
-                                </div>
-                                <div class="filter">
-                                    <input type="radio" name="propertyType" value="Vehicle" onchange="getSelectedValue()">
-                                    <p>Vehicle</p>
-                                </div>
-                                <div class="filter">
-                                    <input type="radio" name="propertyType" value="Teddy Bear" onchange="getSelectedValue()">
-                                    <p>Teddy Bear</p>
-                                </div>
-                                <div class="filter">
-                                    <input type="radio" name="propertyType" value="Robot" onchange="getSelectedValue()">
-                                    <p>Robot</p>
-                                </div>
-                                <h3>Ages</h3>
-                                <div class="filter">
-                                    <input type="radio" name="propertyType" value="under1" onchange="getSelectedValue()">
-                                    <p>Under 1 year old</p><br>
-                                </div>
-                                <div class="filter">
-                                    <input type="radio" name="propertyType" value="between1to3" onchange="getSelectedValue()">
-                                    <p>1 to 3 years old</p><br>
-                                </div>
-                                <div class="filter">
-                                    <input type="radio" name="propertyType" value="above4" onchange="getSelectedValue()">
-                                    <p>Above 4 years old</p><br>
-                                </div>
-                            </div>
-                            
+                            </form>
                         </div>
                         <div class="filter-price-left mt-3">
                             <div class="title-left">
@@ -456,28 +458,30 @@
                         </div>
 
                         <!--js-->
-                        <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+                        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
                         <script>
                             function getSelectedValue() {
                                 // Lấy ra radio button được chọn
-                                var selectedRadioButton = document.querySelector('input[name="propertyType"]:checked');
-                                if (selectedRadioButton) {
-                                    var selectedValue = selectedRadioButton.value;
-                                    // Lấy tất cả các phần tử có class "house"
-                                    var allHouses = document.querySelectorAll('.house');
-                                    // Lặp qua từng phần tử
-                                    allHouses.forEach(function(house) {
-                                        // Kiểm tra nếu phần tử có class tương ứng với giá trị đã chọn
-                                        if (house.classList.contains(selectedValue)) {
-                                            house.style.display = 'block'; // Hiển thị phần tử này
+                                document.getElementById("formFilter").addEventListener("submit", function(event){
+                                    event.preventDefault(); 
+
+                                    var selectElement = document.getElementById("propertyType");
+                                    var searchValue = selectElement.options[selectElement.selectedIndex].value.toLowerCase();
+                                    var toys = document.querySelectorAll(".toy"); 
+
+                                    toys.forEach(function(toy) { 
+                                        var toyName = toy.textContent.toLowerCase();
+
+                                        if (toyName.includes(searchValue)) {
+                                            toy.style.display = "block"; // Hiển thị sản phẩm
                                         } else {
-                                            house.style.display = 'none'; // Ẩn phần tử này
+                                            toy.style.display = "none"; // Ẩn sản phẩm
                                         }
                                     });
-                                }
+                                });
                             }
-                        </script> -->
+                        </script>
                     </div>
                 </div>
             </div>
