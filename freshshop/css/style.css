@@ -3163,7 +3163,7 @@
 /* contact-info-left1 */
 .contact-info-left1 {
     padding: 20px;
-    /* background: url(../images/nenContact.png) no-repeat center; */
+    background: url(../images/nenContact.png) no-repeat center;
     background-size: cover;
     border-radius: 10px;
 }
