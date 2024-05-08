@@ -326,19 +326,24 @@
                 </div>
 				<div class="col-lg-5 col-sm-12">
                     <div class="contact-info-left1">
-                        <h2 class="headcomment">CONTACT INFO</h2>
-                        <p>At Miniature World, we're passionate about bringing joy and wonder to children of all ages. We're here to help you find the perfect toys to spark their imaginations and fuel their playtime adventures. Whether you have a question about a specific product, need help finding the right gift, or simply want to learn more about Toy's World, we'd love to hear from you!</p>
-                        <ul>
-                            <li>
-                                <p><i class="fas fa-map-marker-alt"></i>Address: 19 Nguyen Huu Tho street, Tan Hung, District 7, Ho Chi Minh city </p>
-                            </li>
-                            <li>
-                                <p><i class="fas fa-phone-square"></i>Phone: <a href="tel:028 3775 5052">+028 3775 5052</a></p>
-                            </li>
-                            <li>
-                                <p><i class="fas fa-envelope"></i>Email: <a href="mailto:miniatureworld@gmail.com">miniatureworld@gmail.com</a></p>
-                            </li>
-                        </ul>
+                        <div class="contact-info-left3">
+                            <h2 class="headcomment">CONTACT INFO</h2>
+                            <!-- <p>At Miniature World, we're passionate about bringing joy and wonder to children of all ages. We're here to help you find the perfect toys to spark their imaginations and fuel their playtime adventures. Whether you have a question about a specific product, need help finding the right gift, or simply want to learn more about Toy's World, we'd love to hear from you!</p> -->
+                            <div>
+                                <div class="contactinfo">
+                                    <!-- <p><i class="fas fa-map-marker-alt contactCircle mr-5"></i>Address: 19 Nguyen Huu Tho street, Tan Hung, District 7, Ho Chi Minh city </p> -->
+                                    <i class="fas fa-map-marker-alt contactCircle mr-3"></i>19 Nguyen Huu Tho street, Tan Hung, District 7
+                                </div>
+                                <div class="contactinfo">
+                                    <!-- <p><i class="fas fa-phone-square contactCircle"></i>Phone: <a href="tel:028 3775 5052">+028 3775 5052</a></p> -->
+                                    <i class="fas fa-phone contactCircle mr-3"></i><a href="tel:028 3775 5052">+028 3775 5052</a>
+                                </div>
+                                <div class="contactinfo">
+                                    <!-- <p><i class="fas fa-envelope contactCircle"></i>Email: <a href="mailto:miniatureworld@gmail.com">miniatureworld@gmail.com</a></p> -->
+                                    <i class="fas fa-envelope contactCircle mr-3"></i><a href="mailto:miniatureworld@gmail.com">miniatureworld@gmail.com</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
