@@ -262,9 +262,9 @@
                                           <option value="vehicle">Vehicle</option>
                                           <option value="teddy">Teddy Bear</option>
                                           <option value="robot">Robot</option>
-                                          <option value="1year">Under 1 year old</option>
-                                          <option value="1to3">1 to 3 years old</option>
-                                          <option value="above4">Above 4 years old</option>
+                                          <option value="Under 1 year old">Under 1 year old</option>
+                                          <option value="1 to 3 years old">1 to 3 years old</option>
+                                          <option value="Above 4 years old">Above 4 years old</option>
                                        </select>
                                     </div>
                                     <div>
