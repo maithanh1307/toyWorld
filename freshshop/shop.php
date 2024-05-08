@@ -406,40 +406,40 @@
                                     <h2 style="font-weight: 900;">Select Filters<i class="fad fa-heart fa-bounce ml-2" style="color: #f77ab4;"></i></h2>                                </h2>
                                     <h3>Property Type</h3>
                                     <div class="filter01">
-                                        <input type="submit" id="propertyType" name="propertyType" value="collective" onchange="getSelectedValue()">
+                                        <input style="width: 100px; border-radius: 15px; border: none; background-color: #E0DFDF" type="submit" id="propertyType" name="propertyType" value="collective" onchange="getSelectedValue()">
                                         <p></p><br>
                                     </div>
-                                    <div class="filter02 ">
-                                        <input type="submit" id="propertyType" name="propertyType" value="doll" onchange="getSelectedValue()">
+                                    <div class="filter02">
+                                        <input style="width: 100px; border-radius: 15px; border: none; background-color: #E0DFDF" type="submit" id="propertyType" name="propertyType" value="doll" onchange="getSelectedValue()">
                                         <p></p> <br>
                                     </div>
-                                    <div class="filter03 mb-5">
-                                        <input type="submit" id="propertyType" name="propertyType" value="lego" onchange="getSelectedValue()">
+                                    <div class="filter03">
+                                        <input style="width: 100px; border-radius: 15px; border: none; background-color: #E0DFDF" type="submit" id="propertyType" name="propertyType" value="lego" onchange="getSelectedValue()">
                                         <p></p>
                                     </div>
-                                    <div class="filter04 mb-5">
-                                        <input type="submit" id="propertyType" name="propertyType" value="vehicle" onchange="getSelectedValue()">
+                                    <div class="filter04 mt-4">
+                                        <input style="width: 100px; border-radius: 15px; border: none; background-color: #E0DFDF" type="submit" id="propertyType" name="propertyType" value="vehicle" onchange="getSelectedValue()">
                                         <p></p>
                                     </div>
-                                    <div class="filter05 mb-5">
-                                        <input type="submit" id="propertyType" name="propertyType" value="teddy" onchange="getSelectedValue()">
+                                    <div class="filter05 mt-4">
+                                        <input style="width: 100px; border-radius: 15px; border: none; background-color: #E0DFDF" type="submit" id="propertyType" name="propertyType" value="teddy" onchange="getSelectedValue()">
                                         <p></p>
                                     </div>
-                                    <div class="filter06 mb-5">
-                                        <input type="submit" id="propertyType" name="propertyType" value="robot" onchange="getSelectedValue()">
+                                    <div class="filter06 mt-4 mb-2">
+                                        <input style="width: 100px; border-radius: 15px; border: none; background-color: #E0DFDF" type="submit" id="propertyType" name="propertyType" value="robot" onchange="getSelectedValue()">
                                         <p></p>
                                     </div>
                                     <h3>Ages</h3>
                                     <div class="filter07">
-                                        <input type="submit" id="propertyType" name="propertyType" value="Under 1 year old" onchange="getSelectedValue()">
+                                        <input style="width: 140px; border-radius: 15px; border: none; background-color: #E0DFDF" type="submit" id="propertyType" name="propertyType" value="Under 1 year old" onchange="getSelectedValue()">
                                         <p></p><br>
                                     </div>
                                     <div class="filter08">
-                                        <input type="submit" id="propertyType" name="propertyType" value="1 to 3 years old" onchange="getSelectedValue()">
+                                        <input style="width: 140px; border-radius: 15px; border: none; background-color: #E0DFDF" type="submit" id="propertyType" name="propertyType" value="1 to 3 years old" onchange="getSelectedValue()">
                                         <p></p><br>
                                     </div>
                                     <div class="filter09">
-                                        <input type="submit" id="propertyType" name="propertyType" value="Above 4 years old" onchange="getSelectedValue()">
+                                        <input style="width: 140px; border-radius: 15px; border: none; background-color: #E0DFDF" type="submit" id="propertyType" name="propertyType" value="Above 4 years old" onchange="getSelectedValue()">
                                         <p></p><br>
                                     </div>
                                 </div>

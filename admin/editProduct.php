@@ -54,7 +54,7 @@ if (isset($_POST['submit'])) {
 
            if ($stmt_update) {
                // Ràng buộc tham số
-               mysqli_stmt_bind_param($stmt_update, "sssdsi", $toyName, $imageFileName, $typeOfToy, $Description, $price, $productID);
+               mysqli_stmt_bind_param($stmt_update, "sssssi", $toyName, $imageFileName, $typeOfToy, $Description, $price, $productID);
 
                // Thực thi câu lệnh UPDATE
                if (mysqli_stmt_execute($stmt_update)) {
