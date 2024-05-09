@@ -1,42 +1,61 @@
 <?php
-    require_once ('../phpConnect/connectData.php');
+require_once ('../phpConnect/connectData.php');
+$query = "SELECT * FROM carts";
+// Tính tổng các giá trị total
+$sql_total = "SELECT SUM(total) AS total_sub FROM carts";
+$result_total = mysqli_query($conn, $sql_total);
+$row_total = mysqli_fetch_assoc($result_total);
+$total_sub = $row_total['total_sub'];
 
-    $sql = "SELECT * FROM carts";
-    $query = mysqli_query($conn, $sql);
-    if (isset($_POST["save_cart_btn"])) {
-        // Lấy dữ liệu từ form
-        $toyName = $_POST["toyName"];
-        $newQuantity = $_POST["quantity"];
-        
-        // Lấy giá trị price từ cơ sở dữ liệu và loại bỏ kí tự "$"
-        $price_sql = "SELECT price FROM carts WHERE toyName = ?";
-        $price_stmt = $conn->prepare($price_sql);
-        $price_stmt->bind_param("s", $toyName);
-        $price_stmt->execute();
-        $price_result = $price_stmt->get_result();
-        $price_row = $price_result->fetch_assoc();
-        $price_with_dollar_sign = $price_row["price"];
-        $price_without_dollar_sign = str_replace('$', '', $price_with_dollar_sign);
-        $price = (float) $price_without_dollar_sign;
-        
-        // Tính toán total
-        $newTotalCost = $newQuantity * $price;
-        
+if (isset($_POST["update_cart_btn"])) {
+    // Lặp qua mảng toyName từ form
+    foreach ($_POST['toyName'] as $index => $toyName) {
+        // Lấy số lượng mới từ mảng quantity dựa trên index
+        $newQuantity = $_POST["quantity"][$index];
+
         // Cập nhật dữ liệu trong cơ sở dữ liệu
-        $update_sql = "UPDATE carts SET quantity = ?, total = ? WHERE toyName = ?";
+        $update_sql = "UPDATE carts SET quantity = ? WHERE toyName = ?";
         $update_stmt = $conn->prepare($update_sql);
-        $update_stmt->bind_param("ids", $newQuantity, $newTotalCost, $toyName);
+        $update_stmt->bind_param("is", $newQuantity, $toyName);
 
         if ($update_stmt->execute()) {
-            header('Location: ../freshshop/cart.php');
+            // Cập nhật số lượng thành công, tiếp tục tính toán và cập nhật total
+            // Lấy giá của sản phẩm từ cơ sở dữ liệu
+            $select_sql = "SELECT price FROM products WHERE toyName = ?";
+            $select_stmt = $conn->prepare($select_sql);
+            $select_stmt->bind_param("s", $toyName);
+            $select_stmt->execute();
+            $select_stmt->bind_result($price);
+            $select_stmt->fetch();
+            $select_stmt->close();
+
+            // Trích xuất phần số từ chuỗi price ($ + number)
+            $price_number = (float)substr($price, 1);
+
+            // Tính toán tổng và cập nhật thuộc tính "total"
+            $total = $newQuantity * $price_number;
+            $update_total_sql = "UPDATE carts SET total = ? WHERE toyName = ?";
+            $update_total_stmt = $conn->prepare($update_total_sql);
+            $update_total_stmt->bind_param("ds", $total, $toyName);
+            $update_total_stmt->execute();
+            $update_total_stmt->close();
         } else {
+            // Xảy ra lỗi khi cập nhật
             echo "Error updating record: " . $conn->error;
         }
 
         // Đóng prepared statement
         $update_stmt->close();
     }
+    header('Location: ../freshshop/cart.php');
+}
+
+
+
 ?>
+
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -305,54 +324,66 @@
                                 </tr>
                             </thead>
                             
-                    <tbody>
-                    <form action="" method="post">
-    <?php foreach ($query as $cart): ?>
-    <tr>
-        <td class="thumbnail-img">
-            <img src="../admin/images/layout_img/<?php echo $cart['imageProducts']; ?>" class="img-fluid1" alt="Image">
-        </td>
-        <td class="name-pr">
-            <?php echo $cart['toyName']; ?>
-        </td>
-        <td class="price-pr">
-            <p><?php echo $cart['price']; ?></p>
-        </td>
-        <td class="quantity-box">
-            <input name="quantity" type="number" value="<?php echo $cart['quantity']; ?>" onchange="updateTotal(this, '<?php echo $cart['productID']; ?>')">
-        </td>
+                            <tbody>
+    <form action="" method="post">
         <?php
-        // Remove the dollar sign from the price string
-        $price_without_dollar_sign = str_replace('$', '', $cart['price']);
-        // Convert the price to a float for multiplication
-        $price_float = (float)$price_without_dollar_sign;
+        $sql = "SELECT * FROM carts";
+        $result = mysqli_query($conn, $sql);
+        if (mysqli_num_rows($result) > 0) {
+            while ($row = mysqli_fetch_assoc($result)) {
+                ?>
+                <tr>
+                    <td class="thumbnail-img">
+                        <img src="../admin/images/layout_img/<?php echo $row['imageProducts']; ?>" class="img-fluid1" alt="Image">
+                    </td>
+                    <td class="name-pr">
+                        <?php echo $row['toyName']; ?>
+                    </td>
+                    <td class="price-pr">
+                        <p><?php echo $row['price']; ?></p>
+                    </td>
+                    <td class="quantity-box">
+                        <input name="quantity[]" type="number" value="<?php echo $row['quantity']; ?>" onchange="updateTotal(this, '<?php echo $row['productID']; ?>')">
+                    </td>
+                    <?php
+                    // Remove the dollar sign from the price string
+                    $price_without_dollar_sign = str_replace('$', '', $row['price']);
+                    // Convert the price to a float for multiplication
+                    $price_float = (float)$price_without_dollar_sign;
 
-        // Calculate the total cost by multiplying quantity with the price
-        $total_cost = $cart['quantity'] * $price_float;
+                    // Calculate the total cost by multiplying quantity with the price
+                    $total_cost = $row['quantity'] * $price_float;
+                    ?>
+                    <td id="totalCost_<?php echo $row['productID']; ?>" class="total-pr">
+                        <p id="totalCostValue_<?php echo $row['productID']; ?>">$<?php echo $total_cost; ?></p>
+                    </td>
+                    <td class="remove-pr">
+                        <a href="../phpConnect/deleteCart.php?productID=<?php echo $row['productID']; ?>">
+                            <i class="fas fa-trash fa-xl" style="color: #F3C76C;"></i>
+                        </a>
+                    </td>
+                    <td>
+                        <div class="update-box">
+                            <input type="hidden" name="toyName[]" value="<?php echo $row['toyName']; ?>">
+                            <input type="hidden" name="total_cost[]" id="totalCostInput_<?php echo $row['productID']; ?>" value="<?php echo $total_cost; ?>">
+                        </div>
+                    </td>
+                </tr>
+            <?php
+            }
+        }
         ?>
-        <td id="totalCost_<?php echo $cart['productID']; ?>" class="total-pr">
-            <p id="totalCostValue_<?php echo $cart['productID']; ?>">$<?php echo $total_cost; ?></p>
-        </td>
-        <td class="remove-pr">
-            <a href="../phpConnect/deleteCart.php?productID=<?php echo $cart['productID']; ?>">
-                <i class="fas fa-trash fa-xl" style="color: #F3C76C;"></i>
-            </a>
-        </td>
-        <td>
+        <tr>
+            <td colspan="7" class="text-right">
             <div class="update-box">
-                <input type="hidden" name="toyName" value="<?php echo $cart['toyName']; ?>">
-                <input type="hidden" name="total_cost" id="totalCostInput_<?php echo $cart['toyName']; ?>" value="<?php echo $total_cost; ?>">
-
-                <input value="Save" type="submit" name="save_cart_btn">
+            <button type="submit" class="btn btn-success" name="update_cart_btn">Update Cart</button>
             </div>
-        </td>
-    </tr>
-    <?php endforeach; ?>
-</form>
+                
+            </td>
+        </tr>
+    </form>
+</tbody>
 
-
-
-                    </tbody>
                 
 
 
@@ -366,7 +397,7 @@
                         <h3 style="font-size: x-large; text-align: center; margin-top: 10px;">Order summary</h3>
                         <div class="d-flex">
                             <h4>Sub Total</h4>
-                            <div class="ml-auto font-weight-bold"> $ 130 </div>
+                            <div class="ml-auto font-weight-bold"> <?php echo $total_sub; ?> </div>
                         </div>
                         
                         <hr class="my-1">
@@ -378,7 +409,7 @@
                         <hr>
                         <div class="d-flex gr-total">
                             <h5>Grand Total</h5>
-                            <div class="ml-auto h5"> $ 388 </div>
+                            <div class="ml-auto h5"> <?php echo $total_sub; ?> </div>
                         </div>
                         <hr> 
                     </div>
