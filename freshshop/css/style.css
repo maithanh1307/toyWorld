@@ -1390,6 +1390,38 @@
         50% { color: #2edc91; }
         100% { color: #000; }
         }
+
+        .headcomment3 {
+            font-family:'Poppins', sans-serif;
+            color: #000;
+            text-align: center;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            -webkit-animation: my 1000ms infinite;
+            -moz-animation: my 1000ms infinite;
+            -o-animation: my 1000ms infinite;
+            animation: my 1000ms infinite;
+          }
+          @-webkit-keyframes my {
+            0% { color: #FBB0D3; }
+            50% { color: #ff006ad9; }
+            100% { color: #000; }
+            }
+            @-moz-keyframes my {
+            0% { color: #FBB0D3; }
+            50% { color: #ff006ad9; }
+            100% { color: #000; }
+            }
+            @-o-keyframes my {
+            0% { color: #FBB0D3; }
+            50% { color: #ff006ad9; }
+            100% { color: #000; }
+            }
+            @keyframes my {
+            0% { color: #FBB0D3; }
+            50% { color: #ff006ad9; }
+            100% { color: #000; }
+            }
         
 
 /*------------------------------------------------------------------ Blog -------------------------------------------------------------------*/
@@ -3165,8 +3197,9 @@
 /* contact-info-left1 */
 .contact-info-left1 {
     padding: 20px;
-    background: url(../images/wallpaper.png) no-repeat center;
+    /* background: url(../images/wallpaper.png) no-repeat center; */
     /* background-image: linear-gradient(#e9e7e7, #ffc0e3); */
+    background-color: #f7cbe3;
     background-size: cover;
     border-radius: 10px;
     width: auto;
@@ -3176,7 +3209,7 @@
     padding: 10px 10px ;
     border: none;
     border-radius: 60%;
-    background-color: #C2E9C8;
+    background-color: #ff006a;
     margin-bottom: 3px;
     margin-top: 7px;
     margin-left: 10px;
