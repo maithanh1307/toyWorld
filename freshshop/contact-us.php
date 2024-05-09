@@ -332,15 +332,15 @@
                             <div>
                                 <div class="contactinfo">
                                     <!-- <p><i class="fas fa-map-marker-alt contactCircle mr-5"></i>Address: 19 Nguyen Huu Tho street, Tan Hung, District 7, Ho Chi Minh city </p> -->
-                                    <i class="fas fa-map-marker-alt contactCircle mr-3"></i>19 Nguyen Huu Tho street, Tan Hung, District 7
+                                    <i class="fas fa-map-marker-alt contactCircle mr-3" style="color: white;"></i>19 Nguyen Huu Tho street, Tan Hung, District 7
                                 </div>
                                 <div class="contactinfo">
                                     <!-- <p><i class="fas fa-phone-square contactCircle"></i>Phone: <a href="tel:028 3775 5052">+028 3775 5052</a></p> -->
-                                    <i class="fas fa-phone contactCircle mr-3"></i><a href="tel:028 3775 5052">+028 3775 5052</a>
+                                    <i class="fas fa-phone contactCircle mr-3"  style="color: white;"></i><a href="tel:028 3775 5052">+028 3775 5052</a>
                                 </div>
                                 <div class="contactinfo">
                                     <!-- <p><i class="fas fa-envelope contactCircle"></i>Email: <a href="mailto:miniatureworld@gmail.com">miniatureworld@gmail.com</a></p> -->
-                                    <i class="fas fa-envelope contactCircle mr-3"></i><a href="mailto:miniatureworld@gmail.com">miniatureworld@gmail.com</a>
+                                    <i class="fas fa-envelope contactCircle mr-3"  style="color: white;"></i><a href="mailto:miniatureworld@gmail.com">miniatureworld@gmail.com</a>
                                 </div>
                             </div>
                         </div>
