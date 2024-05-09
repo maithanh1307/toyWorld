@@ -234,10 +234,10 @@ $query = mysqli_query($conn, $sql);
 														<i class="fa fa-trash mr-2"> </i> Delete
 													</button>
 												</a>
-                                                    <div class="right_button">
+                                                    <!-- <div class="right_button">
 														<button type="button" class="btn btn-success btn-xs" name="edit_btn"> <i class="fa fa-pencil mr-2"></i>Edit</button>
 														<button type="button" class="btn btn-danger btn-xs" name="delete_btn"><i class="fa fa-trash mr-2"></i> Delete</button>
-                                                    </div>
+                                                    </div> -->
                                                 </div>
                                             </div>
                                         </div>
