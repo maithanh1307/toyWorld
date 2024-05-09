@@ -1,6 +1,39 @@
 <?php
-?>
+require_once ('../phpConnect/connectData.php');
+$query = "SELECT * FROM carts";
+// Tính tổng các giá trị total
+$sql_total = "SELECT SUM(total) AS total_sub FROM carts";
+$result_total = mysqli_query($conn, $sql_total);
+$row_total = mysqli_fetch_assoc($result_total);
+$total_sub = $row_total['total_sub'];
 
+if(isset($_POST['place_order_btn'])) {
+    // Kiểm tra kết nối
+    if($conn === false){
+        die("ERROR: Could not connect. " . mysqli_connect_error());
+    }
+
+    // Lấy dữ liệu từ biểu mẫu và chuyển đến các biến
+    $email = $_POST['email'];
+    $firstName = $_POST['firstname'];
+    $lastName = $_POST['lastname'];
+    $payment = $_POST['payment'];
+    $total = $_POST['total'];
+
+    // Tạo câu lệnh INSERT để thêm dữ liệu vào bảng orders
+    $sql = "INSERT INTO orders (email, firstName, lastName, payment, total) VALUES ('$email', '$firstName', '$lastName', '$payment', '$total')";
+
+    // Thực thi câu lệnh SQL
+    if(mysqli_query($conn, $sql)){
+        //
+    } else{
+        echo "ERROR: Could not able to execute $sql. " . mysqli_error($conn);
+    }
+
+    // Đóng kết nối
+    mysqli_close($conn);
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <!-- Basic -->
@@ -33,6 +66,7 @@
     <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 
+    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- Site CSS -->
     <link rel="stylesheet" href="css/style.css">
@@ -40,7 +74,6 @@
     <link rel="stylesheet" href="css/responsive.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/custom.css">
-
 
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -50,17 +83,18 @@
 </head>
 
 <body>
+<form action="" class="form01" method="POST" novalidate>
     <!-- Start Main Top -->
     <div class="main-top">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-					<div class="custom-select-box">
+                    <div class="custom-select-box">
                         <select id="basic" class="selectpicker show-tick form-control" data-placeholder="$ USD">
-							<option>¥ JPY</option>
-							<option>$ USD</option>
-							<option>€ EUR</option>
-						</select>
+                            <option>¥ JPY</option>
+                            <option>$ USD</option>
+                            <option>€ EUR</option>
+                        </select>
                     </div>
                     <div class="right-phone-box">
                         <p>Call US :- <a href="tel:028 3775 5052"> 028 3775 5052</a></p>
@@ -69,19 +103,16 @@
                         <ul>
                             <li><a href="#"><i class="fa fa-user s_color fa-beat"></i> My Account</a></li>
                             <!-- <li><a href=""><i class="fas fa-location-arrow"></i> Our location</a></li> -->
-                            <li><a href="contact-us.php"><i class="fas fa-headset fa-beat"></i> Contact Us</a></li>
+                            <li><a href="contact-us.html"><i class="fas fa-headset fa-beat"></i> Contact Us</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-					 <div class="login-box selectpicker show-tick form-control " >
-						<!-- <select id="basic" class="selectpicker show-tick form-control" data-pollacehder="Sign In">
-							<option value="1">Register Here</option>
-							<option value="2" data-url="signin.html">Sign In</option>
-						</select>
-					</div>  -->
-                        <i class="fa-duotone fa-right-to-bracket fa-fade"></i>
-                        <a href="signin.php" class="btn2 btn-primary2 mt-1"><b>Logout</b></a>
+                    <div class="login-box">
+                        <select id="basic" class="selectpicker show-tick form-control" data-placeholder="Sign In">
+                            <option>Register Here</option>
+                            <option>Sign In</option>
+                        </select>
                     </div>
                     <div class="text-slid-box">
                         <div id="offer-box" class="carouselTicker">
@@ -108,7 +139,7 @@
                                     <i class="fab fa-opencart"></i> 20% off Entire Purchase Promo code: offT30
                                 </li>
                                 <li>
-                                    <i class="fab fa-opencart"></i> Off 50%! Shop Now 
+                                    <i class="fab fa-opencart"></i> Off 50%! Shop Now
                                 </li>
                             </ul>
                         </div>
@@ -126,31 +157,32 @@
             <div class="container">
                 <!-- Start Header Navigation -->
                 <div class="navbar-header">
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu"
+                        aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
                         <i class="fa fa-bars"></i>
                     </button>
-                    <a class="navbar-brand" href="index.php"><img src="images/logo01.png" class="logo" alt="logo"><b>Miniature World</b></a>
+                    <a class="navbar-brand" href="index.html"><img src="images/logo.png" class="logo" alt="logo"></a>
                 </div>
                 <!-- End Header Navigation -->
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="navbar-menu">
                     <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
-                        <li class="nav-item active"><a class="nav-link" href="index.php">Home</a></li>
-                        <li class="nav-item"><a class="nav-link " href="about.html">About Us</a></li>
+                        <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
                         <li class="dropdown">
                             <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">SHOP</a>
                             <ul class="dropdown-menu">
-								<li><a href="shop.php">Sidebar Shop</a></li>
-								<!-- <li><a href="shop-detail.html">Shop Detail</a></li> -->
-                                <li><a href="cart.php">Cart</a></li>
-                                <li><a href="checkout.php">Checkout</a></li>
+                                <li><a href="shop.html">Sidebar Shop</a></li>
+                                <!-- <li><a href="shop-detail.html">Shop Detail</a></li> -->
+                                <li><a href="cart.html">Cart</a></li>
+                                <li><a href="checkout.html">Checkout</a></li>
                                 <!-- <li><a href="my-account.html">My Account</a></li> -->
-                                <li><a href="wishlist.php">Wishlist</a></li>
+                                <li><a href="wishlist.html">Wishlist</a></li>
                             </ul>
                         </li>
                         <!-- <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li> -->
-                        <li class="nav-item"><a class="nav-link" href="contact-us.php">Contact Us</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact-us.html">Contact Us</a></li>
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->
@@ -158,14 +190,14 @@
                 <!-- Start Atribute Navigation -->
                 <div class="attr-nav">
                     <ul>
-                        <!-- <li class="search"><a href="#"><i class="fa fa-search"></i></a></li> -->
+                        <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
                         <li class="side-menu">
-							<a href="cart.html">
-								<i class="fa fa-shopping-bag"></i>
-								<span class="badge">3</span>
-								<p>My Cart</p>
-							</a>
-						</li>
+                            <a href="cart.html">
+                                <i class="fa fa-shopping-bag"></i>
+                                <span class="badge">3</span>
+                                <p>My Cart</p>
+                            </a>
+                        </li>
                     </ul>
                 </div>
                 <!-- End Atribute Navigation -->
@@ -231,11 +263,9 @@
     </div>
     <!-- End All Title Box -->
 
-    <!-- Start Cart  -->
- 
 
 
-    <form action="#" class="form01">
+    
         <h1 class="text-center01">Checkout Form</h1>
         <!-- Progress bar -->
         <div class="progressbar01">
@@ -252,87 +282,50 @@
         <!-- Steps -->
         <div class="form-step01 form-step-active01">
             <div class="col-sm-6 col-lg-6 mb-3 container ">
-                <form class="mt-3 collapse review-form-box" id="formLogin">
                     <div class="form-row row">
                         <div class="form-group col-md-6">
                             <label for="InputEmail" class="mb-0">Email Address</label>
-                            <input type="email" class="form-control" id="InputEmail" placeholder="Enter Email">
+                            <input name ="email" type="email" class="form-control" id="email" placeholder="Enter Email">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="InputPassword" class="mb-0">Password</label>
-                            <input type="password" class="form-control" id="InputPassword" placeholder="Password">
+                            <input name ="password" type="password" class="form-control" id="password" placeholder="Password">
                         </div>
                     </div>
-                </form>
             </div>
             <div class="btns-group01">
-            <a href="#" class="btn0001 btn-next01 mr-4" name="checkout_step1_btn">Next</a>
+                <a href="#" class="btn0001 btn-next01   mr-4">Next</a>
             </div>
         </div>
-
         <div class="form-step01  ">
             <div class="col-sm-6 col-lg-6 mb-3 container ">
                 <div class="checkout-address">
-                    <form class="needs-validation" novalidate>
                         <div class="row">
                             <div class="col-md-6 mb-3">
                                 <label for="firstName">First name *</label>
-                                <input type="text" class="form-control" id="firstName" name="firstName" placeholder="" value="" required>
+                                <input type="text" name ="firstname" class="form-control" id="firstName" placeholder="" value="" required>
                                 <div class="invalid-feedback"> Valid first name is required. </div>
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label for="lastName">Last name *</label>
-                                <input type="text" class="form-control" id="lastName" name="lastName" placeholder="" value="" required>
+                                <input type="text" name ="lastname" class="form-control" id="lastName" placeholder="" value="" required>
                                 <div class="invalid-feedback"> Valid last name is required. </div>
                             </div>
                         </div>
-                        <!-- <div class="mb-3">
-                            <label for="username">Username *</label>
-                            <div class="input-group">
-                                <input type="text" class="form-control" id="username" placeholder="" required>
-                                <div class="invalid-feedback" style="width: 100%;"> Your username is required. </div>
-                            </div>
-                        </div> -->
                         <div class="mb-3">
                             <label for="email">Email Address *</label>
-                            <input type="email" class="form-control" id="email" placeholder="">
+                            <input type="email"  class="form-control" id="email" placeholder="">
                             <div class="invalid-feedback"> Please enter a valid email address for shipping updates.
                             </div>
                         </div>
                         <div class="mb-3">
                             <label for="address">Address *</label>
-                            <input type="text" class="form-control" id="address" placeholder="" required>
+                            <input type="text" name ="address" class="form-control" id="address" placeholder="" required>
                             <div class="invalid-feedback"> Please enter your shipping address. </div>
                         </div>
-                        <!-- <div class="mb-3">
-                            <label for="address2">Address 2 *</label>
-                            <input type="text" class="form-control" id="address2" placeholder="">
-                        </div> -->
-                        <!-- <div class="row">
-                            <div class="col-md-5 mb-3">
-                                <label for="country">Country *</label>
-                                <select class="wide w-100" id="country">
-                                    <option value="Choose..." data-display="Select">Choose...</option>
-                                    <option value="United States">United States</option>
-                                </select>
-                                <div class="invalid-feedback"> Please select a valid country. </div>
-                            </div>
-                            <div class="col-md-4 mb-3">
-                                <label for="state">State *</label>
-                                <select class="wide w-100" id="state">
-                                    <option data-display="Select">Choose...</option>
-                                    <option>California</option>
-                                </select>
-                                <div class="invalid-feedback"> Please provide a valid state. </div>
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label for="zip">Zip *</label>
-                                <input type="text" class="form-control" id="zip" placeholder="" required>
-                                <div class="invalid-feedback"> Zip code required. </div>
-                            </div>
-                        </div> -->
+
                         <hr class="mb-4">
-                        <!-- <div class="custom-control custom-checkbox">
+                        <div class="custom-control custom-checkbox">
                             <input type="checkbox" class="custom-control-input" id="same-address">
                             <label class="custom-control-label" for="same-address">Shipping address is the same as my
                                 billing address</label>
@@ -341,51 +334,51 @@
                             <input type="checkbox" class="custom-control-input" id="save-info">
                             <label class="custom-control-label" for="save-info">Save this information for next
                                 time</label>
-                        </div> -->
+                        </div>
                         <hr class="mb-4">
                         <div class="title"> <span>Payment</span> </div>
                         <div class="d-block my-3">
                             <div class="custom-control custom-radio">
-                                <input id="credit" name="paymentMethod" type="radio" class="custom-control-input"
+                                <input id="credit" name="payment" name="paymentMethod" type="radio" class="custom-control-input"
                                     checked required>
                                 <label class="custom-control-label" for="credit">COD</label>
                             </div>
                             <div class="custom-control custom-radio">
                                 <input id="debit" name="paymentMethod" type="radio" class="custom-control-input"
-                                    required>
-                                <label class="custom-control-label" for="debit">Debit card (No available) </label>
+                                    required disabled>
+                                <label class="custom-control-label" for="debit">Debit card (No available)</label>
                             </div>
                             <div class="custom-control custom-radio">
                                 <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input"
-                                    required>
+                                    required disabled>
                                 <label class="custom-control-label" for="paypal">Paypal (No available)</label>
                             </div>
                         </div>
                         <div class="row">
-                            <!-- <div class="col-md-6 mb-3">
+                            <div class="col-md-6 mb-3">
                                 <label for="cc-name">Name on card</label>
-                                <input type="text" class="form-control" id="cc-name" placeholder="" required> <small
+                                <input type="text" class="form-control" id="cc-name" placeholder="" required disabled> <small
                                     class="text-muted">Full name as displayed on card</small>
                                 <div class="invalid-feedback"> Name on card is required </div>
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label for="cc-number">Credit card number</label>
-                                <input type="text" class="form-control" id="cc-number" placeholder="" required>
+                                <input type="text" class="form-control" id="cc-number" placeholder="" required disabled>
                                 <div class="invalid-feedback"> Credit card number is required </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-3 mb-3">
                                 <label for="cc-expiration">Expiration</label>
-                                <input type="text" class="form-control" id="cc-expiration" placeholder="" required>
+                                <input type="text" class="form-control" id="cc-expiration" placeholder="" required disabled>
                                 <div class="invalid-feedback"> Expiration date required </div>
                             </div>
                             <div class="col-md-3 mb-3">
                                 <label for="cc-expiration">CVV</label>
-                                <input type="text" class="form-control" id="cc-cvv" placeholder="" required>
+                                <input type="text" class="form-control" id="cc-cvv" placeholder="" required disabled>
                                 <div class="invalid-feedback"> Security code required </div>
-                            </div> -->
-                            <!-- <div class="col-md-6 mb-3">
+                            </div>
+                            <div class="col-md-6 mb-3">
                                 <div class="payment-icon">
                                     <ul>
                                         <li><img class="img-fluid" src="images/payment-icon/1.png" alt=""></li>
@@ -396,12 +389,20 @@
                                     </ul>
                                 </div>
                             </div>
-                        </div> -->
+                        </div>
                         <hr class="mb-1">
-                    </form>
                 </div>
             </div>
 
+            <!-- <div class="input-group01">
+            
+             <label for="phone">Phone</label>
+            <input type="text" name="phone" id="phone" /> 
+          </div>
+          <div class="input-group01">
+             <label for="email">Email</label>
+            <input type="text" name="email" id="email" /> 
+          </div> -->
             <div class="btns-group01">
                 <a href="#" class="btn001 btn-prev01 col-lg-12 mb-auto mr-auto">Previous</a>
                 <a href="#" class="btn0001 btn-next01 col-lg-12 mb-3">Next</a>
@@ -409,6 +410,14 @@
     </div>
         
         <div class="form-step01 ">
+            <!-- <div class="input-group01">
+            <label for="dob">Date of Birth</label>
+            <input type="date" name="dob" id="dob" />
+          </div>
+          <div class="input-group01">
+            <label for="ID">National ID</label>
+            <input type="number" name="ID" id="ID" />
+          </div> -->
             <div class="col-md-12 col-lg-12 ">
                 <div class="shipping-method-box">
 
@@ -436,9 +445,12 @@
                     <hr class="my-1">
                     <div class="d-flex">
                         <h4>Sub Total</h4>
-                        <div class="ml-auto font-weight-bold"> $ 440 </div>
+                        <div class="ml-auto font-weight-bold"><?php echo $total_sub ?></div>
+                        <input hidden type="text" name ="total" value="<?php echo $total_sub ?>">
                     </div>
+
                     <hr class="my-1">
+
                     <div class="d-flex">
                         <h4>Shipping Cost</h4>
                         <div class="ml-auto font-weight-bold"> Free </div>
@@ -446,7 +458,7 @@
                     <hr>
                     <div class="d-flex gr-total">
                         <h5>Grand Total</h5>
-                        <div class="ml-auto h5"> $ 388 </div>
+                        <div class="ml-auto h5"><?php echo $total_sub ?></div>
                     </div>
                     <hr>
                 </div>
@@ -502,20 +514,17 @@
                 </div>
             </div>
         </div>
-
+</form>
 <script type="text/javascript " src="js/feedback.js">
 
 
 </script>
             <div class="btns-group01">
                 <a href="#" class="btn001 btn-prev01 col-lg-12 mb-auto mr-auto">Previous</a>
-                <a href="checkout.html" class="btn0001 btn-next01 col-lg-12 mb-3">Place order</a>
+                <button name="place_order_btn" type="submit" class="btn0001 btn-next01 col-lg-12 mb-3">Place order</button>
             </div>
         </div>
-    </form>
     <script src="js/main.js" defer></script>
-    <!-- End Cart -->
-
 
 
 
@@ -534,7 +543,16 @@
                             </ul>
                         </div>
                     </div>
-
+                    <!-- <div class="col-lg-4 col-md-12 col-sm-12">
+						<div class="footer-top-box">
+							<h3>Newsletter</h3>
+								<div class="form-group">
+									<input class="" type="email" name="Email" placeholder="Email Address*" />
+									<i class="fa fa-envelope"></i>
+								</div>
+								<button class="btn hvr-hover" type="submit">Submit</button>
+						</div>
+					</div> -->
                     <div class="col-lg-4 col-md-12 col-sm-12">
                         <div class="footer-top-box">
                             <h3>Social Media</h3>
@@ -597,6 +615,7 @@
                 </div>
             </div>
         </div>
+
     </footer>
     <!-- End Footer  -->
 
@@ -629,21 +648,4 @@
     <script src="js/custom.js"></script>
 </body>
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    document.querySelector('[name="checkout_step1_btn"]').addEventListener('click', function(e) {
-        var email = document.getElementById('InputEmail').value;
-        var password = document.getElementById('InputPassword').value;
-        var xhr = new XMLHttpRequest();
-        xhr.open('POST', 'phpConnect/checkoutProcess.php', true);
-        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-        xhr.onreadystatechange = function() {
-            if (xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200) {
-                console.log(xhr.responseText);
-            }
-        };
-        xhr.send('email=' + encodeURIComponent(email) + '&password=' + encodeURIComponent(password));
-    });
-});
-</script>
 </html>
