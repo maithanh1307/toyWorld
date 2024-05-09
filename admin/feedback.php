@@ -1,45 +1,11 @@
 <!-- php -->
 <?php
-   require_once("../phpConnect/connectData.php");
+   require_once ('../phpConnect/connectData.php');
 
-   // add information
-   if (isset($_POST['submit'])) {
-      $toyName = $_POST['toyName'];
-      $typeOfToy = $_POST['typeOfToy'];
-      $Description = $_POST['Description'];
-      $price = $_POST['price'];
-      $imageProducts = $_FILES['imageProducts']['name'];
-      $imageProducts_tmp = $_FILES['imageProducts']['tmp_name'];
+   $sql = "SELECT * from feedbacks";
+   $query = mysqli_query($conn, $sql);
 
-      // Prepare the SQL statement using prepared statements
-      $sql = "INSERT INTO products (toyName, typeOfToy, Description, price, imageProducts)
-               VALUES (?, ?, ?, ?, ?)";
-      
-      // Prepare and bind parameters
-      $stmt = mysqli_prepare($conn, $sql);
-      mysqli_stmt_bind_param($stmt, 'sssss', $toyName, $typeOfToy, $Description, $price, $imageProducts);
-
-      // Execute the statement
-      $result = mysqli_stmt_execute($stmt);
-
-      // Check for errors
-      if ($result) {
-         header("Location: products.php");
-      } else {
-         echo "Error: " . mysqli_error($conn);
-      }
-
-      //image
-      move_uploaded_file($destinationImage_tmp, 'images/'. $imageProducts);
-
-      // Close the statement and connection
-      mysqli_stmt_close($stmt);
-      mysqli_close($conn);
-   } else {
-      echo 'failed';
-   }
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -208,100 +174,96 @@
                      <div class="row column_title">
                         <div class="col-md-12">
                            <div class="page_title">
-                              <h2>Table for products</h2>
+                              <h2>Feedbacks</h2>
                            </div>
                         </div>
                      </div>
                      <!-- row -->
-                     <div class="row">
-                        <!-- table section -->
+                     <div class="row column1">
                         <div class="col-md-12">
                            <div class="white_shd full margin_bottom_30">
                               <div class="full graph_head">
                                  <div class="heading1 margin_0">
-                                    <h2>Add products</h2>
+                                    <h2>List of feedbacks</h2>
                                  </div>
                               </div>
-                              <div class="table_section padding_infor_info">
-                                 <form method="POST" enctype="multipart/form-data">
-                                    <div>
-                                       <label class="mr-2 labelProduct">Toy's name</label>
-                                       <input name="toyName" class="addInput" type="text" id="toyName" placeholder="Enter product's name" required>
+                              <div class="full price_table padding_infor_info">
+                                 <div class="row">
+                                    <div class="col-lg-12">
+                                       <div class="table-responsive-sm">
+                                          <table class="table table-striped projects">
+                                             <thead class="thead-dark">
+                                                <tr>
+                                                   <th style="width: 2%">No</th>
+                                                   <th style="text-align: center">Email</th>
+                                                   <th style="text-align: center">Comments</th>
+                                                </tr>
+                                             </thead>
+                                             <tbody>
+                                                <!-- <tr>
+                                                   <td>1</td>
+                                                   <td>
+                                                      <img style="width: 60px" src="../freshshop/images/bunnyToy.jpg" class="img-fluid">
+                                                   </td>
+                                                   <td>
+                                                      <p class="mt-4">Bunny Rabbit</p>
+                                                   </td>
+                                                   <td>
+                                                      <p class="mt-4">Teddy Bear</p>
+                                                   </td>
+                                                   <td>
+                                                      <p class="mt-4">This is a toy for all ages</p>
+                                                   </td>
+                                                   <td>
+                                                      <p class="mt-4">$8.00</p>
+                                                   </td>
+                                                   <td>
+                                                      <a href="#">
+                                                         <i class="fa-light fa-trash-o fa-xl yellow_color"></i>
+                                                      </a>
+                                                      <i class="fa-light fa-pipe fa-xl"></i>
+                                                      <a href="#">
+                                                         <i class="fa-light fa-pencil fa-xl yellow_color"></i>
+                                                      </a>
+                                                   </td>
+                                                </tr> -->
+                                                <?php
+                                                   include ("../phpConnect/feedback.php");
+                                                ?>
+                                             </tbody>
+                                          </table>
+                                       </div>
                                     </div>
-                                    <div>
-                                       <label class="mr-2 labelProduct">Type of toy</label>
-                                       <select name="typeOfToy"  id="typeOfToy"type="text"  class="addInput" required>
-                                          <option value="collective">Collective</option>
-                                          <option value="doll">Doll</option>
-                                          <option value="lego">Lego</option>
-                                          <option value="vehicle">Vehicle</option>
-                                          <option value="teddy">Teddy Bear</option>
-                                          <option value="robot">Robot</option>
-                                          <option value="Under 1 year old">Under 1 year old</option>
-                                          <option value="1 to 3 years old">1 to 3 years old</option>
-                                          <option value="Above 4 years old">Above 4 years old</option>
-                                       </select>
-                                    </div>
-                                    <div>
-                                       <label class="mr-2 labelProduct">Description</label>
-                                       <input name="Description" class="addInput" type="text" id="Description" placeholder="Enter your description" required>
-                                    </div>
-                                    <div>
-                                       <label class="mr-2 labelProduct">Price</label>
-                                       <input name="price" class="addInput" type="text" id="price" placeholder="Prices" required>
-                                    </div>
-                                    <div class="mt-4">
-                                       <label class="labelProduct" for="file labelProduct">Image for products</label>
-                                       <input name ="imageProducts" id="file" type="file">
-                                       
-                                    </div>
-                                    <div class="mt-4">
-                                       <button name="submit" class="btn btn-primary btnAdd" type="submit">Add products</button>
-                                    </div>
-                                    
-                                 </form>
+                                 </div>
+                                 
                               </div>
                            </div>
                         </div>
+                        <!-- end row -->
+                     </div>
+                     <!-- footer -->
+                     <div class="container-fluid">
+                        <div class="footer">
+                           <p><i class="fas fa-map-marker-alt mr-2"></i>19 Nguyen Huu Tho street, Tan Hung, District 7, Ho Chi Minh city</p>
+                        </div>
                      </div>
                   </div>
-                  <!-- footer -->
-                  <div class="container-fluid">
-                     <div class="footer">
-                        <p><i class="fas fa-map-marker-alt mr-2"></i>19 Nguyen Huu Tho street, Tan Hung, District 7, Ho Chi Minh city</p>
-                     </div>
-                  </div>
-               </div>
-               <!-- end dashboard inner -->
-            </div>
-         </div>
-         <!-- model popup -->
-         <!-- The Modal -->
-         <div class="modal fade" id="myModal">
-            <div class="modal-dialog">
-               <div class="modal-content">
-                  <!-- Modal Header -->
-                  <div class="modal-header">
-                     <h4 class="modal-title">Modal Heading</h4>
-                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                  </div>
-                  <!-- Modal body -->
-                  <div class="modal-body">
-                     Modal body..
-                  </div>
-                  <!-- Modal footer -->
-                  <div class="modal-footer">
-                     <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                  </div>
+                  <!-- end dashboard inner -->
                </div>
             </div>
          </div>
-         <!-- end model popup -->
       </div>
       <!-- jQuery -->
       <script src="js/jquery.min.js"></script>
       <script src="js/popper.min.js"></script>
       <script src="js/bootstrap.min.js"></script>
+
+      <!-- delete -->
+      <script>
+		function deleteProduct(id){
+			window.location.href = 'products.php?delete_product=' + id;
+		}
+	   </script>
       <!-- wow animation -->
       <script src="js/animate.js"></script>
       <!-- select country -->
@@ -318,12 +280,9 @@
       <script>
          var ps = new PerfectScrollbar('#sidebar');
       </script>
-      <!-- fancy box js -->
-      <script src="js/jquery-3.3.1.min.js"></script>
-      <script src="js/jquery.fancybox.min.js"></script>
       <!-- custom js -->
       <script src="js/custom.js"></script>
-      <!-- calendar file css -->    
+      <!-- calendar file css -->     
       <script src="js/semantic.min.js"></script>
    </body>
 </html>

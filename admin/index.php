@@ -107,10 +107,11 @@ $query = mysqli_query($conn, $sql);
                         </ul>
                      </li>
                      <li><a href="tables.php"><i class="fa fa-table purple_color2"></i> <span>Tables</span></a></li>
+                     <li><a href="feedback.php"><i class="fa fa-comment yellow_color"></i> <span>Feedback</span></a></li>
                      <li>
                         <a href="#apps" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-object-group blue2_color"></i> <span>Apps</span></a>
                         <ul class="collapse list-unstyled" id="apps">               
-                           <li><a href="calendar.html">> <span>Calendar</span></a></li>
+                           <li><a href="calendar.php">> <span>Calendar</span></a></li>
                         </ul>
                      </li>
                      <li>
@@ -124,11 +125,11 @@ $query = mysqli_query($conn, $sql);
                               <a href="products.php">> <span>Products</span></a>
                            </li>
                            <li>
-                              <a href="404_error.html">> <span>404 Error</span></a>
+                              <a href="404_error.php">> <span>404 Error</span></a>
                            </li>
                         </ul>
                      </li>
-                     <li><a href="map.html"><i class="fa fa-map purple_color2"></i> <span>Map</span></a></li>
+                     <li><a href="map.php"><i class="fa fa-map purple_color2"></i> <span>Map</span></a></li>
                   </ul>
                </div>
             </nav>
@@ -341,7 +342,7 @@ $query = mysqli_query($conn, $sql);
                      <!-- end graph -->
                      <div class="row column3">
                         <!-- testimonial -->
-                        <div class="col-md-6">
+                        <!-- <div class="col-md-6">
                            <div class="dark_bg10 full margin_bottom_30">
                               <div class="full graph_head">
                                  <div class="heading1 margin_0">
@@ -353,25 +354,25 @@ $query = mysqli_query($conn, $sql);
                                     <div class="col-md-12">
                                        <div class="content testimonial">
                                           <div id="testimonial_slider" class="carousel slide" data-ride="carousel">
-                                             <!-- Wrapper for carousel items -->
+                                             Wrapper for carousel items
                                              <div class="carousel-inner">
                                                 <div class="item carousel-item active">
-                                                   <!-- <div class="img-box"><img src="images/layout_img/user_img.jpg" alt=""></div> -->
+                                                   <div class="img-box"><img src="images/layout_img/user_img.jpg" alt=""></div>
                                                    <p class="testimonial">feedback[comment]</p>
                                                    <p class="overview"><b>Anonymous </b>Seo Founder</p>
                                                 </div>
                                                 <div class="item carousel-item">
-                                                   <!-- <div class="img-box"><img src="images/layout_img/user_img.jpg" alt=""></div> -->
+                                                   <div class="img-box"><img src="images/layout_img/user_img.jpg" alt=""></div>
                                                    <p class="testimonial">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae..</p>
                                                    <p class="overview"><b>test@gmail.com</b>Seo Founder</p>
                                                 </div>
                                                 <div class="item carousel-item">
-                                                   <!-- <div class="img-box"><img src="images/layout_img/user_img.jpg" alt=""></div> -->
+                                                   <div class="img-box"><img src="images/layout_img/user_img.jpg" alt=""></div>
                                                    <p class="testimonial">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae..</p>
                                                    <p class="overview"><b>test@gmail.com</b>Seo Founder</p>
                                                 </div>
                                              </div>
-                                             <!-- Carousel controls -->
+                                             Carousel controls
                                              <a class="carousel-control left carousel-control-prev" href="#testimonial_slider" data-slide="prev">
                                              <i class="fa fa-angle-left"></i>
                                              </a>
@@ -384,7 +385,7 @@ $query = mysqli_query($conn, $sql);
                                  </div>
                               </div>
                            </div>
-                        </div>
+                        </div> -->
                         <!-- end testimonial -->
                         <!-- progress bar -->
                         <div class="col-md-6">

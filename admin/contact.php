@@ -102,14 +102,15 @@
                      <li>
                         <a href="#element" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-diamond purple_color"></i> <span>Elements</span></a>
                         <ul class="collapse list-unstyled" id="element">
-                           <li><a href="icons.html">> <span>Icons</span></a></li>
+                           <li><a href="icons.php">> <span>Icons</span></a></li>
                         </ul>
                      </li>
                      <li><a href="tables.php"><i class="fa fa-table purple_color2"></i> <span>Tables</span></a></li>
+                     <li><a href="feedback.php"><i class="fa fa-comment yellow_color"></i> <span>Feedback</span></a></li>
                      <li>
                         <a href="#apps" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-object-group blue2_color"></i> <span>Apps</span></a>
                         <ul class="collapse list-unstyled" id="apps">               
-                           <li><a href="calendar.html">> <span>Calendar</span></a></li>
+                           <li><a href="calendar.php">> <span>Calendar</span></a></li>
                         </ul>
                      </li>
                      <li>
@@ -123,11 +124,11 @@
                               <a href="products.php">> <span>Products</span></a>
                            </li>
                            <li>
-                              <a href="404_error.html">> <span>404 Error</span></a>
+                              <a href="404_error.php">> <span>404 Error</span></a>
                            </li>
                         </ul>
                      </li>
-                     <li><a href="map.html"><i class="fa fa-map purple_color2"></i> <span>Map</span></a></li>
+                     <li><a href="map.php"><i class="fa fa-map purple_color2"></i> <span>Map</span></a></li>
                   </ul>
                </div>
             </nav>
