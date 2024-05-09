@@ -1359,69 +1359,69 @@
     
 
 
-    .headcomment1 {
-        font-family:'Poppins', sans-serif;
-        color: #000;
-        text-align: center;
-        margin-top: 5px;
-        margin-bottom: 10px;
-        -webkit-animation: my 1000ms infinite;
-        -moz-animation: my 1000ms infinite;
-        -o-animation: my 1000ms infinite;
-        animation: my 1000ms infinite;
-      }
-      @-webkit-keyframes my {
-        0% { color: #FBB0D3; }
-        50% { color: #2edc91; }
-        100% { color: #000; }
-        }
-        @-moz-keyframes my {
-        0% { color: #FBB0D3; }
-        50% { color: #2edc91; }
-        100% { color: #000; }
-        }
-        @-o-keyframes my {
-        0% { color: #FBB0D3; }
-        50% { color: #2edc91; }
-        100% { color: #000; }
-        }
-        @keyframes my {
-        0% { color: #FBB0D3; }
-        50% { color: #2edc91; }
-        100% { color: #000; }
-        }
+.headcomment1 {
+font-family:'Poppins', sans-serif;
+color: #000;
+text-align: center;
+margin-top: 5px;
+margin-bottom: 10px;
+-webkit-animation: my 1000ms infinite;
+-moz-animation: my 1000ms infinite;
+-o-animation: my 1000ms infinite;
+animation: my 1000ms infinite;
+}
+@-webkit-keyframes my {
+0% { color: #FBB0D3; }
+50% { color: #2edc91; }
+100% { color: #000; }
+}
+@-moz-keyframes my {
+0% { color: #FBB0D3; }
+50% { color: #2edc91; }
+100% { color: #000; }
+}
+@-o-keyframes my {
+0% { color: #FBB0D3; }
+50% { color: #2edc91; }
+100% { color: #000; }
+}
+@keyframes my {
+0% { color: #FBB0D3; }
+50% { color: #2edc91; }
+100% { color: #000; }
+}
 
-        .headcomment3 {
-            font-family:'Poppins', sans-serif;
-            color: #000;
-            text-align: center;
-            margin-top: 5px;
-            margin-bottom: 10px;
-            -webkit-animation: my 1000ms infinite;
-            -moz-animation: my 1000ms infinite;
-            -o-animation: my 1000ms infinite;
-            animation: my 1000ms infinite;
-          }
-          @-webkit-keyframes my {
-            0% { color: #FBB0D3; }
-            50% { color: #ff006ad9; }
-            100% { color: #000; }
-            }
-            @-moz-keyframes my {
-            0% { color: #FBB0D3; }
-            50% { color: #ff006ad9; }
-            100% { color: #000; }
-            }
-            @-o-keyframes my {
-            0% { color: #FBB0D3; }
-            50% { color: #ff006ad9; }
-            100% { color: #000; }
-            }
-            @keyframes my {
-            0% { color: #FBB0D3; }
-            50% { color: #ff006ad9; }
-            100% { color: #000; }
-            }
+.headcomment3 {
+    font-family:'Poppins', sans-serif;
+    color: #000;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    -webkit-animation: my 1000ms infinite;
+    -moz-animation: my 1000ms infinite;
+    -o-animation: my 1000ms infinite;
+    animation: my 1000ms infinite;
+    }
+    @-webkit-keyframes my {
+    0% { color: #FBB0D3; }
+    50% { color: #ff006ad9; }
+    100% { color: #000; }
+    }
+    @-moz-keyframes my {
+    0% { color: #FBB0D3; }
+    50% { color: #ff006ad9; }
+    100% { color: #000; }
+    }
+    @-o-keyframes my {
+    0% { color: #FBB0D3; }
+    50% { color: #ff006ad9; }
+    100% { color: #000; }
+    }
+    @keyframes my {
+    0% { color: #FBB0D3; }
+    50% { color: #ff006ad9; }
+    100% { color: #000; }
+    }
         
 
 /*------------------------------------------------------------------ Blog -------------------------------------------------------------------*/

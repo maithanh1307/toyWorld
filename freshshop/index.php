@@ -107,7 +107,7 @@
                         <ul>
                             <li><a href="#"><i class="fa fa-user s_color fa-beat"></i> My Account</a></li>
                             <!-- <li><a href=""><i class="fas fa-location-arrow"></i> Our location</a></li> -->
-                            <li><a href="contact-us.html"><i class="fas fa-headset fa-beat"></i> Contact Us</a></li>
+                            <li><a href="contact-us.php"><i class="fas fa-headset fa-beat"></i> Contact Us</a></li>
                         </ul>
                     </div>
                 </div>
@@ -181,14 +181,14 @@
                             <ul class="dropdown-menu">
 								<li><a href="shop.php">Sidebar Shop</a></li>
 								<!-- <li><a href="shop-detail.html">Shop Detail</a></li> -->
-                                <li><a href="cart.html">Cart</a></li>
-                                <li><a href="checkout.html">Checkout</a></li>
+                                <li><a href="cart.php">Cart</a></li>
+                                <li><a href="checkout.php">Checkout</a></li>
                                 <!-- <li><a href="my-account.html">My Account</a></li> -->
                                 <li><a href="wishlist.php">Wishlist</a></li>
                             </ul>
                         </li>
                         <!-- <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li> -->
-                        <li class="nav-item"><a class="nav-link" href="contact-us.html">Contact Us</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact-us.php">Contact Us</a></li>
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->
@@ -396,12 +396,7 @@
             
         </div>
     </div> -->
-    <div class="card01">
-        <div class=">
-            
-        </div>
-
-    </div>
+    
 
     <!-- Start Products  -->
     <div class="products-box">
@@ -414,7 +409,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <!-- <div class="row">
                 <div class="col-lg-12">
                     <div class="special-menu text-center">
                         <div class="button-group filter-button-group">
@@ -424,7 +419,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
             <div class="row special-list">
                 <?php
