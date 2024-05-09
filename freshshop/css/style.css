@@ -317,6 +317,33 @@
 	padding: 5px 10px;
 }
 
+.headerPay {
+    text-align: center;
+    font-weight: 600;
+    color: #f86793;
+}
+.payment {
+   background-color: #CED1E6;
+   border: solid 5px;
+}
+.fullBack {
+    background-image: url(../images/background.png);
+}
+.payment a {
+    color: f86793;
+}
+.btnPayment {
+    border-radius: 50px;
+    background-color: #9dbbe8;
+    font-weight: 750;
+    border: none;
+}
+.btnPayment:hover {
+    background-color: #6f7de5;
+}
+
+
+
 .bootstrap-select.btn-group .dropdown-menu a.dropdown-item span.dropdown-item-inner span.text{
 	font-size: 13px;
 }

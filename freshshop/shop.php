@@ -56,7 +56,7 @@
     <meta name="author" content="">
 
     <!-- Site Icons -->
-    <link rel="shortcut icon" href="images/logo01.png" type="image/x-icon">
+    <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 
     <!-- Bootstrap CSS -->
@@ -294,9 +294,9 @@
                                 <div role="tabpanel" class="tab-pane fade show active" id="grid-view">
                                     <div class="row">
                                         <?php
-                                            include ("../phpConnect/filterProduct.php");
+                                            // include ("../phpConnect/filterProduct.php");
                                             include ("../phpConnect/searchProduct.php");
-                                            include ("../phpConnect/productShop.php");
+                                            include ("../phpConnect/productShop2.php");
                                         ?>
                                     </div>
                                 </div>
@@ -304,7 +304,7 @@
                                     <div class="list-view-box">
                                         <div class="row">
                                             <?php
-                                                include ("../phpConnect/filterProduct1.php");
+                                                // include ("../phpConnect/filterProduct1.php");
                                                 include ("../phpConnect/searchProduct1.php");
                                                 include ("../phpConnect/productShop1.php");
                                             ?>
@@ -403,10 +403,10 @@
                                 <a href="#" class="list-group-item list-group-item-action"> Grocery <small class="text-muted">(22)</small></a>
                             </div>
                         </div> -->
-                        <div class="right-col ">
+                        <!-- <div class="right-col ">
                         <form method="post" id="formFilter">
                                 <div class="sidebar border-top6 " name="typeOfToy">
-                                    <h2 style="font-weight: 900;" href="shop1.php">Select Filters<i class="fad fa-heart fa-bounce ml-2" style="color: #f77ab4;"></i></h2>                                </h2>
+                                    <h2 style="font-weight: 900;">Select Filters<i class="fad fa-heart fa-bounce ml-2" style="color: #f77ab4;"></i></h2>                                </h2>
                                     <h3>Property Type</h3>
                                     <div class="filter01">
                                         <input style="width: 100px; border-radius: 15px; border: none; background-color: #E0DFDF" type="submit" id="propertyType" name="propertyType" value="collective" onchange="getSelectedValue()">
@@ -447,16 +447,16 @@
                                     </div>
                                 </div>
                             </form>
-                        </div>
-                        <div class="filter-price-left mt-3">
-                            <div class="title-left">
+                        </div> -->
+                        <div class="filter-price-left">
+                            <!-- <div class="title-left">
                                 <h3>Price</h3>
-                            </div>
+                            </div> -->
                             <div class="price-box-slider">
-                                <div id="slider-range"></div>
+                                <!-- <div id="slider-range"></div> -->
                                 <p>
-                                    <input type="text" id="amount" readonly style="border:0; color:#fbb714; font-weight:bold;">
-                                    <button class="btn hvr-hover bfil" style="font-weight: 800;" type="submit">Filter</button>
+                                    <!-- <input type="text" id="amount" readonly style="border:0; color:#fbb714; font-weight:bold;"> -->
+                                    <a href="shop1.php" ><button class="btn hvr-hover bfil" style="font-weight: 800;" type="submit">Filter</button></a>
                                 </p>
                             </div>
                         </div>
