@@ -309,19 +309,19 @@
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <div class="shop-cat-box">
                         <img class="img-fluid1" src="images/baby.jpg" alt="" />
-                        <a class="btn1 hvr-hover poster" href="shop.html">Under 1 year old</a>
+                        <a class="btn1 hvr-hover poster" href="shop.php">Under 1 year old</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <div class="shop-cat-box">
                         <img class="img-fluid1" src="images/girl1-3.jpg" alt="" />
-                        <a class="btn1 hvr-hover poster1" href="shop.html">1 to 3 years old</a>
+                        <a class="btn1 hvr-hover poster1" href="shop.php">1 to 3 years old</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <div class="shop-cat-box">
                         <img class="img-fluid1" src="images/girl3+.jpg" alt="" />
-                        <a class="btn1 hvr-hover poster2" href="shop.html">Over 3 years old</a>
+                        <a class="btn1 hvr-hover poster2" href="shop.php">Over 3 years old</a>
                     </div>
                 </div>
             </div>
@@ -561,7 +561,7 @@
                             </div>
                         </div> -->
                         <div class="container1">
-                            <a href="#">
+                            <a href="shop.php">
                                 <div class="blog-img">
                                     <img class="img-fluid2" src="images/brandBarbies.jpeg" alt="" />
                                     <div class="caption">
@@ -589,7 +589,7 @@
                             </div>
                         </div> -->
                         <div class="container1">
-                            <a href="#">
+                            <a href="shop.php">
                                 <div class="blog-img">
                                     <img class="img-fluid2" src="images/brandLego.jpg" alt="" />
                                     <div class="caption">
@@ -617,7 +617,7 @@
                             </div>
                         </div> -->
                         <div class="container1">
-                            <a href="#">
+                            <a href="shop.php">
                                 <div class="blog-img">
                                     <img class="img-fluid2" src="images/brandHotwheels.jpg" alt="" />
                                     <div class="caption">

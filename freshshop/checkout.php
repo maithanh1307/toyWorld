@@ -30,7 +30,7 @@
     <meta name="author" content="">
 
     <!-- Site Icons -->
-    <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="images/logo01.png" type="image/x-icon">
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
