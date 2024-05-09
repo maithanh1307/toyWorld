@@ -95,17 +95,20 @@
                         <ul>
                             <li><a href="#"><i class="fa fa-user s_color fa-beat"></i> My Account</a></li>
                             <!-- <li><a href=""><i class="fas fa-location-arrow"></i> Our location</a></li> -->
-                            <li><a href="contact-us.html"><i class="fas fa-headset fa-beat"></i> Contact Us</a></li>
+                            <li><a href="contact-us.php"><i class="fas fa-headset fa-beat"></i> Contact Us</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-					<div class="login-box">
-						<select id="basic" class="selectpicker show-tick form-control" data-placeholder="Sign In">
-							<option>Register Here</option>
-							<option>Sign In</option>
+					 <div class="login-box selectpicker show-tick form-control " >
+						<!-- <select id="basic" class="selectpicker show-tick form-control" data-pollacehder="Sign In">
+							<option value="1">Register Here</option>
+							<option value="2" data-url="signin.html">Sign In</option>
 						</select>
-					</div>
+					</div>  -->
+                        <i class="fa-duotone fa-right-to-bracket fa-fade"></i>
+                        <a href="signin.php" class="btn2 btn-primary2 mt-1"><b>Logout</b></a>
+                    </div>
                     <div class="text-slid-box">
                         <div id="offer-box" class="carouselTicker">
                             <ul class="offer-box">
@@ -152,28 +155,28 @@
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
                         <i class="fa fa-bars"></i>
                     </button>
-                    <a class="navbar-brand" href="index.html"><img src="images/logo.png" class="logo" alt="logo"></a>
+                    <a class="navbar-brand" href="index.php"><img src="images/logo01.png" class="logo" alt="logo"><b>Miniature World</b></a>
                 </div>
                 <!-- End Header Navigation -->
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="navbar-menu">
                     <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
-                        <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                        <li class="nav-item active"><a class="nav-link" href="index.php">Home</a></li>
+                        <li class="nav-item"><a class="nav-link " href="about.html">About Us</a></li>
                         <li class="dropdown">
                             <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">SHOP</a>
                             <ul class="dropdown-menu">
 								<li><a href="shop.php">Sidebar Shop</a></li>
 								<!-- <li><a href="shop-detail.html">Shop Detail</a></li> -->
-                                <li><a href="cart.html">Cart</a></li>
-                                <li><a href="checkout.html">Checkout</a></li>
+                                <li><a href="cart.php">Cart</a></li>
+                                <li><a href="checkout.php">Checkout</a></li>
                                 <!-- <li><a href="my-account.html">My Account</a></li> -->
-                                <li><a href="wishlist.html">Wishlist</a></li>
+                                <li><a href="wishlist.php">Wishlist</a></li>
                             </ul>
                         </li>
                         <!-- <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li> -->
-                        <li class="nav-item"><a class="nav-link" href="contact-us.html">Contact Us</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact-us.php">Contact Us</a></li>
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->
@@ -181,7 +184,7 @@
                 <!-- Start Atribute Navigation -->
                 <div class="attr-nav">
                     <ul>
-                        <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
+                        <!-- <li class="search"><a href="#"><i class="fa fa-search"></i></a></li> -->
                         <li class="side-menu">
 							<a href="cart.html">
 								<i class="fa fa-shopping-bag"></i>
@@ -301,6 +304,7 @@
                                     <div class="list-view-box">
                                         <div class="row">
                                             <?php
+                                                include ("../phpConnect/filterProduct1.php");
                                                 include ("../phpConnect/searchProduct1.php");
                                                 include ("../phpConnect/productShop1.php");
                                             ?>
@@ -404,42 +408,42 @@
                                 <div class="sidebar border-top6 " name="typeOfToy">
                                     <h2 style="font-weight: 900;">Select Filters<i class="fad fa-heart fa-bounce ml-2" style="color: #f77ab4;"></i></h2>                                </h2>
                                     <h3>Property Type</h3>
-                                    <div class="filter">
-                                        <input type="submit" id="propertyType" name="propertyType" value="collective" onchange="getSelectedValue()">
+                                    <div class="filter01">
+                                        <input style="width: 100px; border-radius: 15px; border: none; background-color: #E0DFDF" type="submit" id="propertyType" name="propertyType" value="collective" onchange="getSelectedValue()">
                                         <p></p><br>
                                     </div>
-                                    <div class="filter">
-                                        <input type="submit" id="propertyType" name="propertyType" value="doll" onchange="getSelectedValue()">
-                                        <p>Doll</p> <br>
+                                    <div class="filter02">
+                                        <input style="width: 100px; border-radius: 15px; border: none; background-color: #E0DFDF" type="submit" id="propertyType" name="propertyType" value="doll" onchange="getSelectedValue()">
+                                        <p></p> <br>
                                     </div>
-                                    <div class="filter">
-                                        <input type="submit" id="propertyType" name="propertyType" value="lego" onchange="getSelectedValue()">
-                                        <p>Lego</p>
+                                    <div class="filter03">
+                                        <input style="width: 100px; border-radius: 15px; border: none; background-color: #E0DFDF" type="submit" id="propertyType" name="propertyType" value="lego" onchange="getSelectedValue()">
+                                        <p></p>
                                     </div>
-                                    <div class="filter">
-                                        <input type="submit" id="propertyType" name="propertyType" value="vehicle" onchange="getSelectedValue()">
-                                        <p>Vehicle</p>
+                                    <div class="filter04 mt-4">
+                                        <input style="width: 100px; border-radius: 15px; border: none; background-color: #E0DFDF" type="submit" id="propertyType" name="propertyType" value="vehicle" onchange="getSelectedValue()">
+                                        <p></p>
                                     </div>
-                                    <div class="filter">
-                                        <input type="submit" id="propertyType" name="propertyType" value="teddy" onchange="getSelectedValue()">
-                                        <p>Teddy Bear</p>
+                                    <div class="filter05 mt-4">
+                                        <input style="width: 100px; border-radius: 15px; border: none; background-color: #E0DFDF" type="submit" id="propertyType" name="propertyType" value="teddy" onchange="getSelectedValue()">
+                                        <p></p>
                                     </div>
-                                    <div class="filter">
-                                        <input type="submit" id="propertyType" name="propertyType" value="robot" onchange="getSelectedValue()">
-                                        <p>Robot</p>
+                                    <div class="filter06 mt-4 mb-2">
+                                        <input style="width: 100px; border-radius: 15px; border: none; background-color: #E0DFDF" type="submit" id="propertyType" name="propertyType" value="robot" onchange="getSelectedValue()">
+                                        <p></p>
                                     </div>
                                     <h3>Ages</h3>
-                                    <div class="filter">
-                                        <input type="submit" id="propertyType" name="propertyType" value="1year" onchange="getSelectedValue()">
-                                        <p>Under 1 year old</p><br>
+                                    <div class="filter07">
+                                        <input style="width: 140px; border-radius: 15px; border: none; background-color: #E0DFDF" type="submit" id="propertyType" name="propertyType" value="Under 1 year old" onchange="getSelectedValue()">
+                                        <p></p><br>
                                     </div>
-                                    <div class="filter">
-                                        <input type="submit" id="propertyType" name="propertyType" value="1to3" onchange="getSelectedValue()">
-                                        <p>1 to 3 years old</p><br>
+                                    <div class="filter08">
+                                        <input style="width: 140px; border-radius: 15px; border: none; background-color: #E0DFDF" type="submit" id="propertyType" name="propertyType" value="1 to 3 years old" onchange="getSelectedValue()">
+                                        <p></p><br>
                                     </div>
-                                    <div class="filter">
-                                        <input type="submit" id="propertyType" name="propertyType" value="above4" onchange="getSelectedValue()">
-                                        <p>Above 4 years old</p><br>
+                                    <div class="filter09">
+                                        <input style="width: 140px; border-radius: 15px; border: none; background-color: #E0DFDF" type="submit" id="propertyType" name="propertyType" value="Above 4 years old" onchange="getSelectedValue()">
+                                        <p></p><br>
                                     </div>
                                 </div>
                             </form>

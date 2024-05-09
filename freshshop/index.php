@@ -107,7 +107,7 @@
                         <ul>
                             <li><a href="#"><i class="fa fa-user s_color fa-beat"></i> My Account</a></li>
                             <!-- <li><a href=""><i class="fas fa-location-arrow"></i> Our location</a></li> -->
-                            <li><a href="contact-us.html"><i class="fas fa-headset fa-beat"></i> Contact Us</a></li>
+                            <li><a href="contact-us.php"><i class="fas fa-headset fa-beat"></i> Contact Us</a></li>
                         </ul>
                     </div>
                 </div>
@@ -167,7 +167,7 @@
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
                         <i class="fa fa-bars"></i>
                     </button>
-                    <a class="navbar-brand" href="index.php"><img src="images/logo01.png" class="logo" alt="logo"></a>
+                    <a class="navbar-brand" href="index.php"><img src="images/logo01.png" class="logo" alt="logo"><b>Miniature World</b></a>
                 </div>
                 <!-- End Header Navigation -->
 
@@ -181,14 +181,14 @@
                             <ul class="dropdown-menu">
 								<li><a href="shop.php">Sidebar Shop</a></li>
 								<!-- <li><a href="shop-detail.html">Shop Detail</a></li> -->
-                                <li><a href="cart.html">Cart</a></li>
-                                <li><a href="checkout.html">Checkout</a></li>
+                                <li><a href="cart.php">Cart</a></li>
+                                <li><a href="checkout.php">Checkout</a></li>
                                 <!-- <li><a href="my-account.html">My Account</a></li> -->
                                 <li><a href="wishlist.php">Wishlist</a></li>
                             </ul>
                         </li>
                         <!-- <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li> -->
-                        <li class="nav-item"><a class="nav-link" href="contact-us.html">Contact Us</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact-us.php">Contact Us</a></li>
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->
@@ -343,7 +343,7 @@
 			</div>
 		</div>
 	</div> -->
-    <div class="instagram-box">
+    <!-- <div class="instagram-box">
         <div class="main-instagram owl-carousel owl-theme">
             <div class="item">
                 <div class="ins-inner-box">
@@ -397,6 +397,9 @@
         </div>
     </div>
     
+    </div> -->
+    
+
     <!-- Start Products  -->
     <div class="products-box">
         <div class="container">
@@ -408,7 +411,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <!-- <div class="row">
                 <div class="col-lg-12">
                     <div class="special-menu text-center">
                         <div class="button-group filter-button-group">
@@ -418,7 +421,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
             <div class="row special-list">
                 <?php
@@ -632,7 +635,7 @@
     </div>
     <!-- End copyright  -->
 
-    <a href="#" id="back-to-top" title="Back to top" style="display: none;"><i class="fa-solid fa-arrow-up fa-beat"></i></a>
+    <a href="#" id="back-to-top" title="Back to top" style="display: none;"><i class="fa-solid fa-circle-up fa-shake"></i></a>
 
     <!-- ALL JS FILES -->
     <script src="js/jquery-3.2.1.min.js"></script>
