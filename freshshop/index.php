@@ -403,80 +403,83 @@
    <div class="title-all text-center">
        <h1 class="headcomment">Type of toy </h1>
     </div>
+     <!-- <div class="main-instagram owl-carousel "> -->
 
-    <section class="swiper mySwiper">
+        <section class="swiper mySwiper">
+        <!-- <div class="table-responsive-sm"> -->
+    <div class="re">
+        <div class="swiper-wrapper ">
+            <div class="card swiper-slide">
+                <div class="card__image">
+                <img src="../freshshop/images/1.jpg" alt="card image">
+                </div>
 
-        <div class="swiper-wrapper">
-
-        <div class="card swiper-slide">
-            <div class="card__image">
-            <img src="../freshshop/images/1.jpg" alt="card image">
+                <div class="card__content">
+                <span class="card__title">Teddy</span>
+                </div>
             </div>
 
-            <div class="card__content">
-            <span class="card__title">Teddy</span>
+           <div class="card swiper-slide">
+                <div class="card__image">
+                <img src="../freshshop/images/2.jpg" alt="card image">
+                </div>
+
+                <div class="card__content">
+                <span class="card__title">Collectible</span>
+                </div>
+            </div> 
+
+             <div class="card swiper-slide">
+                <div class="card__image">
+                <img src="../freshshop/images/3.jpg" alt="card image">
+                </div>
+
+                <div class="card__content">
+                <span class="card__title">Doll</span>
+                </div>
             </div>
+
+            <div class="card swiper-slide">
+                <div class="card__image">
+                <img src="../freshshop/images/4.jpg" alt="card image">
+                </div>
+
+                <div class="card__content">
+                <span class="card__title">Lego</span>
+                </div>
+            </div>
+
+
+            <div class="card swiper-slide">
+                <div class="card__image">
+                <img src="../freshshop/images/5.jpg" alt="card image">
+                </div>
+
+                <div class="card__content">
+                <span class="card__title">Vehicle toys</span>
+                </div>
+            </div>
+
+            <div class="card swiper-slide">
+                <div class="card__image">
+                <img src="../freshshop/images/6.jpg" alt="card image">
+                </div>
+
+                <div class="card__content">
+                <span class="card__title"> Robot</span>
+                </div>
+            </div> 
         </div>
-
-        <div class="card swiper-slide">
-            <div class="card__image">
-            <img src="../freshshop/images/2.jpg" alt="card image">
-            </div>
-
-            <div class="card__content">
-            <span class="card__title">Collectible</span>
-            </div>
-        </div>
-
-        <div class="card swiper-slide">
-            <div class="card__image">
-            <img src="../freshshop/images/3.jpg" alt="card image">
-            </div>
-
-            <div class="card__content">
-            <span class="card__title">Doll</span>
-            </div>
-        </div>
-
-        <div class="card swiper-slide">
-            <div class="card__image">
-            <img src="../freshshop/images/4.jpg" alt="card image">
-            </div>
-
-            <div class="card__content">
-            <span class="card__title">Lego</span>
-            </div>
-        </div>
-
-
-        <div class="card swiper-slide">
-            <div class="card__image">
-            <img src="../freshshop/images/5.jpg" alt="card image">
-            </div>
-
-            <div class="card__content">
-            <span class="card__title">Vehicle toys</span>
-            </div>
-        </div>
-
-        <div class="card swiper-slide">
-            <div class="card__image">
-            <img src="../freshshop/images/6.jpg" alt="card image">
-            </div>
-
-            <div class="card__content">
-            <span class="card__title"> Robot</span>
-            </div>
-        </div>
-        </div>
-    </section>
+        </section>
     </div>
+</div>
+</div>
 
         <!-- Swiper JS -->
-        <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+        <!-- <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script> -->
 
         <!-- Initialize Swiper -->
-        <script>
+        <!-- <script>
         var swiper = new Swiper(".mySwiper", {
         effect: "coverflow",
         grabCursor: true,
@@ -493,7 +496,7 @@
             el: ".swiper-pagination",
         },
         });
-        </script>
+        </script> -->
 
 
     <!-- Start Products  -->

@@ -11,7 +11,7 @@
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
             echo '
-            <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 toy">
+            <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 toy disImage">
                 <div class="products-single fix">
                     <div class="box-img-hover">
                         <div class="type-lb">
