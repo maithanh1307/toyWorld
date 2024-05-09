@@ -1,8 +1,9 @@
+<!-- php -->
 <?php
-require_once ('../phpConnect/connectData.php');
+   require_once ('../phpConnect/connectData.php');
 
-$sql = "SELECT * FROM user";
-$query = mysqli_query($conn, $sql);
+   $sql = "SELECT * from products";
+   $query = mysqli_query($conn, $sql);
 
 ?>
 
@@ -81,7 +82,7 @@ $query = mysqli_query($conn, $sql);
                <div class="sidebar_blog_1">
                   <div class="sidebar-header">
                      <div class="logo_section">
-                        <a href="index.html"><img class="logo_icon img-responsive" src="../freshshop/images/logo.png" alt="#" /></a>
+                        <a href="index.php"><img class="logo_icon img-responsive" src="../freshshop/images/logo.png" alt="#" /></a>
                      </div>
                   </div>
                   <div class="sidebar_user_info">
@@ -99,63 +100,41 @@ $query = mysqli_query($conn, $sql);
                   <h4>General</h4>
                   <ul class="list-unstyled components">
                      <li class="active">
-                        <a href="#dashboard" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-dashboard yellow_color"></i> <span>Dashboard</span></a>
-                        <ul class="collapse list-unstyled" id="dashboard">
-                           <li>
-                              <a href="dashboard.html">> <span>Default Dashboard</span></a>
-                           </li>
-                           <li>
-                              <a href="dashboard_2.html">> <span>Dashboard style 2</span></a>
-                           </li>
-                        </ul>
+                        <a href="index.php"><i class="fa fa-dashboard yellow_color"></i> <span>Dashboard</span></a>
                      </li>
-                     <li><a href="widgets.html"><i class="fa fa-clock-o orange_color"></i> <span>Widgets</span></a></li>
                      <li>
                         <a href="#element" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-diamond purple_color"></i> <span>Elements</span></a>
                         <ul class="collapse list-unstyled" id="element">
-                           <li><a href="general_elements.html">> <span>General Elements</span></a></li>
-                           <li><a href="media_gallery.html">> <span>Media Gallery</span></a></li>
-                           <li><a href="icons.html">> <span>Icons</span></a></li>
-                           <li><a href="invoice.html">> <span>Invoice</span></a></li>
+                           <li><a href="icons.php">> <span>Icons</span></a></li>
                         </ul>
                      </li>
-                     <li><a href="tables.html"><i class="fa fa-table purple_color2"></i> <span>Tables</span></a></li>
+                     <li><a href="tables.php"><i class="fa fa-table purple_color2"></i> <span>Tables</span></a></li>
+                     <li><a href="feedback.php"><i class="fa fa-comment yellow_color"></i> <span>Feedback</span></a></li>
                      <li>
                         <a href="#apps" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-object-group blue2_color"></i> <span>Apps</span></a>
-                        <ul class="collapse list-unstyled" id="apps">
-                           <li><a href="email.html">> <span>Email</span></a></li>
-                           <li><a href="calendar.html">> <span>Calendar</span></a></li>
-                           <li><a href="media_gallery.html">> <span>Media Gallery</span></a></li>
+                        <ul class="collapse list-unstyled" id="apps">               
+                           <li><a href="calendar.php">> <span>Calendar</span></a></li>
                         </ul>
                      </li>
-                     <li><a href="price.html"><i class="fa fa-briefcase blue1_color"></i> <span>Pricing Tables</span></a></li>
                      <li>
-                        <a href="contact.html">
-                        <i class="fa fa-paper-plane red_color"></i> <span>Users</span></a>
+                        <a href="contact.php">
+                        <i class="fa fa-paper-plane red_color"></i> <span>Get in touch</span></a>
                      </li>
                      <li class="active">
                         <a href="#additional_page" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-clone yellow_color"></i> <span>Additional Pages</span></a>
                         <ul class="collapse list-unstyled" id="additional_page">
                            <li>
-                              <a href="profile.html">> <span>Profile</span></a>
+                              <a href="products.php">> <span>Products</span></a>
                            </li>
                            <li>
-                              <a href="products.html">> <span>Products</span></a>
-                           </li>
-                           <li>
-                              <a href="login.html">> <span>Login</span></a>
-                           </li>
-                           <li>
-                              <a href="404_error.html">> <span>404 Error</span></a>
+                              <a href="404_error.php">> <span>404 Error</span></a>
                            </li>
                            <li>
                               <a href="checkout.php">> <span>Check out</span></a>
                            </li>
                         </ul>
                      </li>
-                     <li><a href="map.html"><i class="fa fa-map purple_color2"></i> <span>Map</span></a></li>
-                     <li><a href="charts.html"><i class="fa fa-bar-chart-o green_color"></i> <span>Charts</span></a></li>
-                     <li><a href="settings.html"><i class="fa fa-cog yellow_color"></i> <span>Settings</span></a></li>
+                     <li><a href="map.php"><i class="fa fa-map purple_color2"></i> <span>Map</span></a></li>
                   </ul>
                </div>
             </nav>
@@ -181,10 +160,7 @@ $query = mysqli_query($conn, $sql);
                                  <li>
                                     <a class="dropdown-toggle" data-toggle="dropdown"><img class="img-responsive rounded-circle" src="../freshshop/images/logo.png" alt="#" /><span class="name_user">Miniature World - Admin</span></a>
                                     <div class="dropdown-menu">
-                                       <a class="dropdown-item" href="profile.html">My Profile</a>
-                                       <a class="dropdown-item" href="settings.html">Settings</a>
-                                       <a class="dropdown-item" href="help.html">Help</a>
-                                       <a class="dropdown-item" href="index.html">Home</a>
+                                       <a class="dropdown-item" href="index.php">Home</a>
                                        <a class="dropdown-item" href="#"><span>Log Out</span> <i class="fa fa-sign-out"></i></a>
                                     </div>
                                  </li>
@@ -201,7 +177,7 @@ $query = mysqli_query($conn, $sql);
                      <div class="row column_title">
                         <div class="col-md-12">
                            <div class="page_title">
-                              <h2>Users</h2>
+                              <h2>Products</h2>
                            </div>
                         </div>
                      </div>
@@ -211,42 +187,65 @@ $query = mysqli_query($conn, $sql);
                            <div class="white_shd full margin_bottom_30">
                               <div class="full graph_head">
                                  <div class="heading1 margin_0">
-                                    <h2>List of user</h2>
+                                    <h2>List of product</h2>
                                  </div>
                               </div>
                               <div class="full price_table padding_infor_info">
                                  <div class="row">
-                                    <!-- column contact --> 
-                                                                    <?php foreach ($query as $user) { ?>
-                                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 profile_details margin_bottom_30">
-                                        <div class="contact_blog">
-                                            <div class="contact_inner">
-                                                <div class="left">
-                                                    <h3><?= $user['firstName'] ?> <?= $user['lastName'] ?></h3>
-                                                    <ul class="list-unstyled">
-													<li><i class="fa fa-envelope-o"></i> : <a href="<?= 'mailto:' . $user['email'] ?>"><?= $user['email'] ?></a></li>
-													<li><i class="fa fa-phone"></i> <a href="tel:<?= $user['phoneNumber'] ?>">tel: <?= $user['phoneNumber'] ?></a></li>
-                                                    <li><i class="fa fa-lock"></i> Password: <?= htmlspecialchars($user['passWord']) ?></li>
-
-
-                                                    </ul>
-                                                </div>
-                                                <div class="bottom_list">
-												<a href="../phpConnect/deleteUser.php?customerID=<?= $user['customerID'] ?>">
-													<button type="button" class="btn btn-danger btn-xs">
-														<i class="fa fa-trash mr-2"> </i> Delete
-													</button>
-												</a>
-                                                    <!-- <div class="right_button">
-														<button type="button" class="btn btn-success btn-xs" name="edit_btn"> <i class="fa fa-pencil mr-2"></i>Edit</button>
-														<button type="button" class="btn btn-danger btn-xs" name="delete_btn"><i class="fa fa-trash mr-2"></i> Delete</button>
-                                                    </div> -->
-                                                </div>
-                                            </div>
-                                        </div>
+                                    <div class="col-lg-12">
+                                       <div class="table-responsive-sm">
+                                          <table class="table table-striped projects">
+                                             <thead class="thead-dark">
+                                                <tr>
+                                                   <th style="width: 2%">No</th>
+                                                   <th style="width: 15%">Images</th>
+                                                   <th>Toy's name</th>
+                                                   <th>Type</th>
+                                                   <th>Description</th>
+                                                   <th>Price</th>
+                                                   <th>Control</th>
+                                                </tr>
+                                             </thead>
+                                             <tbody>
+                                                <!-- <tr>
+                                                   <td>1</td>
+                                                   <td>
+                                                      <img style="width: 60px" src="../freshshop/images/bunnyToy.jpg" class="img-fluid">
+                                                   </td>
+                                                   <td>
+                                                      <p class="mt-4">Bunny Rabbit</p>
+                                                   </td>
+                                                   <td>
+                                                      <p class="mt-4">Teddy Bear</p>
+                                                   </td>
+                                                   <td>
+                                                      <p class="mt-4">This is a toy for all ages</p>
+                                                   </td>
+                                                   <td>
+                                                      <p class="mt-4">$8.00</p>
+                                                   </td>
+                                                   <td>
+                                                      <a href="#">
+                                                         <i class="fa-light fa-trash-o fa-xl yellow_color"></i>
+                                                      </a>
+                                                      <i class="fa-light fa-pipe fa-xl"></i>
+                                                      <a href="#">
+                                                         <i class="fa-light fa-pencil fa-xl yellow_color"></i>
+                                                      </a>
+                                                   </td>
+                                                </tr> -->
+                                                <?php
+                                                   include ("../phpConnect/checkout.php");
+                                                ?>
+                                             </tbody>
+                                          </table>
+                                       </div>
                                     </div>
-                                <?php } ?>
-                                    <!-- end column contact blog -->
+                                 </div>
+                                 <div class="mt-4">
+                                    <a href="../freshshop/index.php">
+                                       <button class="btn btn-primary btnUser">User interface</button>
+                                    </a>
                                  </div>
                               </div>
                            </div>
@@ -269,6 +268,13 @@ $query = mysqli_query($conn, $sql);
       <script src="js/jquery.min.js"></script>
       <script src="js/popper.min.js"></script>
       <script src="js/bootstrap.min.js"></script>
+
+      <!-- delete -->
+      <script>
+		function deleteProduct(id){
+			window.location.href = 'products.php?delete_product=' + id;
+		}
+	   </script>
       <!-- wow animation -->
       <script src="js/animate.js"></script>
       <!-- select country -->
@@ -289,6 +295,5 @@ $query = mysqli_query($conn, $sql);
       <script src="js/custom.js"></script>
       <!-- calendar file css -->     
       <script src="js/semantic.min.js"></script>
-      <script></script>
    </body>
 </html>

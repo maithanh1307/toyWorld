@@ -127,6 +127,9 @@ $query = mysqli_query($conn, $sql);
                            <li>
                               <a href="404_error.php">> <span>404 Error</span></a>
                            </li>
+                           <li>
+                              <a href="checkout.php">> <span>Check out</span></a>
+                           </li>
                         </ul>
                      </li>
                      <li><a href="map.php"><i class="fa fa-map purple_color2"></i> <span>Map</span></a></li>
