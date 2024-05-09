@@ -4017,3 +4017,7 @@ box-shadow: none;
   .color01 ::after .hvr-hover{
     color:#133bc8;
   }
+ 
+.disImage{
+    display: none;
+}
