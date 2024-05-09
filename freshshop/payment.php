@@ -23,7 +23,7 @@
   <body class="fullBack">
     <div class="container">
       <div class="row">
-        <div class="col-md-6 mt-5 mx-auto p-3 border payment" style="border-radius: 15px;">
+        <div class="col-md-6 mx-auto p-3 border payment" style="border-radius: 15px; margin-top: 145px;">
             <h2 class="headerPay">Payment successful</h4>
             <p>We would like to extend our sincere thanks to you for successfully completing the payment for your recent order with</p>
             <p>Click <a href="index.php" style="color: #f86793;">here</a> to return to the home page and continue shopping, or the website will automatically redirect in  <span id="counter" class="text-danger">10</span> second.</p>
@@ -43,7 +43,7 @@
           counter.innerHTML = countdown.toString();
           if(countdown==0){
             clearInterval(id);
-            window.location.href='login.php'
+            window.location.href='signin.php'
           }
         }, 1000);
       }
