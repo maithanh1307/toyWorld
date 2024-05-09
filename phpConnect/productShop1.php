@@ -12,7 +12,7 @@
         while ($row = $result->fetch_assoc()) {
             echo '
             <div class="row toy">
-                <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 ">
+                <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4  ">
                     <div class="products-single1 fix">
                         <div class="box-img-hover">
                             <div class="type-lb">
