@@ -67,6 +67,8 @@
     <link rel="stylesheet" href="css/responsive.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/slide.css">
+
 
 
     <!-- Google Web Fonts -->
@@ -397,6 +399,102 @@
         </div>
     </div> -->
     
+<div clas="slide01">
+   <div class="title-all text-center">
+       <h1 class="headcomment">Type of toy </h1>
+    </div>
+
+    <section class="swiper mySwiper">
+
+        <div class="swiper-wrapper">
+
+        <div class="card swiper-slide">
+            <div class="card__image">
+            <img src="../freshshop/images/1.jpg" alt="card image">
+            </div>
+
+            <div class="card__content">
+            <span class="card__title">Teddy</span>
+            </div>
+        </div>
+
+        <div class="card swiper-slide">
+            <div class="card__image">
+            <img src="../freshshop/images/2.jpg" alt="card image">
+            </div>
+
+            <div class="card__content">
+            <span class="card__title">Collectible</span>
+            </div>
+        </div>
+
+        <div class="card swiper-slide">
+            <div class="card__image">
+            <img src="../freshshop/images/3.jpg" alt="card image">
+            </div>
+
+            <div class="card__content">
+            <span class="card__title">Doll</span>
+            </div>
+        </div>
+
+        <div class="card swiper-slide">
+            <div class="card__image">
+            <img src="../freshshop/images/4.jpg" alt="card image">
+            </div>
+
+            <div class="card__content">
+            <span class="card__title">Lego</span>
+            </div>
+        </div>
+
+
+        <div class="card swiper-slide">
+            <div class="card__image">
+            <img src="../freshshop/images/5.jpg" alt="card image">
+            </div>
+
+            <div class="card__content">
+            <span class="card__title">Vehicle toys</span>
+            </div>
+        </div>
+
+        <div class="card swiper-slide">
+            <div class="card__image">
+            <img src="../freshshop/images/6.jpg" alt="card image">
+            </div>
+
+            <div class="card__content">
+            <span class="card__title"> Robot</span>
+            </div>
+        </div>
+        </div>
+    </section>
+    </div>
+
+        <!-- Swiper JS -->
+        <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+        <!-- Initialize Swiper -->
+        <script>
+        var swiper = new Swiper(".mySwiper", {
+        effect: "coverflow",
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: "auto",
+        coverflowEffect: {
+            rotate: 0,
+            stretch: 0,
+            depth: 300,
+            modifier: 1,
+            slideShadows: false,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+        },
+        });
+        </script>
+
 
     <!-- Start Products  -->
     <div class="products-box">
