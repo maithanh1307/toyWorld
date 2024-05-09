@@ -122,6 +122,10 @@
                            <li>
                               <a href="products.php">> <span>Products</span></a>
                            </li>
+
+                           <li>
+                              <a href="feedbacks.php">> <span>Feedbacks</span></a>
+                           </li>
                            <li>
                               <a href="404_error.html">> <span>404 Error</span></a>
                            </li>
