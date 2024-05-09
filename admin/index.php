@@ -1,3 +1,10 @@
+<?php
+require_once ('../phpConnect/connectData.php');
+
+$sql = "SELECT * FROM feedbacks";
+$query = mysqli_query($conn, $sql);
+
+?>
 <!DOCTYPE html>
 <html lang="en">
    <head>
@@ -350,8 +357,8 @@
                                              <div class="carousel-inner">
                                                 <div class="item carousel-item active">
                                                    <!-- <div class="img-box"><img src="images/layout_img/user_img.jpg" alt=""></div> -->
-                                                   <p class="testimonial">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae..</p>
-                                                   <p class="overview"><b>test@gmail.com</b>Seo Founder</p>
+                                                   <p class="testimonial">feedback[comment]</p>
+                                                   <p class="overview"><b>Anonymous </b>Seo Founder</p>
                                                 </div>
                                                 <div class="item carousel-item">
                                                    <!-- <div class="img-box"><img src="images/layout_img/user_img.jpg" alt=""></div> -->
