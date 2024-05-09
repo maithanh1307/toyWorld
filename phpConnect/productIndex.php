@@ -23,7 +23,8 @@
                                 <ul>
                                     <li><a href="../phpConnect/addWishlist.php?productID='.$row['productID'].'" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
                                 </ul>
-                                <a class="cart" href="#">Add to Cart</a>
+                                <a class="cart" href="../phpConnect/addToCart.php?productID='.$row['productID'].'" data-placement="right">Add to Cart</a>
+
                             </div>
                         </div>
                         <div class="why-text">

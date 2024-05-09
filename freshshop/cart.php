@@ -1,9 +1,41 @@
-<!-- php -->
 <?php
-   require_once ('../phpConnect/connectData.php');
+    require_once ('../phpConnect/connectData.php');
 
-   $sql = "SELECT * from products";
-   $query = mysqli_query($conn, $sql);
+    $sql = "SELECT * FROM carts";
+    $query = mysqli_query($conn, $sql);
+    if (isset($_POST["save_cart_btn"])) {
+        // Lấy dữ liệu từ form
+        $toyName = $_POST["toyName"];
+        $newQuantity = $_POST["quantity"];
+        
+        // Lấy giá trị price từ cơ sở dữ liệu và loại bỏ kí tự "$"
+        $price_sql = "SELECT price FROM carts WHERE toyName = ?";
+        $price_stmt = $conn->prepare($price_sql);
+        $price_stmt->bind_param("s", $toyName);
+        $price_stmt->execute();
+        $price_result = $price_stmt->get_result();
+        $price_row = $price_result->fetch_assoc();
+        $price_with_dollar_sign = $price_row["price"];
+        $price_without_dollar_sign = str_replace('$', '', $price_with_dollar_sign);
+        $price = (float) $price_without_dollar_sign;
+        
+        // Tính toán total
+        $newTotalCost = $newQuantity * $price;
+        
+        // Cập nhật dữ liệu trong cơ sở dữ liệu
+        $update_sql = "UPDATE carts SET quantity = ?, total = ? WHERE toyName = ?";
+        $update_stmt = $conn->prepare($update_sql);
+        $update_stmt->bind_param("ids", $newQuantity, $newTotalCost, $toyName);
+
+        if ($update_stmt->execute()) {
+            header('Location: ../freshshop/cart.php');
+        } else {
+            echo "Error updating record: " . $conn->error;
+        }
+
+        // Đóng prepared statement
+        $update_stmt->close();
+    }
 ?>
 
 <!DOCTYPE html>
@@ -56,7 +88,7 @@
     <meta name="author" content="">
 
     <!-- Site Icons -->
-    <link rel="shortcut icon" href="images/logo01.png" type="image/x-icon">
+    <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 
     <!-- Bootstrap CSS -->
@@ -67,18 +99,6 @@
     <link rel="stylesheet" href="css/responsive.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/custom.css">
-
-
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"> 
-
-    <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-
-    <!-- Libraries Stylesheet -->
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
 
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -112,15 +132,12 @@
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-					 <div class="login-box selectpicker show-tick form-control " >
-						<!-- <select id="basic" class="selectpicker show-tick form-control" data-pollacehder="Sign In">
-							<option value="1">Register Here</option>
-							<option value="2" data-url="signin.html">Sign In</option>
+					<div class="login-box">
+						<select id="basic" class="selectpicker show-tick form-control" data-placeholder="Sign In">
+							<option>Register Here</option>
+							<option>Sign In</option>
 						</select>
-					</div>  -->
-                        <i class="fa-duotone fa-right-to-bracket fa-fade"></i>
-                        <a href="signin.php" class="btn2 btn-primary2 mt-1"><b>Logout</b></a>
-                    </div>
+					</div>
                     <div class="text-slid-box">
                         <div id="offer-box" class="carouselTicker">
                             <ul class="offer-box">
@@ -167,24 +184,24 @@
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
                         <i class="fa fa-bars"></i>
                     </button>
-                    <a class="navbar-brand" href="index.php"><img src="images/logo01.png" class="logo" alt="logo"></a>
+                    <a class="navbar-brand" href="index.html"><img src="images/logo.png" class="logo" alt="logo"></a>
                 </div>
                 <!-- End Header Navigation -->
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="navbar-menu">
                     <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
-                        <li class="nav-item active"><a class="nav-link" href="index.php">Home</a></li>
-                        <li class="nav-item"><a class="nav-link " href="about.html">About Us</a></li>
+                        <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
                         <li class="dropdown">
                             <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">SHOP</a>
                             <ul class="dropdown-menu">
-								<li><a href="shop.php">Sidebar Shop</a></li>
+								<li><a href="shop.html">Sidebar Shop</a></li>
 								<!-- <li><a href="shop-detail.html">Shop Detail</a></li> -->
                                 <li><a href="cart.html">Cart</a></li>
                                 <li><a href="checkout.html">Checkout</a></li>
                                 <!-- <li><a href="my-account.html">My Account</a></li> -->
-                                <li><a href="wishlist.php">Wishlist</a></li>
+                                <li><a href="wishlist.html">Wishlist</a></li>
                             </ul>
                         </li>
                         <!-- <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li> -->
@@ -196,7 +213,7 @@
                 <!-- Start Atribute Navigation -->
                 <div class="attr-nav">
                     <ul>
-                        <!-- <li class="search"><a href="#"><i class="fa fa-search"></i></a></li> -->
+                        <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
                         <li class="side-menu">
 							<a href="cart.html">
 								<i class="fa fa-shopping-bag"></i>
@@ -253,288 +270,238 @@
     </div>
     <!-- End Top Search -->
 
-    <!-- Start Slider -->
-    <div id="slides-shop" class="cover-slides">
-        <ul class="slides-container">
-            <li class="text-center">
-                <img src="images/toypos1.jpg" alt="">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h1 class="m-b-20"><strong>Welcome To <br> Miniature World</strong></h1>
-                            <p class="m-b-40">Miniature World isn't just a place filled with shelves and aisles, <br>it's a portal to endless adventures, <br>a land where creativity blossoms, <br>and a universe where laughter echoes. </p>
-                            <p><b><a class="btn hvr-hover" href="#">Shop New</a></b></p>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li class="text-center">
-                <img src="images/toypos2.jpg" alt="">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h1 class="m-b-20"><strong>Welcome To <br> Miniature World</strong></h1>
-                            <p class="m-b-40">Miniature World isn't just a place filled with shelves and aisles, <br>it's a portal to endless adventures, <br>a land where creativity blossoms, <br>and a universe where laughter echoes. </p>
-                            <p><a class="btn hvr-hover" href="#">Shop New</a></p>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li class="text-center">
-                <img src="images/toypos3.jpg" alt="">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h1 class="m-b-20"><strong>Welcome To <br> Miniature World</strong></h1>
-                            <p class="m-b-40">Miniature World isn't just a place filled with shelves and aisles, <br>it's a portal to endless adventures, <br>a land where creativity blossoms, <br>and a universe where laughter echoes. </p>
-                            <p><a class="btn hvr-hover" href="#">Shop New</a></p>
-                        </div>
-                    </div>
-                </div>
-            </li>
-        </ul>
-        <div class="slides-navigation">
-            <a href="#" class="next"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
-            <a href="#" class="prev"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
-        </div>
-    </div>
-    <!-- End Slider -->
-
-    <!-- Start Categories  -->
-    <div class="categories-shop">
+    <!-- Start All Title Box -->
+    <div class="all-title-box1">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                    <div class="shop-cat-box">
-                        <img class="img-fluid1" src="images/baby.jpg" alt="" />
-                        <a class="btn1 hvr-hover poster" href="shop.html">Under 1 year old</a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                    <div class="shop-cat-box">
-                        <img class="img-fluid1" src="images/girl1-3.jpg" alt="" />
-                        <a class="btn1 hvr-hover poster1" href="shop.html">1 to 3 years old</a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                    <div class="shop-cat-box">
-                        <img class="img-fluid1" src="images/girl3+.jpg" alt="" />
-                        <a class="btn1 hvr-hover poster2" href="shop.html">Over 3 years old</a>
-                    </div>
+                <div class="col-lg-12">
+                    <h2>Cart</h2>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">Shop</a></li>
+                        <li class="breadcrumb-item active">Cart</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </div>
-    <!-- End Categories -->
-	
-	<!-- <div class="box-add-products">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-6 col-md-6 col-sm-12">
-					<div class="offer-box-products">
-						<img class="img-fluidBox" src="images/add-img-01.jpg" alt="" />
-					</div>
-				</div>
-				<div class="col-lg-6 col-md-6 col-sm-12">
-					<div class="offer-box-products">
-						<img class="img-fluidBox" src="images/add-img-02.jpg" alt="" />
-					</div>
-				</div>
-			</div>
-		</div>
-	</div> -->
-    <div class="instagram-box">
+    <!-- End All Title Box -->
+
+    <!-- Start Cart  -->
+    <div class="cart-box-main">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="table-main table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Images</th>
+                                    <th>Product Name</th>
+                                    <th>Price</th>
+                                    <th>Quantity</th>
+                                    <th>Total</th>
+                                    <th>Remove</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            
+                    <tbody>
+                    <form action="" method="post">
+    <?php foreach ($query as $cart): ?>
+    <tr>
+        <td class="thumbnail-img">
+            <img src="../admin/images/layout_img/<?php echo $cart['imageProducts']; ?>" class="img-fluid1" alt="Image">
+        </td>
+        <td class="name-pr">
+            <?php echo $cart['toyName']; ?>
+        </td>
+        <td class="price-pr">
+            <p><?php echo $cart['price']; ?></p>
+        </td>
+        <td class="quantity-box">
+            <input name="quantity" type="number" value="<?php echo $cart['quantity']; ?>" onchange="updateTotal(this, '<?php echo $cart['productID']; ?>')">
+        </td>
+        <?php
+        // Remove the dollar sign from the price string
+        $price_without_dollar_sign = str_replace('$', '', $cart['price']);
+        // Convert the price to a float for multiplication
+        $price_float = (float)$price_without_dollar_sign;
+
+        // Calculate the total cost by multiplying quantity with the price
+        $total_cost = $cart['quantity'] * $price_float;
+        ?>
+        <td id="totalCost_<?php echo $cart['productID']; ?>" class="total-pr">
+            <p id="totalCostValue_<?php echo $cart['productID']; ?>">$<?php echo $total_cost; ?></p>
+        </td>
+        <td class="remove-pr">
+            <a href="../phpConnect/deleteCart.php?productID=<?php echo $cart['productID']; ?>">
+                <i class="fas fa-trash fa-xl" style="color: #F3C76C;"></i>
+            </a>
+        </td>
+        <td>
+            <div class="update-box">
+                <input type="hidden" name="toyName" value="<?php echo $cart['toyName']; ?>">
+                <input type="hidden" name="total_cost" id="totalCostInput_<?php echo $cart['toyName']; ?>" value="<?php echo $total_cost; ?>">
+
+                <input value="Save" type="submit" name="save_cart_btn">
+            </div>
+        </td>
+    </tr>
+    <?php endforeach; ?>
+</form>
+
+
+
+                    </tbody>
+                
+
+
+
+                        </table>
+                    </div>
+                    
+                </div>
+                <div class="col-lg-4 col-sm-12 border-top6">
+                    <div class="order-box">
+                        <h3 style="font-size: x-large; text-align: center; margin-top: 10px;">Order summary</h3>
+                        <div class="d-flex">
+                            <h4>Sub Total</h4>
+                            <div class="ml-auto font-weight-bold"> $ 130 </div>
+                        </div>
+                        
+                        <hr class="my-1">
+                        
+                        <div class="d-flex">
+                            <h4>Shipping Cost</h4>
+                            <div class="ml-auto font-weight-bold"> Free </div>
+                        </div>
+                        <hr>
+                        <div class="d-flex gr-total">
+                            <h5>Grand Total</h5>
+                            <div class="ml-auto h5"> $ 388 </div>
+                        </div>
+                        <hr> 
+                    </div>
+                    <div class="row">
+                        <a href="checkout.html">
+                            <div class="wrapper">
+                                <div class="button">
+                                    <div class="checkoutB"><i class="fas fa-shopping-cart fa-2xl"></i></div>
+                                    <span class="book"><b>Check Out</b></span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="row my-5">
+                <!-- <div class="col-lg-6 col-sm-6">
+                    <div class="coupon-box">
+                        <div class="input-group input-group-sm">
+                            <input class="form-control" placeholder="Enter your coupon code" aria-label="Coupon code" type="text">
+                            <div class="input-group-append">
+                                <button class="btn btn-theme" type="button">Apply Coupon</button>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+                <!-- <div class="col-lg-6 col-sm-6">
+                    <div class="update-box">
+                        <input value="Update Cart" type="submit">
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+    <!-- End Cart -->
+
+    <!-- Start Instagram Feed  -->
+    <!-- <div class="instagram-box">
         <div class="main-instagram owl-carousel owl-theme">
             <div class="item">
                 <div class="ins-inner-box">
-                    <img class="insta" src="images/collective.jpg" alt="" />
+                    <img src="images/instagram-img-01.jpg" alt="" />
                     <div class="hov-in">
-                        <a href="shop.html"><p class="fontInsta">Collectible toys</p></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
             </div>
             <div class="item">
                 <div class="ins-inner-box">
-                    <img class="insta" src="images/doll.jpg" alt="" />
+                    <img src="images/instagram-img-02.jpg" alt="" />
                     <div class="hov-in">
-                        <a href="shop.html"><p class="fontInsta">Doll</p></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
             </div>
             <div class="item">
                 <div class="ins-inner-box">
-                    <img class="insta" src="images/lego.jpg" alt="" />
+                    <img src="images/instagram-img-03.jpg" alt="" />
                     <div class="hov-in">
-                        <a href="shop.html"><p class="fontInsta">Lego</p></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
             </div>
             <div class="item">
                 <div class="ins-inner-box">
-                    <img class="insta" src="images/vehicle.jpg" alt="" />
+                    <img src="images/instagram-img-04.jpg" alt="" />
                     <div class="hov-in">
-                        <a href="shop.html"><p class="fontInsta">Vehicle toys</p></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
             </div>
             <div class="item">
                 <div class="ins-inner-box">
-                    <img class="insta" src="images/teddyBear.jpg" alt="" />
+                    <img src="images/instagram-img-05.jpg" alt="" />
                     <div class="hov-in">
-                        <a href="shop.html"><p class="fontInsta">Teddy bear</p></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
             </div>
             <div class="item">
                 <div class="ins-inner-box">
-                    <img class="insta" src="images/robot.jpg" alt="" />
+                    <img src="images/instagram-img-06.jpg" alt="" />
                     <div class="hov-in">
-                        <a href="shop.html"><p class="fontInsta">Robot</p></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
             </div>
-            
-        </div>
-    </div>
-    
-    <!-- Start Products  -->
-    <div class="products-box">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="title-all text-center">
-                        <h1 class="headcomment">Toys</h1>
-                        <p style="font-weight: 900;">Some popular toys for all ages have good reviews.</p>
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img src="images/instagram-img-07.jpg" alt="" />
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="special-menu text-center">
-                        <div class="button-group filter-button-group">
-                            <button class="active" data-filter="*">All</button>
-                            <button data-filter=".top-featured">Top featured</button>
-                            <button data-filter=".best-seller">Best seller</button>
-                        </div>
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img src="images/instagram-img-08.jpg" alt="" />
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
             </div>
-
-            <div class="row special-list">
-                <?php
-                    include ("../phpConnect/productIndex.php");
-                ?>
-            </div>
-        </div>
-    </div>
-    <!-- End Products  -->
-
-    <!-- Start Blog  -->
-    <div class="latest-blog">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="title-all text-center">
-                        <h1 class="headcomment">Famous Brand</h1>
-                        <p style="font-weight: 900;">Some popular toy brands that people choose</p>
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img src="images/instagram-img-09.jpg" alt="" />
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
             </div>
-            <div class="">
-                <div class="row">
-                    <div class="col-md-6 col-lg-4 col-xl-4">
-                        <!-- <div class="blog-box">
-                            <div class="blog-img">
-                                <img class="img-fluid" src="images/blog-img.jpg" alt="" />
-                            </div>
-                            <div class="blog-content">
-                                <div class="title-blog">
-                                    <h3>Fusce in augue non nisi fringilla</h3>
-                                    <p>Nulla ut urna egestas, porta libero id, suscipit orci. Quisque in lectus sit amet urna dignissim feugiat. Mauris molestie egestas pharetra. Ut finibus cursus nunc sed mollis. Praesent laoreet lacinia elit id lobortis.</p>
-                                </div>
-                                <ul class="option-blog">
-                                    <li><a href="#"><i class="far fa-heart"></i></a></li>
-                                    <li><a href="#"><i class="fas fa-eye"></i></a></li>
-                                    <li><a href="#"><i class="far fa-comments"></i></a></li>
-                                </ul>
-                            </div>
-                        </div> -->
-                        <div class="container1">
-                            <a href="#">
-                                <div class="blog-img">
-                                    <img class="img-fluid2" src="images/brandBarbies.jpeg" alt="" />
-                                    <div class="caption">
-                                        <p>Shopping now</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 col-xl-4">
-                        <!-- <div class="blog-box">
-                            <div class="blog-img">
-                                <img class="img-fluid" src="images/blog-img-01.jpg" alt="" />
-                            </div>
-                            <div class="blog-content">
-                                <div class="title-blog">
-                                    <h3>Fusce in augue non nisi fringilla</h3>
-                                    <p>Nulla ut urna egestas, porta libero id, suscipit orci. Quisque in lectus sit amet urna dignissim feugiat. Mauris molestie egestas pharetra. Ut finibus cursus nunc sed mollis. Praesent laoreet lacinia elit id lobortis.</p>
-                                </div>
-                                <ul class="option-blog">
-                                    <li><a href="#"><i class="far fa-heart"></i></a></li>
-                                    <li><a href="#"><i class="fas fa-eye"></i></a></li>
-                                    <li><a href="#"><i class="far fa-comments"></i></a></li>
-                                </ul>
-                            </div>
-                        </div> -->
-                        <div class="container1">
-                            <a href="#">
-                                <div class="blog-img">
-                                    <img class="img-fluid2" src="images/brandLego.jpg" alt="" />
-                                    <div class="caption">
-                                        <p>Shopping now</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 col-xl-4">
-                        <!-- <div class="blog-box">
-                            <div class="blog-img">
-                                <img class="img-fluid" src="images/blog-img-02.jpg" alt="" />
-                            </div>
-                            <div class="blog-content">
-                                <div class="title-blog">
-                                    <h3>Fusce in augue non nisi fringilla</h3>
-                                    <p>Nulla ut urna egestas, porta libero id, suscipit orci. Quisque in lectus sit amet urna dignissim feugiat. Mauris molestie egestas pharetra. Ut finibus cursus nunc sed mollis. Praesent laoreet lacinia elit id lobortis.</p>
-                                </div>
-                                <ul class="option-blog">
-                                    <li><a href="#"><i class="far fa-heart"></i></a></li>
-                                    <li><a href="#"><i class="fas fa-eye"></i></a></li>
-                                    <li><a href="#"><i class="far fa-comments"></i></a></li>
-                                </ul>
-                            </div>
-                        </div> -->
-                        <div class="container1">
-                            <a href="#">
-                                <div class="blog-img">
-                                    <img class="img-fluid2" src="images/brandHotwheels.jpg" alt="" />
-                                    <div class="caption">
-                                        <p>Shopping now</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img src="images/instagram-img-05.jpg" alt="" />
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- End Blog  -->
-
-
-    <!-- Start Instagram Feed  -->
-    
+    </div> -->
     <!-- End Instagram Feed  -->
 
 
@@ -551,7 +518,7 @@
 							</ul>
 						</div>
 					</div>
-					<!-- <div class="col-lg-4 col-md-12 col-sm-12">
+					<div class="col-lg-4 col-md-12 col-sm-12">
 						<div class="footer-top-box">
 							<h3>Newsletter</h3>
 							<form class="newsletter-box">
@@ -562,11 +529,12 @@
 								<button class="btn hvr-hover" type="submit">Submit</button>
 							</form>
 						</div>
-					</div> -->
+					</div>
 					<div class="col-lg-4 col-md-12 col-sm-12">
 						<div class="footer-top-box">
 							<h3>Social Media</h3>
-							<ul class="mt-3">
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+							<ul>
                                 <li><a href="#"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
                                 <li><a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
                                 <li><a href="#"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li>
@@ -582,12 +550,9 @@
                 <div class="row">
                     <div class="col-lg-4 col-md-12 col-sm-12">
                         <div class="footer-widget">
-                            <h4>About Miniature World</h4>
-                            <p>Miniature World is a whimsical wonderland where imagination takes flight, 
-                                offering a treasure trove of fun-filled adventures for children of all ages. 
-                                Dive into a realm where teddy bears have tea parties, action figures battle epic foes, 
-                                and dolls come to life in enchanting tales of make-believe. Welcome to a place where 
-                                every toy has a story to tell and laughter knows no bounds.
+                            <h4>About Freshshop</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p> 
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p> 							
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-12 col-sm-12">
@@ -608,13 +573,13 @@
                             <h4>Contact Us</h4>
                             <ul>
                                 <li>
-                                    <p><i class="fas fa-map-marker-alt"></i>19 Nguyen Huu Tho street, Tan Hung, District 7, Ho Chi Minh city</p>
+                                    <p><i class="fas fa-map-marker-alt"></i>Address: Michael I. Days 3756 <br>Preston Street Wichita,<br> KS 67213 </p>
                                 </li>
                                 <li>
-                                    <p><i class="fas fa-phone-square"></i>Phone: <a href="tel:028 3775 5052">028 3775 5052</a></p>
+                                    <p><i class="fas fa-phone-square"></i>Phone: <a href="tel:+1-888705770">+1-888 705 770</a></p>
                                 </li>
                                 <li>
-                                    <p><i class="fas fa-envelope"></i>Email: <a href="mailto:miniatureworld@gmail.com">miniatureworld@gmail.com</a></p>
+                                    <p><i class="fas fa-envelope"></i>Email: <a href="mailto:contactinfo@gmail.com">contactinfo@gmail.com</a></p>
                                 </li>
                             </ul>
                         </div>
@@ -632,7 +597,7 @@
     </div>
     <!-- End copyright  -->
 
-    <a href="#" id="back-to-top" title="Back to top" style="display: none;"><i class="fa-solid fa-arrow-up fa-beat"></i></a>
+    <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
 
     <!-- ALL JS FILES -->
     <script src="js/jquery-3.2.1.min.js"></script>
@@ -650,6 +615,20 @@
     <script src="js/form-validator.min.js"></script>
     <script src="js/contact-form-script.js"></script>
     <script src="js/custom.js"></script>
+    <script>
+    function updateTotal(input, productId) {
+    var quantity = input.value;
+    var price = parseFloat(input.parentNode.previousElementSibling.firstElementChild.innerText.replace('$', ''));
+    var totalCost = quantity * price;
+    document.getElementById('totalCostValue_' + productId).innerText = '$' + totalCost.toFixed(2);
+    document.getElementById('totalCostInput_' + productId).value = totalCost.toFixed(2); // Lưu giá trị mới vào input hidden
+    document.getElementById('updatebox_' + productId).innerText = '$' + totalCost.toFixed(2);
+}
+
+</script>
+
+
+
 </body>
 
 </html>
