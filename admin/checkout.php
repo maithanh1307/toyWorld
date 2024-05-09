@@ -2,7 +2,7 @@
 <?php
    require_once ('../phpConnect/connectData.php');
 
-   $sql = "SELECT * from feedbacks";
+   $sql = "SELECT * from carts";
    $query = mysqli_query($conn, $sql);
 
 ?>
@@ -109,6 +109,7 @@
                         </ul>
                      </li>
                      <li><a href="tables.php"><i class="fa fa-table purple_color2"></i> <span>Tables</span></a></li>
+                     <li><a href="feedback.php"><i class="fa fa-comment yellow_color"></i> <span>Feedback</span></a></li>
                      <li>
                         <a href="#apps" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-object-group blue2_color"></i> <span>Apps</span></a>
                         <ul class="collapse list-unstyled" id="apps">               
@@ -125,24 +126,15 @@
                            <li>
                               <a href="products.php">> <span>Products</span></a>
                            </li>
-                            
                            <li>
-<<<<<<< Updated upstream:admin/feedbacks.php
-                              <a href="feedbacks.php">> <span>Feedbacks</span></a>
-                           </li>
-
-                           <li>
-                              <a href="404_error.html">> <span>404 Error</span></a>
-=======
                               <a href="checkout.php">> <span>Check out</span></a>
                            </li>
                            <li>
                               <a href="404_error.php">> <span>404 Error</span></a>
->>>>>>> Stashed changes:admin/feedback.php
                            </li>
                         </ul>
                      </li>
-                     <li><a href="map.html"><i class="fa fa-map purple_color2"></i> <span>Map</span></a></li>
+                     <li><a href="map.php"><i class="fa fa-map purple_color2"></i> <span>Map</span></a></li>
                   </ul>
                </div>
             </nav>
@@ -206,8 +198,11 @@
                                              <thead class="thead-dark">
                                                 <tr>
                                                    <th style="width: 5%">No</th>
-                                                   <th style="width: 15%">User</th>
-                                                   <th >Comment</th>
+                                                   <th style="width: 15%">email</th>
+                                                   <th>FirstName</th>
+                                                   <th>Last Name</th>
+                                                   <th>Payment</th>
+                                                   <th>total</th>
                                                 </tr>
                                              </thead>
                                              <tbody>
@@ -239,7 +234,7 @@
                                                    </td>
                                                 </tr> -->
                                                 <?php
-                                                   include ("../phpConnect/feedback.php");
+                                                   include ("../phpConnect/checkout.php");
                                                 ?>
                                              </tbody>
                                           </table>
@@ -250,7 +245,6 @@
                                     <a href="../freshshop/index.php">
                                        <button class="btn btn-primary btnUser">User interface</button>
                                     </a>
-
                                  </div>
                               </div>
                            </div>

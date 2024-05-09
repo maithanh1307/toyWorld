@@ -112,6 +112,9 @@
                               <a href="login.html">> <span>Login</span></a>
                            </li>
                            <li>
+                              <a href="checkout.php">> <span>Check out</span></a>
+                           </li>
+                           <li>
                               <a href="404_error.html">> <span>404 Error</span></a>
                            </li>
                         </ul>

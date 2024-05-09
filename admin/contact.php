@@ -124,10 +124,17 @@
                            </li>
 
                            <li>
+<<<<<<< Updated upstream
                               <a href="feedbacks.php">> <span>Feedbacks</span></a>
                            </li>
                            <li>
                               <a href="404_error.html">> <span>404 Error</span></a>
+=======
+                              <a href="checkout.php">> <span>Check out</span></a>
+                           </li>
+                           <li>
+                              <a href="404_error.php">> <span>404 Error</span></a>
+>>>>>>> Stashed changes
                            </li>
                         </ul>
                      </li>
