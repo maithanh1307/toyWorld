@@ -30,6 +30,8 @@
       <link rel="stylesheet" href="css/custom.css" />
       <!-- calendar file css -->
       <link rel="stylesheet" href="js/semantic.min.css" />
+      <link rel="shortcut icon" href="../freshshop/images/logo01.png" type="image/x-icon">
+
       <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -48,7 +50,7 @@
                   <br>
                   <h3>PAGE NOT FOUND !</h3>
                   <P>YOU SEEM TO BE TRYING TO FIND HIS WAY HOME</P>
-                  <div class="center"><a class="main_bt" href="index.html">Go To Home Page</a></div>
+                  <div class="center"><a class="main_bt" href="index.php">Go To Home Page</a></div>
                </div>
             </div>
          </div>

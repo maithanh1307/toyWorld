@@ -69,6 +69,8 @@
       <link rel="stylesheet" href="css/perfect-scrollbar.css" />
       <!-- custom css -->
       <link rel="stylesheet" href="css/custom.css" />
+      <link rel="shortcut icon" href="../freshshop/images/logo01.png" type="image/x-icon">
+
       <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -82,13 +84,13 @@
                <div class="sidebar_blog_1">
                   <div class="sidebar-header">
                      <div class="logo_section">
-                        <a href="index.php"><img class="logo_icon img-responsive" src="../freshshop/images/logo.png" alt="#" /></a>
+                     <a href="index.php"><img class="logo_icon img-responsive" src="../freshshop/images/logo01.png" alt="#" /></a>
                      </div>
                   </div>
                   <div class="sidebar_user_info">
                      <div class="icon_setting"></div>
                      <div class="user_profle_side">
-                        <div class="user_img"><img class="img-responsive" src="../freshshop/images/logo.png" alt="#" /></div>
+                     <div class="user_img"><img class="img-responsive" src="../freshshop/images/logo01.png" alt="#" /></div>
                         <div class="user_info">
                            <h6>Miniature World - Admin</h6>
                            <p><span class="online_animation"></span> Online</p>
@@ -126,11 +128,11 @@
                               <a href="products.php">> <span>Products</span></a>
                            </li>
                            <li>
-                              <a href="404_error.html">> <span>404 Error</span></a>
+                              <a href="404_error.php">> <span>404 Error</span></a>
                            </li>
                         </ul>
                      </li>
-                     <li><a href="map.html"><i class="fa fa-map purple_color2"></i> <span>Map</span></a></li>
+                     <li><a href="map.php"><i class="fa fa-map purple_color2"></i> <span>Map</span></a></li>
                   </ul>
                </div>
             </nav>

@@ -56,7 +56,7 @@
     <meta name="author" content="">
 
     <!-- Site Icons -->
-    <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="images/logo01.png" type="image/x-icon">
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 
     <!-- Bootstrap CSS -->
@@ -163,19 +163,19 @@
                 <div class="collapse navbar-collapse" id="navbar-menu">
                     <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
                         <li class="nav-item active"><a class="nav-link" href="index.php">Home</a></li>
-                        <li class="nav-item"><a class="nav-link " href="about.html">About Us</a></li>
+                        <li class="nav-item"><a class="nav-link " href="about.php">About Us</a></li>
                         <li class="dropdown">
                             <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">SHOP</a>
                             <ul class="dropdown-menu">
 								<li><a href="shop.php">Sidebar Shop</a></li>
-								<!-- <li><a href="shop-detail.html">Shop Detail</a></li> -->
+								<!-- <li><a href="shop-detail.php">Shop Detail</a></li> -->
                                 <li><a href="cart.php">Cart</a></li>
                                 <li><a href="checkout.php">Checkout</a></li>
                                 <!-- <li><a href="my-account.html">My Account</a></li> -->
                                 <li><a href="wishlist.php">Wishlist</a></li>
                             </ul>
                         </li>
-                        <!-- <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li> -->
+                        <!-- <li class="nav-item"><a class="nav-link" href="gallery.php">Gallery</a></li> -->
                         <li class="nav-item"><a class="nav-link" href="contact-us.php">Contact Us</a></li>
                     </ul>
                 </div>
@@ -186,7 +186,7 @@
                     <ul>
                         <!-- <li class="search"><a href="#"><i class="fa fa-search"></i></a></li> -->
                         <li class="side-menu">
-							<a href="cart.html">
+							<a href="cart.php">
 								<i class="fa fa-shopping-bag"></i>
 								<span class="badge">3</span>
 								<p>My Cart</p>
