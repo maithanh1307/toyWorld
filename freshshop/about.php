@@ -1,11 +1,3 @@
-<!-- php -->
-<?php
-   require_once ('../phpConnect/connectData.php');
-
-   $sql = "SELECT * from products";
-   $query = mysqli_query($conn, $sql);
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <!-- Basic -->
@@ -100,15 +92,12 @@
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-					 <div class="login-box selectpicker show-tick form-control " >
-						<!-- <select id="basic" class="selectpicker show-tick form-control" data-pollacehder="Sign In">
-							<option value="1">Register Here</option>
-							<option value="2" data-url="signin.html">Sign In</option>
+					<div class="login-box">
+						<select id="basic" class="selectpicker show-tick form-control" data-placeholder="Sign In">
+							<option>Register Here</option>
+							<option>Sign In</option>
 						</select>
-					</div>  -->
-                        <i class="fa-duotone fa-right-to-bracket fa-fade"></i>
-                        <a href="signin.php" class="btn2 btn-primary2 mt-1"><b>Logout</b></a>
-                    </div>
+					</div>
                     <div class="text-slid-box">
                         <div id="offer-box" class="carouselTicker">
                             <ul class="offer-box">
@@ -163,12 +152,12 @@
                 <div class="collapse navbar-collapse" id="navbar-menu">
                     <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
                         <li class="nav-item active"><a class="nav-link" href="index.php">Home</a></li>
-                        <li class="nav-item"><a class="nav-link " href="about.php">About Us</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.php">About Us</a></li>
                         <li class="dropdown">
                             <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">SHOP</a>
                             <ul class="dropdown-menu">
 								<li><a href="shop.php">Sidebar Shop</a></li>
-								<!-- <li><a href="shop-detail.php">Shop Detail</a></li> -->
+								<!-- <li><a href="shop-detail.html">Shop Detail</a></li> -->
                                 <li><a href="cart.php">Cart</a></li>
                                 <li><a href="checkout.php">Checkout</a></li>
                                 <!-- <li><a href="my-account.html">My Account</a></li> -->
@@ -184,9 +173,9 @@
                 <!-- Start Atribute Navigation -->
                 <div class="attr-nav">
                     <ul>
-                        <!-- <li class="search"><a href="#"><i class="fa fa-search"></i></a></li> -->
+                        <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
                         <li class="side-menu">
-							<a href="cart.html">
+							<a href="cart.php">
 								<i class="fa fa-shopping-bag"></i>
 								<span class="badge">3</span>
 								<p>My Cart</p>
@@ -242,14 +231,14 @@
     <!-- End Top Search -->
 
     <!-- Start All Title Box -->
-    <div class="all-title-box">
+    <div class="all-title-box02">
         <div class="container">
-            <div class="row">
+            <div class=" row">
                 <div class="col-lg-12">
-                    <h2>Shop</h2>
+                    <h2>ABOUT US</h2>
                     <ul class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">Shop</li>
+                        <li class="breadcrumb-item"><a href="index.php"><b>HOME</b></a></li>
+                        <li class="breadcrumb-item active"><b>ABOUT US</b></li>
                     </ul>
                 </div>
             </div>
@@ -257,241 +246,238 @@
     </div>
     <!-- End All Title Box -->
 
-    <!-- Start Shop Page  -->
-    <div class="shop-box-inner">
+    <!-- Start About Page  -->
+    <div class="about-box-main">
         <div class="container">
             <div class="row">
-                <div class="col-xl-9 col-lg-9 col-sm-12 col-xs-12 shop-content-right">
-                    <div class="right-product-box">
-                        <div class="product-item-filter row">
-                            <div class="col-6 col-sm-8 text-center text-sm-left">
-                                <!-- <div class="toolbar-sorter-right">
-                                    <span>Sort by </span>
-                                    <select id="basic" class="selectpicker show-tick form-control" data-placeholder="$ USD">
-									<option data-display="Select">Nothing</option>
-									<option value="1">Popularity</option>
-									<option value="2">High Price → High Price</option>
-									<option value="3">Low Price → High Price</option>
-									<option value="4">Best Selling</option>
-								</select>
-                                </div> -->
-                                <p style="font-weight: 900;">Showing all results</p>
-                            </div>
-                            <div class="col-6 col-sm-4 text-center text-sm-right">
-                                <ul class="nav nav-tabs ml-auto">
-                                    <li>
-                                        <a class="nav-link active" href="#grid-view" data-toggle="tab"> <i class="fa fa-th"></i> </a>
-                                    </li>
-                                    <li>
-                                        <a class="nav-link" href="#list-view" data-toggle="tab"> <i class="fa fa-list-ul"></i> </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="product-categorie-box">
-                            <div class="tab-content">
-                                <div role="tabpanel" class="tab-pane fade show active" id="grid-view">
-                                    <div class="row">
-                                        <?php
-                                            include ("../phpConnect/filterProduct.php");
-                                            include ("../phpConnect/searchProduct.php");
-                                            include ("../phpConnect/productShop.php");
-                                        ?>
-                                    </div>
-                                </div>
-                                <div role="tabpanel" class="tab-pane fade" id="list-view">
-                                    <div class="list-view-box">
-                                        <div class="row">
-                                            <?php
-                                                include ("../phpConnect/filterProduct1.php");
-                                                include ("../phpConnect/searchProduct1.php");
-                                                include ("../phpConnect/productShop1.php");
-                                            ?>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+				<div class="col-lg-6">
+                    <div class="banner-frame"> <img class="img-fluid" src="images/aboutus1.1.jpg" alt="" />
                     </div>
                 </div>
-				<div class="col-xl-3 col-lg-3 col-sm-12 col-xs-12 sidebar-shop-left">
-                    <div class="product-categori">
-                        <!-- <div class="search-product">
-                            <form method="post" id="searchData">
-                                <input class="form-control" name="search" id="search" placeholder="Search here..." type="text">
-                                <button type="submit" name="submit" type="submit" onchange="searchInfor()"> <i class="fa fa-search"></i> </button>
-                            </form>
-                        </div>
-                        
-                        <script>
-                            function searchInfor() {
-                                var searchValue = document.getElementById("search").value.toLowerCase(); 
-                                var products = document.querySelectorAll(".toy"); 
+                <div class="box col-lg-6">
+                    <h2 class="noo-sh-title-top colorhover">We are <span>Miniature World</span></h2>
+                        <p style="font-size:16px ; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;"><b>A Haven for Imagination and Joy</b>:
+                                Nestled in the heart of your community, Your Toy Store stands as a beacon of wonder and delight for children of all ages. Stepping through our doors is like entering a realm where imagination reigns supreme and every corner holds the promise of an exciting adventure.
 
-                                products.forEach(function(toy) { 
-                                    var productName = toy.textContent.toLowerCase(); 
+                                <br><b>A Treasure Trove of Toys</b>:
 
-                                    if (productName.includes(searchValue)) { 
-                                        toy.style.display = "block"; 
-                                    } else {
-                                        toy.style.display = "none"; 
-                                    }
-                                });
-                            }
-                        </script> -->
+                                Our shelves overflow with an extraordinary collection of toys, carefully curated to ignite the spark of creativity and foster endless hours of playtime. From cuddly plush animals and whimsical dolls to action figures that inspire heroic deeds and building blocks that unleash architectural dreams, we have something to captivate every child's unique interests.
 
-                        <div class="search-product">
-                            <form method="post" id="searchData">
-                                <input class="form-control" name="search" id="search" placeholder="Search here..." type="text">
-                                <button type="submit"> <i class="fa fa-search"></i> </button>
-                            </form>
-                        </div>
+                                <br><b>A World of Discovery</b>: 
 
-                        <script>
-                            document.getElementById("searchData").addEventListener("submit", function(event) {
-                                event.preventDefault(); 
+                                More than just a place to purchase toys, Your Toy Store is an immersive experience that sparks curiosity and encourages exploration. Our aisles are designed to be interactive havens, where children can freely engage with the toys that capture their imagination. Whether testing out the latest remote-controlled gadgets or assembling intricate puzzles, our store provides a stage for creativity to flourish.
 
-                                var searchValue = document.getElementById("search").value.toLowerCase();
-                                var toys = document.querySelectorAll(".toy"); 
+                                <br><b>Nurturing Growth and Development:</b>
 
-                                toys.forEach(function(toy) { 
-                                    var toyName = toy.textContent.toLowerCase();
+                                We believe that toys have the power to not only entertain but also educate and empower. <span id ="dots">.....</span><span id="more">Our selection is carefully chosen to promote cognitive, social, and emotional development in children of all ages. From educational games that challenge young minds to creative art supplies that nurture artistic expression, we strive to provide toys that enrich and inspire.
 
-                                    if (toyName.includes(searchValue)) {
-                                        toy.style.display = "block"; // hiển thị 
-                                    } else {
-                                        toy.style.display = "none"; //  ẩn 
-                                    }
-                                });
-                            });
-                        </script>
-
-
-                        <!-- <div class="filter-sidebar-left">
-                            <div class="title-left">
-                                <h3>Categories</h3>
-                            </div>
-                            <div class="list-group list-group-collapse list-group-sm list-group-tree" id="list-group-men" data-children=".sub-men">
-                                <div class="list-group-collapse sub-men">
-                                    <a class="list-group-item list-group-item-action" href="#sub-men1" data-toggle="collapse" aria-expanded="true" aria-controls="sub-men1">Fruits & Drinks <small class="text-muted">(100)</small>
-								</a>
-                                    <div class="collapse show" id="sub-men1" data-parent="#list-group-men">
-                                        <div class="list-group">
-                                            <a href="#" class="list-group-item list-group-item-action active">Fruits 1 <small class="text-muted">(50)</small></a>
-                                            <a href="#" class="list-group-item list-group-item-action">Fruits 2 <small class="text-muted">(10)</small></a>
-                                            <a href="#" class="list-group-item list-group-item-action">Fruits 3 <small class="text-muted">(10)</small></a>
-                                            <a href="#" class="list-group-item list-group-item-action">Fruits 4 <small class="text-muted">(10)</small></a>
-                                            <a href="#" class="list-group-item list-group-item-action">Fruits 5 <small class="text-muted">(20)</small></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="list-group-collapse sub-men">
-                                    <a class="list-group-item list-group-item-action" href="#sub-men2" data-toggle="collapse" aria-expanded="false" aria-controls="sub-men2">Vegetables 
-								<small class="text-muted">(50)</small>
-								</a>
-                                    <div class="collapse" id="sub-men2" data-parent="#list-group-men">
-                                        <div class="list-group">
-                                            <a href="#" class="list-group-item list-group-item-action">Vegetables 1 <small class="text-muted">(10)</small></a>
-                                            <a href="#" class="list-group-item list-group-item-action">Vegetables 2 <small class="text-muted">(20)</small></a>
-                                            <a href="#" class="list-group-item list-group-item-action">Vegetables 3 <small class="text-muted">(20)</small></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <a href="#" class="list-group-item list-group-item-action"> Grocery  <small class="text-muted">(150) </small></a>
-                                <a href="#" class="list-group-item list-group-item-action"> Grocery <small class="text-muted">(11)</small></a>
-                                <a href="#" class="list-group-item list-group-item-action"> Grocery <small class="text-muted">(22)</small></a>
-                            </div>
-                        </div> -->
-                        <div class="right-col ">
-                        <form method="post" id="formFilter">
-                                <div class="sidebar border-top6 " name="typeOfToy">
-                                    <h2 style="font-weight: 900;" href="shop1.php">Select Filters<i class="fad fa-heart fa-bounce ml-2" style="color: #f77ab4;"></i></h2>                                </h2>
-                                    <h3>Property Type</h3>
-                                    <div class="filter01">
-                                        <input style="width: 100px; border-radius: 15px; border: none; background-color: #E0DFDF" type="submit" id="propertyType" name="propertyType" value="collective" onchange="getSelectedValue()">
-                                        <p></p><br>
-                                    </div>
-                                    <div class="filter02">
-                                        <input style="width: 100px; border-radius: 15px; border: none; background-color: #E0DFDF" type="submit" id="propertyType" name="propertyType" value="doll" onchange="getSelectedValue()">
-                                        <p></p> <br>
-                                    </div>
-                                    <div class="filter03">
-                                        <input style="width: 100px; border-radius: 15px; border: none; background-color: #E0DFDF" type="submit" id="propertyType" name="propertyType" value="lego" onchange="getSelectedValue()">
-                                        <p></p>
-                                    </div>
-                                    <div class="filter04 mt-4">
-                                        <input style="width: 100px; border-radius: 15px; border: none; background-color: #E0DFDF" type="submit" id="propertyType" name="propertyType" value="vehicle" onchange="getSelectedValue()">
-                                        <p></p>
-                                    </div>
-                                    <div class="filter05 mt-4">
-                                        <input style="width: 100px; border-radius: 15px; border: none; background-color: #E0DFDF" type="submit" id="propertyType" name="propertyType" value="teddy" onchange="getSelectedValue()">
-                                        <p></p>
-                                    </div>
-                                    <div class="filter06 mt-4 mb-2">
-                                        <input style="width: 100px; border-radius: 15px; border: none; background-color: #E0DFDF" type="submit" id="propertyType" name="propertyType" value="robot" onchange="getSelectedValue()">
-                                        <p></p>
-                                    </div>
-                                    <h3>Ages</h3>
-                                    <div class="filter07">
-                                        <input style="width: 140px; border-radius: 15px; border: none; background-color: #E0DFDF" type="submit" id="propertyType" name="propertyType" value="Under 1 year old" onchange="getSelectedValue()">
-                                        <p></p><br>
-                                    </div>
-                                    <div class="filter08">
-                                        <input style="width: 140px; border-radius: 15px; border: none; background-color: #E0DFDF" type="submit" id="propertyType" name="propertyType" value="1 to 3 years old" onchange="getSelectedValue()">
-                                        <p></p><br>
-                                    </div>
-                                    <div class="filter09">
-                                        <input style="width: 140px; border-radius: 15px; border: none; background-color: #E0DFDF" type="submit" id="propertyType" name="propertyType" value="Above 4 years old" onchange="getSelectedValue()">
-                                        <p></p><br>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="filter-price-left mt-3">
-                            <div class="title-left">
-                                <h3>Price</h3>
-                            </div>
-                            <div class="price-box-slider">
-                                <div id="slider-range"></div>
-                                <p>
-                                    <input type="text" id="amount" readonly style="border:0; color:#fbb714; font-weight:bold;">
-                                    <button class="btn hvr-hover bfil" style="font-weight: 800;" type="submit">Filter</button>
-                                </p>
-                            </div>
-                        </div>
-
-                        <!--js-->
-                        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-                        <script>
-                            function getSelectedValue() {
-                                // Lấy ra radio button được chọn
-                                document.getElementById("formFilter").addEventListener("submit", function(event){
-                                    event.preventDefault(); 
-
-                                    var selectElement = document.getElementById("propertyType");
-                                    var searchValue = selectElement.options[selectElement.selectedIndex].value.toLowerCase();
-                                    var toys = document.querySelectorAll(".toy"); 
-
-                                    toys.forEach(function(toy) { 
-                                        var toyName = toy.textContent.toLowerCase();
-
-                                        if (toyName.includes(searchValue)) {
-                                            toy.style.display = "block"; // Hiển thị sản phẩm
-                                        } else {
-                                            toy.style.display = "none"; // Ẩn sản phẩm
-                                        }
-                                    });
-                                });
-                            }
-                        </script>
+                                    <br><b>A Commitment to Safety:</b>
+    
+                                    The safety of our customers is our top priority. We meticulously source our products from reputable manufacturers and adhere to the strictest safety standards. Every toy that enters our store undergoes rigorous inspections to ensure it meets the highest safety requirements.</span>
+                        </p>
+                        <button onclick="myFunction()" id="myBtn" class="Btn01">Read more</button>
+                </div>
+            </div>
+            <div class="row my-5">
+                <div class="col-sm-6 col-lg-4">
+                    <div class="service-block-inner01">
+                        <h3>We are Trusted</h3>
+                        <p>Delivering joy and peace of mind for your little ones: Our store is committed to providing high-quality, safe products that are gentle on your child's health. We ensure clear origins, transparent sourcing, and international safety certifications.
+                            Dedicated consultation, addressing all inquiries: Our experienced and knowledgeable staff is always ready to assist you in choosing the perfect toys that match your child's needs and interests.
+                            Flexible return policy: We offer a flexible 7-day return policy for your peace of mind. </p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="service-block-inner01">
+                        <h3>We are Professional</h3>
+                        <p>Diverse product range to meet every need: We offer a wide variety of toys for children from infants to teenagers, catering to all ages and preferences.
+                            Modern and safe shopping space: Our store features a spacious, well-lit shopping area designed in a modern style, ensuring a safe and enjoyable experience for children.
+                            Attentive customer service: We strive to provide exceptional customer service, ensuring your satisfaction. </p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="service-block-inner01">
+                        <h3>We are Expert</h3>
+                        <p>Always staying ahead of trends: We constantly keep up with the latest trends in children's toys worldwide to bring you modern, high-quality products.
+                            Partnering with reputable brands: We collaborate only with trusted toy brands globally to guarantee product quality.
+                            Organizing fun activities for kids: We regularly host engaging activities for children, fostering their holistic development. </p>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- End Shop Page -->
+
+            <!-- test -->
+        <!-- <div class="row my-4">
+                <div class="col-12">
+                    <h2 class="noo-sh-title">Meet Our Team</h2>
+                </div>
+            
+            <div class="all">    
+                <div class="card1 rgb1">
+                    <div class="card1-image" ></div>
+                    <div class="card1-text">
+                        <span class="date1">4 days ago</span>
+                        <h2>Post one</h2>
+                        <p></p>
+                    </div>
+                </div>
+                <div class="card1 rgb1">
+                    <div class="card1-image card002"></div>
+                    <div class="card1-text card002">
+                    <span class="date">1 week ago</span>
+                    <h2>Post two</h2>
+                    <p></p>
+                    </div>
+                </div>
+                <div class="card1 rgb1">
+                    <div class="card1-image card003"></div>
+                    <div class="card1-text card003">
+                        <span class="date1">3 week ago</span>
+                        <h2>Post Three</h2>
+                        <p></p>
+                    </div>
+                </div>
+                <div class="card1 rgb1">
+                    <div class="card1-image card003"></div>
+                    <div class="card1-text card003">
+                    <span class="date1">3 week ago</span>
+                    <h2>Post Three</h2>
+                    <p>Repudiandae repudiandae de corrupti amet temporibus omnis si provident illum maxime. Ducimus, lorem ipsum dolor adipisicing elit</p>
+                    </div>
+                </div>
+                <div class="card1 rgb1">
+                    <div class="card1-image card003"></div>
+                    <div class="card1-text card003">
+                    <span class="date1">3 week ago</span>
+                    <h2>Post Three</h2>
+                    <p>Repudiandae repudiandae de corrupti amet temporibus omnis si provident illum maxime. Ducimus, lorem ipsum dolor adipisicing elit</p>
+                    </div>
+                </div> -->
+                <!-- <div class="slides-navigation">
+                    <a href="#" class="next"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                    <a href="#" class="prev"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+                </div> 
+            </div>
+        </div> -->
+              <!-- end -->
+
+
+            <div class="products-box">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="title-all text-center">
+                                <h1 class="headcomment1">MEET OUR TEAM </h1>
+                                <!-- <p style="font-weight: 900;">Some popular toys for all ages have good reviews.</p> -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="row">
+                        <div class="col-lg-12">
+                            <div class="special-menu text-center">
+                                <div class="button-group filter-button-group">
+                                    <button class="active" data-filter="*">All</button>
+                                    <button data-filter=".top-featured">Top featured</button>
+                                    <button data-filter=".best-seller">Best seller</button> 
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+        
+                    <div class="row specialD-list">
+                        <div class="col-lg-3 col-md-6 special-grid best-seller">
+                            <div class="products-single fix">
+                                <div class="box-img-hover">
+                                    <div class="type-lb">
+                                        <!-- <p class="sale">Sale</p> -->
+                                    </div>
+                                    <img src="images/person1.jpg" class="img-fluid1" alt="Image">
+                                    <div class="mask-icon01">
+                                        <ul>
+                                            <li><a href="https://www.instagram.com/olesia_learns/" data-toggle="tooltip" data-placement="right" title="Instagram"><i class="fa-brands fa-instagram fa-beat" style="color: #1d6d31;"></i></a></li>
+                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title=""><i class="fa-regular fa-heart fa-beat-fade" style="color: #27511f;"></i></a></li>
+                                        </ul>
+                                        <!-- <a class="cart" href="#">Add to Cart</a> -->
+                                    </div>
+                                </div>
+                                <div class="why-text">
+                                    <h1>Olesia</h1>
+                                    <h6>Digital creator</h6>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div class="col-lg-3 col-md-6 special-grid top-featured">
+                            <div class="products-single fix">
+                                <div class="box-img-hover">
+                                    <div class="type-lb">
+                                        <!-- <p class="new">New</p> -->
+                                    </div>
+                                    <img src="images/person2.jpg" class="img-fluid1" alt="Image">
+                                    <div class="mask-icon01">
+                                        <ul>
+                                            <li><a href="https://www.instagram.com/tom.developer/" data-toggle="tooltip" data-placement="right" title="Instagram"><i class="fa-brands fa-instagram fa-beat" style="color: #1d6d31;"></i></a></li>
+                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title=""><i class="fa-regular fa-heart fa-beat-fade" style="color: #27511f;"></i></a></li>
+                                        </ul>
+                                        <!-- <a class="cart" href="#">Add to Cart</a> -->
+                                    </div>
+                                </div>
+                                <div class="why-text">
+                                    <h1>Tom</h1>
+                                    <h6>Digital creator</h6>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div class="col-lg-3 col-md-6 special-grid top-featured">
+                            <div class="products-single fix">
+                                <div class="box-img-hover">
+                                    <div class="type-lb">
+                                        <!-- <p class="sale">Sale</p> -->
+                                    </div>
+                                    <img src="images/person3.jpg" class="img-fluid1" alt="Image">
+                                    <div class="mask-icon01">
+                                        <ul>
+                                            <li><a href="https://www.instagram.com/coding_elf/" data-toggle="tooltip" data-placement="right" title="Instagram"><i class="fa-brands fa-instagram fa-beat" style="color: #1d6d31;"></i></a></li>
+                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title=""><i class="fa-regular fa-heart fa-beat-fade" style="color: #27511f;"></i></a></li>
+                                        </ul>
+                                        <!-- <a class="cart" href="#">Add to Cart</a> -->
+                                    </div>
+                                </div>
+                                <div class="why-text">
+                                    <h1>Olga </h1>
+                                    <h6> Software Developer ✿</h6>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div class="col-lg-3 col-md-6 special-grid best-seller">
+                            <div class="products-single fix">
+                                <div class="box-img-hover">
+                                    <div class="type-lb">
+                                        <!-- <p class="sale">Sale</p> -->
+                                    </div>
+                                    <img src="images/person4.jpg" class="img-fluid1" alt="Image">
+                                    <div class="mask-icon01">
+                                        <ul>
+                                            <li><a href="https://www.instagram.com/codewiththainam/" data-toggle="tooltip" data-placement="right" title="Instagram"><i class="fa-brands fa-instagram fa-beat" style="color: #1d6d31;"></i></a></li>
+                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title=""><i class="fa-regular fa-heart fa-beat-fade" style="color: #27511f;"></i></a></li>
+                                        </ul>
+                                        <!-- <a class="cart" href="#">Add to Cart</a> -->
+                                    </div>
+                                </div>
+                                <div class="why-text">
+                                    <h1>Thai Nam</h1>
+                                    <h6>Mobile Developer</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> 
+    <script type="text/javascript"src= "js/script.js"></script>
+    <!-- End About Page -->
 
     <!-- Start Instagram Feed  -->
     <!-- <div class="instagram-box">
@@ -626,7 +612,7 @@
                     <div class="col-lg-4 col-md-12 col-sm-12">
                         <div class="footer-widget">
                             <h4>About Miniature World</h4>
-                            <p>Miniature World is a whimsical wonderland where imagination takes flight, 
+                            <p>Toy's World is a whimsical wonderland where imagination takes flight, 
                                 offering a treasure trove of fun-filled adventures for children of all ages. 
                                 Dive into a realm where teddy bears have tea parties, action figures battle epic foes, 
                                 and dolls come to life in enchanting tales of make-believe. Welcome to a place where 
@@ -666,16 +652,16 @@
             </div>
         </div>
     </footer>
-    <!-- End Footer  -->
+        <!-- End Footer  -->
 
     <!-- Start copyright  -->
     <div class="footer-copyright">
         <p class="footer-company">All Rights Reserved. &copy; 2018 <a href="#">ThewayShop</a> Design By :
-            <a href="https://html.design/">html design</a></p>
+            <a href="https://php.design/">html design</a></p>
     </div>
     <!-- End copyright  -->
 
-    <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
+    <a href="#" id="back-to-top" title="Back to top" style="display: none;"><i class="fa-solid fa-circle-up fa-shake"></i></a>
 
     <!-- ALL JS FILES -->
     <script src="js/jquery-3.2.1.min.js"></script>
@@ -690,8 +676,6 @@
     <script src="js/isotope.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/baguetteBox.min.js"></script>
-    <script src="js/jquery-ui.js"></script>
-    <script src="js/jquery.nicescroll.min.js"></script>
     <script src="js/form-validator.min.js"></script>
     <script src="js/contact-form-script.js"></script>
     <script src="js/custom.js"></script>

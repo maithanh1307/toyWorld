@@ -68,6 +68,8 @@ $query = mysqli_query($conn, $sql);
       <link rel="stylesheet" href="css/perfect-scrollbar.css" />
       <!-- custom css -->
       <link rel="stylesheet" href="css/custom.css" />
+      <link rel="shortcut icon" href="../freshshop/images/logo01.png" type="image/x-icon">
+
       <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -81,7 +83,7 @@ $query = mysqli_query($conn, $sql);
                <div class="sidebar_blog_1">
                   <div class="sidebar-header">
                      <div class="logo_section">
-                        <a href="index.html"><img class="logo_icon img-responsive" src="../freshshop/images/logo.png" alt="#" /></a>
+                        <a href="index.php"><img class="logo_icon img-responsive" src="../freshshop/images/logo.png" alt="#" /></a>
                      </div>
                   </div>
                   <div class="sidebar_user_info">
@@ -115,22 +117,22 @@ $query = mysqli_query($conn, $sql);
                         <ul class="collapse list-unstyled" id="element">
                            <li><a href="general_elements.html">> <span>General Elements</span></a></li>
                            <li><a href="media_gallery.html">> <span>Media Gallery</span></a></li>
-                           <li><a href="icons.html">> <span>Icons</span></a></li>
+                           <li><a href="icons.php">> <span>Icons</span></a></li>
                            <li><a href="invoice.html">> <span>Invoice</span></a></li>
                         </ul>
                      </li>
-                     <li><a href="tables.html"><i class="fa fa-table purple_color2"></i> <span>Tables</span></a></li>
+                     <li><a href="tables.php"><i class="fa fa-table purple_color2"></i> <span>Tables</span></a></li>
                      <li>
                         <a href="#apps" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-object-group blue2_color"></i> <span>Apps</span></a>
                         <ul class="collapse list-unstyled" id="apps">
                            <li><a href="email.html">> <span>Email</span></a></li>
-                           <li><a href="calendar.html">> <span>Calendar</span></a></li>
+                           <li><a href="calendar.php">> <span>Calendar</span></a></li>
                            <li><a href="media_gallery.html">> <span>Media Gallery</span></a></li>
                         </ul>
                      </li>
                      <li><a href="price.html"><i class="fa fa-briefcase blue1_color"></i> <span>Pricing Tables</span></a></li>
                      <li>
-                        <a href="contact.html">
+                        <a href="contact.php">
                         <i class="fa fa-paper-plane red_color"></i> <span>Users</span></a>
                      </li>
                      <li class="active">
@@ -140,21 +142,21 @@ $query = mysqli_query($conn, $sql);
                               <a href="profile.html">> <span>Profile</span></a>
                            </li>
                            <li>
-                              <a href="products.html">> <span>Products</span></a>
+                              <a href="products.php">> <span>Products</span></a>
                            </li>
                            <li>
                               <a href="login.html">> <span>Login</span></a>
                            </li>
                            <li>
-                              <a href="404_error.html">> <span>404 Error</span></a>
+                              <a href="404_error.php">> <span>404 Error</span></a>
                            </li>
                            <li>
                               <a href="checkout.php">> <span>Check out</span></a>
                            </li>
                         </ul>
                      </li>
-                     <li><a href="map.html"><i class="fa fa-map purple_color2"></i> <span>Map</span></a></li>
-                     <li><a href="charts.html"><i class="fa fa-bar-chart-o green_color"></i> <span>Charts</span></a></li>
+                     <li><a href="map.php"><i class="fa fa-map purple_color2"></i> <span>Map</span></a></li>
+                     <li><a href="charts.php"><i class="fa fa-bar-chart-o green_color"></i> <span>Charts</span></a></li>
                      <li><a href="settings.html"><i class="fa fa-cog yellow_color"></i> <span>Settings</span></a></li>
                   </ul>
                </div>
@@ -178,13 +180,10 @@ $query = mysqli_query($conn, $sql);
                                  <li><a href="#"><i class="fa fa-envelope-o black_color"></i><span class="badge">3</span></a></li>
                               </ul>
                               <ul class="user_profile_dd">
-                                 <li>
-                                    <a class="dropdown-toggle" data-toggle="dropdown"><img class="img-responsive rounded-circle" src="../freshshop/images/logo.png" alt="#" /><span class="name_user">Miniature World - Admin</span></a>
+                              <li>
+                                    <a class="dropdown-toggle" data-toggle="dropdown"><img class="img-responsive rounded-circle" src="../freshshop/images/logo01.png" alt="#" /><span class="name_user">Miniature World - Admin</span></a>
                                     <div class="dropdown-menu">
-                                       <a class="dropdown-item" href="profile.html">My Profile</a>
-                                       <a class="dropdown-item" href="settings.html">Settings</a>
-                                       <a class="dropdown-item" href="help.html">Help</a>
-                                       <a class="dropdown-item" href="index.html">Home</a>
+                                       <a class="dropdown-item" href="index.php">Home</a>
                                        <a class="dropdown-item" href="#"><span>Log Out</span> <i class="fa fa-sign-out"></i></a>
                                     </div>
                                  </li>

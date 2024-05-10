@@ -1,6 +1,8 @@
 
 <!DOCTYPE html>
 <html lang="en">
+<link rel="shortcut icon" href="images/logo01.png" type="image/x-icon">
+
   <head>
     <title>Miniature World</title>
     <meta charset="utf-8" />
