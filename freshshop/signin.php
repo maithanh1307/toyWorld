@@ -16,14 +16,20 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
     $password = $_POST['password'];
 
     $login_result = login($email, $password);
-    if ($login_result === false) {
+    if ($login_result === 'admin') {
+        // If login as admin, redirect to admin page
+        header('Location: ../admin/index.php');
+        exit();
+    } elseif ($login_result === false) {
         $error = 'Wrong email or password';
     } else {
+        // For regular user login
         $_SESSION['email'] = $email;
         header('Location: index.php');
         exit();
     }
 }
+
 ?>
 <!DOCTYPE html>
 <!-- Coding By CodingNepal - www.codingnepalweb.com -->
