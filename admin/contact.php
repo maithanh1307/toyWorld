@@ -108,6 +108,7 @@
                         </ul>
                      </li>
                      <li><a href="tables.php"><i class="fa fa-table purple_color2"></i> <span>Tables</span></a></li>
+                     <li><a href="feedback.php"><i class="fa fa-comment yellow_color"></i> <span>Feedback</span></a></li>
                      <li>
                         <a href="#apps" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-object-group blue2_color"></i> <span>Apps</span></a>
                         <ul class="collapse list-unstyled" id="apps">               
@@ -126,6 +127,10 @@
                            </li>
                            <li>
                               <a href="404_error.php">> <span>404 Error</span></a>
+                           </li>
+                           <li>
+                              <a href="checkout.php">> <span>Check out</span></a>
+
                            </li>
                         </ul>
                      </li>
