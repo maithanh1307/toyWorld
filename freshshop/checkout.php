@@ -21,7 +21,7 @@ if(isset($_POST['place_order_btn'])) {
     $total = $_POST['total'];
 
     // Tạo câu lệnh INSERT để thêm dữ liệu vào bảng orders
-    $sql = "INSERT INTO orders (email, firstName, lastName, payment, total) VALUES ('$email', '$firstName', '$lastName', '$payment', '$total')";
+    $sql = "INSERT INTO orders (email, firstName, lastName, payment, total) VALUES ('$email', '$firstName', '$lastName', 'COD', '$total')";
 
     // Thực thi câu lệnh SQL
     if(mysqli_query($conn, $sql)){
