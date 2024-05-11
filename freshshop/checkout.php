@@ -25,7 +25,8 @@ if(isset($_POST['place_order_btn'])) {
 
     // Thực thi câu lệnh SQL
     if(mysqli_query($conn, $sql)){
-        //
+        header("Location: payment.php"); // Chuyển hướng đến trang payment.php
+        exit(); // Dừng kịp thời để chuyển hướng hoạt động
     } else{
         echo "ERROR: Could not able to execute $sql. " . mysqli_error($conn);
     }
@@ -475,6 +476,7 @@ if(isset($_POST['place_order_btn'])) {
         <div class="form-step01">
             <div class="wrapper01">
                  <!-- <button class="feedback_btn01 send_btn01">Send Your Feedback</button> -->
+
                 <div class="btns-group01">
                     <a href="#" class="btn001 btn-prev01 col-lg-12 mb-auto mr-auto">Previous</a>
                     <a href="payment.php" class="btn0001 btn-next01 col-lg-12 mb-3">Place order</a>
@@ -522,19 +524,19 @@ if(isset($_POST['place_order_btn'])) {
                 </div>
             </div>
         </div>
-</form>
+
 <script type="text/javascript " src="js/feedback.js">
 
 
 </script>
             <!-- <div class="btns-group01">
                 <a href="#" class="btn001 btn-prev01 col-lg-12 mb-auto mr-auto">Previous</a>
-                <a href="payment.php" class="btn0001 btn-next01 col-lg-12 mb-3">Place order</a>
+                <button class="btn0001 btn-next01 col-lg-12 mb-3" name="place_order_btn">  Place order</a>
            
             </div> -->
         </div>
     <script src="js/main.js" defer></script>
-
+</form>
 
 
     <!-- Start Footer  -->
