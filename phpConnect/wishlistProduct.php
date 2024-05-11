@@ -23,7 +23,7 @@
                     </td>
                     <td class="quantity-box">In Stock</td>
                     <td class="add-pr">
-                        <a class="btn hvr-hover" href="#">Add to Cart</a>
+                        <a class="btn hvr-hover" href="../phpConnect/addToCartWish.php?productID='.$row['productID'].'">Add to Cart</a>
                     </td>
                     <td class="remove-pr">
                         <a href="../phpConnect/deleteWishlist.php?productID='.$row['productID'].'">

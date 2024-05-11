@@ -359,7 +359,7 @@ if (isset($_POST["update_cart_btn"])) {
         <tr>
             <td colspan="7" class="text-right">
             <div class="update-box">
-            <button type="submit" class="btn btn-success" name="update_cart_btn">Update Cart</button>
+            <button type="submit" class="btn btn-success btnUpdate" name="update_cart_btn">Update Cart</button>
             </div>
                 
             </td>

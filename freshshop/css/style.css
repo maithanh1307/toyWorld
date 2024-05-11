@@ -3691,6 +3691,7 @@ box-shadow: none;
 
    :root {
     --primary-color: #EDD9B9;
+    color: #000;
   }
   
   *,
@@ -3861,6 +3862,19 @@ box-shadow: none;
   .btn001:hover {
     box-shadow: 0 0 0 2px #fff, 0 0 0 3px var(--primary-color);
   }
+
+  .btnUpdate {
+    border-radius: 10px;
+    background-color: #C2E9C8;
+    font-weight: 700;
+    color: #000;
+  }
+
+  .btnUpdate:hover {
+    background-color: #000;
+    color: #C2E9C8;
+  }
+
 
 
 
