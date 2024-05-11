@@ -28,8 +28,10 @@
         <div class="col-md-6 mx-auto p-3 border payment" style="border-radius: 15px; margin-top: 145px;">
             <h2 class="headerPay">Payment successful</h4>
             <p>We would like to extend our sincere thanks to you for successfully completing the payment for your recent order with</p>
-            <p>Click <a href="index.php" style="color: #f86793;">here</a> to return to the home page and continue shopping, or the website will automatically redirect in  <span id="counter" class="text-danger">10</span> second.</p>
-            <a href="signin.php"><button class="btn btn-success btnPayment px-5 mt-3">Sign in</button></a>
+            <p>Click <a href="index.php" style="color: #f86793;">here</a> to return to the home page and continue shopping, or the website will automatically redirect in  <span id="counter" class="text-danger">20</span> second.</p>
+            <a href="signin.php"><button class="btn btn-success btnPayment px-5 mt-3 mr-3">Sign in</button></a>
+            <a href="feedback.php"><button class="btn btn-success btnPayment px-5 mt-3 mr-2">Feed back</button></a>
+            <a href="bill.php"><button class="btn btn-success btnPayment px-5 mt-3">Print Bill</button></a>
         </div>
         
       </div>
@@ -38,7 +40,7 @@
       window.addEventListener('load', startTheCountdown)
 
       function startTheCountdown(){
-        let countdown= 10;
+        let countdown= 20;
         let counter= document.getElementById('counter');
         let id= setInterval(() => {
           countdown--;

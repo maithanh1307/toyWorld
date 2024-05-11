@@ -411,7 +411,7 @@ if(isset($_POST['place_order_btn'])) {
                 <a href="#" class="btn001 btn-prev01 col-lg-12 mb-auto mr-auto">Previous</a>
                 <a href="#" class="btn0001 btn-next01 col-lg-12 mb-3">Next</a>
             </div>
-    </div>
+        </div>
         
         <div class="form-step01 ">
             <!-- <div class="input-group01">
@@ -476,6 +476,12 @@ if(isset($_POST['place_order_btn'])) {
         <div class="form-step01">
             <div class="wrapper01">
                  <!-- <button class="feedback_btn01 send_btn01">Send Your Feedback</button> -->
+
+                <div class="btns-group01">
+                    <a href="#" class="btn001 btn-prev01 col-lg-12 mb-auto mr-auto">Previous</a>
+                    <a href="payment.php" class="btn0001 btn-next01 col-lg-12 mb-3">Place order</a>
+           
+                </div>
                 <div class="modal_wrapper01">
                     <div class="shadow01 close_btn01"></div>
                     <div class="modal01">
@@ -523,11 +529,11 @@ if(isset($_POST['place_order_btn'])) {
 
 
 </script>
-            <div class="btns-group01">
+            <!-- <div class="btns-group01">
                 <a href="#" class="btn001 btn-prev01 col-lg-12 mb-auto mr-auto">Previous</a>
                 <button class="btn0001 btn-next01 col-lg-12 mb-3" name="place_order_btn">  Place order</a>
            
-            </div>
+            </div> -->
         </div>
     <script src="js/main.js" defer></script>
 </form>
