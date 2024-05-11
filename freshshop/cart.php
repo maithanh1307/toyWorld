@@ -236,7 +236,6 @@ if (isset($_POST["update_cart_btn"])) {
                         <li class="side-menu">
 							<a href="cart.php">
 								<i class="fa fa-shopping-bag"></i>
-								<span class="badge">3</span>
 								<p>My Cart</p>
 							</a>
 						</li>
@@ -249,25 +248,9 @@ if (isset($_POST["update_cart_btn"])) {
                 <a href="#" class="close-side"><i class="fa fa-times"></i></a>
                 <li class="cart-box">
                     <ul class="cart-list">
-                        <li>
-                            <a href="#" class="photo"><img src="images/img-pro-01.jpg" class="cart-thumb" alt="" /></a>
-                            <h6><a href="#">Delica omtantur </a></h6>
-                            <p>1x - <span class="price">$80.00</span></p>
-                        </li>
-                        <li>
-                            <a href="#" class="photo"><img src="images/img-pro-02.jpg" class="cart-thumb" alt="" /></a>
-                            <h6><a href="#">Omnes ocurreret</a></h6>
-                            <p>1x - <span class="price">$60.00</span></p>
-                        </li>
-                        <li>
-                            <a href="#" class="photo"><img src="images/img-pro-03.jpg" class="cart-thumb" alt="" /></a>
-                            <h6><a href="#">Agam facilisis</a></h6>
-                            <p>1x - <span class="price">$40.00</span></p>
-                        </li>
-                        <li class="total">
-                            <a href="#" class="btn btn-default hvr-hover btn-cart">VIEW CART</a>
-                            <span class="float-right"><strong>Total</strong>: $180.00</span>
-                        </li>
+                        <?php
+                            include ("../phpConnect/cartIndex.php");
+                        ?>
                     </ul>
                 </li>
             </div>
@@ -334,7 +317,7 @@ if (isset($_POST["update_cart_btn"])) {
                 ?>
                 <tr>
                     <td class="thumbnail-img">
-                        <img src="../admin/images/layout_img/<?php echo $row['imageProducts']; ?>" class="img-fluid1" alt="Image">
+                        <img src="../admin/images/layout_img/<?php echo $row['imageProducts']; ?>" class="img-fluid2" alt="Image">
                     </td>
                     <td class="name-pr">
                         <?php echo $row['toyName']; ?>

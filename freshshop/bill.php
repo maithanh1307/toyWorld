@@ -8,10 +8,10 @@ $pdf->AddPage();
 
 // Font chữ và cỡ chữ cho tiêu đề
 $pdf->SetFont('Arial', 'B', 16);
-$pdf->Image('../freshshop/images/logo.png', 10, 10, 30); // Thay đổi path và kích thước nếu cần
+$pdf->Image('../freshshop/images/logo01.png', 10, 10, 30); // Thay đổi path và kích thước nếu cần
 // Header: Toy World
 $pdf->SetFont('Arial', 'B', 16);
-$pdf->Cell(0, 10, 'Toyworld', 0, 1, 'C'); // Thay đổi tên công ty
+$pdf->Cell(0, 10, 'Miniature World', 0, 1, 'C'); // Thay đổi tên công ty
 
 // Thêm địa chỉ công ty và mã số thuế
 $pdf->SetFont('Arial', '', 12);

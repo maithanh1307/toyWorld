@@ -162,7 +162,7 @@ if(isset($_POST['place_order_btn'])) {
                         aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
                         <i class="fa fa-bars"></i>
                     </button>
-                    <a class="navbar-brand" href="index.html"><img src="images/logo.png" class="logo" alt="logo"></a>
+                    <a class="navbar-brand" href="index.php"><img src="images/logo01.png" class="logo" alt="logo"><b>Miniature World</b></a>
                 </div>
                 <!-- End Header Navigation -->
 
@@ -196,7 +196,6 @@ if(isset($_POST['place_order_btn'])) {
 
                         <a href="cart.php">
                           <i class="fa fa-shopping-bag"></i>
-                          <span class="badge">3</span>
                           <p>My Cart</p>
                         </a>
                       </li>
@@ -211,25 +210,9 @@ if(isset($_POST['place_order_btn'])) {
                 <a href="#" class="close-side"><i class="fa fa-times"></i></a>
                 <li class="cart-box">
                     <ul class="cart-list">
-                        <li>
-                            <a href="#" class="photo"><img src="images/img-pro-01.jpg" class="cart-thumb" alt="" /></a>
-                            <h6><a href="#">Delica omtantur </a></h6>
-                            <p>1x - <span class="price">$80.00</span></p>
-                        </li>
-                        <li>
-                            <a href="#" class="photo"><img src="images/img-pro-02.jpg" class="cart-thumb" alt="" /></a>
-                            <h6><a href="#">Omnes ocurreret</a></h6>
-                            <p>1x - <span class="price">$60.00</span></p>
-                        </li>
-                        <li>
-                            <a href="#" class="photo"><img src="images/img-pro-03.jpg" class="cart-thumb" alt="" /></a>
-                            <h6><a href="#">Agam facilisis</a></h6>
-                            <p>1x - <span class="price">$40.00</span></p>
-                        </li>
-                        <li class="total">
-                            <a href="#" class="btn btn-default hvr-hover btn-cart">VIEW CART</a>
-                            <span class="float-right"><strong>Total</strong>: $180.00</span>
-                        </li>
+                        <?php
+                            include ("../phpConnect/cartIndex.php");
+                        ?>
                     </ul>
                 </li>
             </div>
@@ -270,7 +253,7 @@ if(isset($_POST['place_order_btn'])) {
 
 
     
-        <h1 class="text-center01">Checkout Form</h1>
+        <h1 class="text-center01 mt-3"><b>Checkout Form</b></h1>
         <!-- Progress bar -->
         <div class="progressbar01">
             <div class="progress01" id="progress01"></div>
@@ -411,7 +394,7 @@ if(isset($_POST['place_order_btn'])) {
                 <a href="#" class="btn001 btn-prev01 col-lg-12 mb-auto mr-auto">Previous</a>
                 <a href="#" class="btn0001 btn-next01 col-lg-12 mb-3">Next</a>
             </div>
-        </div>
+    </div>
         
         <div class="form-step01 ">
             <!-- <div class="input-group01">
@@ -476,12 +459,6 @@ if(isset($_POST['place_order_btn'])) {
         <div class="form-step01">
             <div class="wrapper01">
                  <!-- <button class="feedback_btn01 send_btn01">Send Your Feedback</button> -->
-
-                <div class="btns-group01">
-                    <a href="#" class="btn001 btn-prev01 col-lg-12 mb-auto mr-auto">Previous</a>
-                    <a href="payment.php" class="btn0001 btn-next01 col-lg-12 mb-3">Place order</a>
-           
-                </div>
                 <div class="modal_wrapper01">
                     <div class="shadow01 close_btn01"></div>
                     <div class="modal01">
@@ -529,11 +506,11 @@ if(isset($_POST['place_order_btn'])) {
 
 
 </script>
-            <!-- <div class="btns-group01">
+            <div class="btns-group01">
                 <a href="#" class="btn001 btn-prev01 col-lg-12 mb-auto mr-auto">Previous</a>
                 <button class="btn0001 btn-next01 col-lg-12 mb-3" name="place_order_btn">  Place order</a>
            
-            </div> -->
+            </div>
         </div>
     <script src="js/main.js" defer></script>
 </form>
@@ -557,7 +534,7 @@ if(isset($_POST['place_order_btn'])) {
                     <!-- <div class="col-lg-4 col-md-12 col-sm-12">
 						<div class="footer-top-box">
 							<h3>Newsletter</h3>
-								<div class="form-group">
+								<div class="form-group" sdsdsdsdsdsđssd>
 									<input class="" type="email" name="Email" placeholder="Email Address*" />
 									<i class="fa fa-envelope"></i>
 								</div>
@@ -638,7 +615,7 @@ if(isset($_POST['place_order_btn'])) {
     </div>
     <!-- End copyright  -->
 
-    <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
+    <a href="#" id="back-to-top" title="Back to top" style="display: none;"><i class="fa-solid fa-circle-up fa-shake"></i></a>
 
     <!-- ALL JS FILES -->
     <script src="https://kit.fontawesome.com/4a0046fff5.js" crossorigin="anonymous"></script>

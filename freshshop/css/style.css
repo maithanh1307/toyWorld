@@ -3529,8 +3529,9 @@ background:  #dfefc6;
 transition-property: color;
 -webkit-transition-duration: 0.3s;
 transition-duration: 0.3s;
-border-radius: 5px; 
+border-radius: 50px; 
 box-shadow: none;
+
 }
 .colorhover:hover{
     color:#66FF99;
@@ -3689,7 +3690,7 @@ box-shadow: none;
 
 
    :root {
-    --primary-color: rgb(11, 78, 179);
+    --primary-color: #EDD9B9;
   }
   
   *,

@@ -441,6 +441,43 @@ $query = mysqli_query($conn, $sql);
                               </div>
                            </div>
                         </div>
+                        <div class="container-fluid col-md-6 midde_cont">
+                           
+                           <!-- row -->
+                           <div class="row">
+                              <!-- invoice section -->
+                              <div class="col-md-12">
+                                 <div class="white_shd full margin_bottom_30">
+                                    
+                                    <div class="full padding_infor_info">
+                                       <div class="invoice_inner">
+                                          <div class="row">
+                                             <div class="col-md-12">
+                                                <div class="white_shd full margin_bottom_30">
+                                                   <div class="full graph_head">
+                                                      <div class="heading1 margin_0">
+                                                         <h2>Calendar</h2>
+                                                      </div>
+                                                   </div>
+                                                   <div class="full progress_bar_inner">
+                                                      <div class="row">
+                                                         <div class="col-md-12">
+                                                            <div class="full">
+                                                               <div class="ui calendar" id="example14"></div>
+                                                            </div>
+                                                         </div>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                     <!-- row -->
+                  </div>
                         <!-- end progress bar -->
                      </div>
                      <!-- <div class="row column4 graph">
@@ -552,8 +589,12 @@ $query = mysqli_query($conn, $sql);
       <script>
          var ps = new PerfectScrollbar('#sidebar');
       </script>
+      <!-- fancy box js -->
+      <script src="js/jquery-3.3.1.min.js"></script>
+      <script src="js/jquery.fancybox.min.js"></script>
       <!-- custom js -->
       <script src="js/custom.js"></script>
-      <script src="js/chart_custom_style1.js"></script>
+      <!-- calendar file css -->    
+      <script src="js/semantic.min.js"></script>
    </body>
 </html>

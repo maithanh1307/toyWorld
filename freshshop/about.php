@@ -92,12 +92,15 @@
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-					<div class="login-box">
-						<select id="basic" class="selectpicker show-tick form-control" data-placeholder="Sign In">
-							<option>Register Here</option>
-							<option>Sign In</option>
+                <div class="login-box selectpicker show-tick form-control " >
+						<!-- <select id="basic" class="selectpicker show-tick form-control" data-pollacehder="Sign In">
+							<option value="1">Register Here</option>
+							<option value="2" data-url="signin.html">Sign In</option>
 						</select>
-					</div>
+					</div>  -->
+                        <i class="fa-duotone fa-right-to-bracket fa-fade"></i>
+                        <a href="signin.php" class="btn2 btn-primary2 mt-1"><b>Logout</b></a>
+                    </div>
                     <div class="text-slid-box">
                         <div id="offer-box" class="carouselTicker">
                             <ul class="offer-box">
@@ -177,7 +180,6 @@
                         <li class="side-menu">
 							<a href="cart.php">
 								<i class="fa fa-shopping-bag"></i>
-								<span class="badge">3</span>
 								<p>My Cart</p>
 							</a>
 						</li>
@@ -190,25 +192,9 @@
                 <a href="#" class="close-side"><i class="fa fa-times"></i></a>
                 <li class="cart-box">
                     <ul class="cart-list">
-                        <li>
-                            <a href="#" class="photo"><img src="images/img-pro-01.jpg" class="cart-thumb" alt="" /></a>
-                            <h6><a href="#">Delica omtantur </a></h6>
-                            <p>1x - <span class="price">$80.00</span></p>
-                        </li>
-                        <li>
-                            <a href="#" class="photo"><img src="images/img-pro-02.jpg" class="cart-thumb" alt="" /></a>
-                            <h6><a href="#">Omnes ocurreret</a></h6>
-                            <p>1x - <span class="price">$60.00</span></p>
-                        </li>
-                        <li>
-                            <a href="#" class="photo"><img src="images/img-pro-03.jpg" class="cart-thumb" alt="" /></a>
-                            <h6><a href="#">Agam facilisis</a></h6>
-                            <p>1x - <span class="price">$40.00</span></p>
-                        </li>
-                        <li class="total">
-                            <a href="#" class="btn btn-default hvr-hover btn-cart">VIEW CART</a>
-                            <span class="float-right"><strong>Total</strong>: $180.00</span>
-                        </li>
+                        <?php
+                            include ("../phpConnect/cartIndex.php");
+                        ?>
                     </ul>
                 </li>
             </div>
@@ -275,7 +261,7 @@
     
                                     The safety of our customers is our top priority. We meticulously source our products from reputable manufacturers and adhere to the strictest safety standards. Every toy that enters our store undergoes rigorous inspections to ensure it meets the highest safety requirements.</span>
                         </p>
-                        <button onclick="myFunction()" id="myBtn" class="Btn01">Read more</button>
+                        <button style="padding: 10px 3px; boder-radius: 50px;" onclick="myFunction()" id="myBtn" class="Btn01">Read more</button>
                 </div>
             </div>
             <div class="row my-5">

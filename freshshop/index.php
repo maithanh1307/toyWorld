@@ -114,7 +114,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-					 <div class="login-box selectpicker show-tick form-control " >
+					<div class="login-box selectpicker show-tick form-control " >
 						<!-- <select id="basic" class="selectpicker show-tick form-control" data-pollacehder="Sign In">
 							<option value="1">Register Here</option>
 							<option value="2" data-url="signin.html">Sign In</option>
@@ -202,7 +202,7 @@
                         <li class="side-menu">
 							<a href="cart.php">
 								<i class="fa fa-shopping-bag"></i>
-								<span class="badge">3</span>
+								
 								<p>My Cart</p>
 							</a>
 						</li>
@@ -215,25 +215,9 @@
                 <a href="#" class="close-side"><i class="fa fa-times"></i></a>
                 <li class="cart-box">
                     <ul class="cart-list">
-                        <li>
-                            <a href="#" class="photo"><img src="images/img-pro-01.jpg" class="cart-thumb" alt="" /></a>
-                            <h6><a href="#">Delica omtantur </a></h6>
-                            <p>1x - <span class="price">$80.00</span></p>
-                        </li>
-                        <li>
-                            <a href="#" class="photo"><img src="images/img-pro-02.jpg" class="cart-thumb" alt="" /></a>
-                            <h6><a href="#">Omnes ocurreret</a></h6>
-                            <p>1x - <span class="price">$60.00</span></p>
-                        </li>
-                        <li>
-                            <a href="#" class="photo"><img src="images/img-pro-03.jpg" class="cart-thumb" alt="" /></a>
-                            <h6><a href="#">Agam facilisis</a></h6>
-                            <p>1x - <span class="price">$40.00</span></p>
-                        </li>
-                        <li class="total">
-                            <a href="#" class="btn btn-default hvr-hover btn-cart">VIEW CART</a>
-                            <span class="float-right"><strong>Total</strong>: $180.00</span>
-                        </li>
+                        <?php
+                            include ("../phpConnect/cartIndex.php");
+                        ?>
                     </ul>
                 </li>
             </div>
@@ -443,7 +427,7 @@
 
             <div class="card swiper-slide">
                 <div class="card__image">
-                <img src="../freshshop/images/4.jpg" alt="card image">
+                <img src="../freshshop/images/vit.jpg" alt="card image">
                 </div>
 
                 <div class="card__content">
