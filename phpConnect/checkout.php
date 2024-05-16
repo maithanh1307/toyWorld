@@ -29,6 +29,9 @@
                     <p class="mt-4">'.$row['total'].'</p>
                 </td>
                 <td>
+                    <a href="../phpConnect/deleteCheckOut.php?orderID='.$row['orderID'].'">
+                        <i class="fa-light fa-trash-o fa-xl yellow_color"></i>
+                    </a>
                 </td>
             </tr> ';
         }

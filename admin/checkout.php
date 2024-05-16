@@ -54,7 +54,7 @@
       <meta name="description" content="">
       <meta name="author" content="">
       <!-- site icon -->
-      <link rel="icon" href="../freshshop/images/logo.png" type="image/png" />
+      <link rel="icon" href="../freshshop/images/logo01.png" type="image/png" />
       <!-- bootstrap css -->
       <link rel="stylesheet" href="css/bootstrap.min.css" />
       <!-- site css -->
@@ -82,7 +82,7 @@
                <div class="sidebar_blog_1">
                   <div class="sidebar-header">
                      <div class="logo_section">
-                        <a href="index.php"><img class="logo_icon img-responsive" src="../freshshop/images/logo.png" alt="#" /></a>
+                        <a href="index.php"><img class="logo_icon img-responsive" src="../freshshop/images/logo01.png" alt="#" /></a>
                      </div>
                   </div>
                   <div class="sidebar_user_info">
@@ -180,7 +180,7 @@
                      <div class="row column_title">
                         <div class="col-md-12">
                            <div class="page_title">
-                              <h2>Products</h2>
+                              <h2>Check out</h2>
                            </div>
                         </div>
                      </div>
@@ -190,7 +190,7 @@
                            <div class="white_shd full margin_bottom_30">
                               <div class="full graph_head">
                                  <div class="heading1 margin_0">
-                                    <h2>List of product</h2>
+                                    <h2>Manage checkout</h2>
                                  </div>
                               </div>
                               <div class="full price_table padding_infor_info">
@@ -201,11 +201,11 @@
                                              <thead class="thead-dark">
                                                 <tr>
                                                    <th style="width: 2%">No</th>
-                                                   <th style="width: 15%">Images</th>
-                                                   <th>Toy's name</th>
-                                                   <th>Type</th>
-                                                   <th>Description</th>
-                                                   <th>Price</th>
+                                                   <th style="width: 15%">Email</th>
+                                                   <th>First name</th>
+                                                   <th>Last name</th>
+                                                   <th>Address</th>
+                                                   <th>Total</th>
                                                    <th>Control</th>
                                                 </tr>
                                              </thead>
