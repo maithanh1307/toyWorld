@@ -129,8 +129,12 @@
                               <a href="products.php">> <span>Products</span></a>
                            </li>
                            <li>
+                              <a href="contact1.php">> <span>User</span></a>
+                           </li>
+                           <li>
                               <a href="404_error.php">> <span>404 Error</span></a>
                            </li>
+                           
                         </ul>
                      </li>
                      <li><a href="map.php"><i class="fa fa-map purple_color2"></i> <span>Map</span></a></li>

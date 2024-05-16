@@ -53,7 +53,7 @@ $query = mysqli_query($conn, $sql);
       <meta name="description" content="">
       <meta name="author" content="">
       <!-- site icon -->
-      <link rel="icon" href="../freshshop/images/logo.png" type="image/png" />
+      <link rel="icon" href="../freshshop/images/logo01.png" type="image/png" />
       <!-- bootstrap css -->
       <link rel="stylesheet" href="css/bootstrap.min.css" />
       <!-- site css -->
@@ -83,13 +83,13 @@ $query = mysqli_query($conn, $sql);
                <div class="sidebar_blog_1">
                   <div class="sidebar-header">
                      <div class="logo_section">
-                        <a href="index.php"><img class="logo_icon img-responsive" src="../freshshop/images/logo.png" alt="#" /></a>
+                        <a href="index.php"><img class="logo_icon img-responsive" src="../freshshop/images/logo01.png" alt="#" /></a>
                      </div>
                   </div>
                   <div class="sidebar_user_info">
                      <div class="icon_setting"></div>
                      <div class="user_profle_side">
-                        <div class="user_img"><img class="img-responsive" src="../freshshop/images/logo.png" alt="#" /></div>
+                        <div class="user_img"><img class="img-responsive" src="../freshshop/images/logo01.png" alt="#" /></div>
                         <div class="user_info">
                            <h6>Miniature World - Admin</h6>
                            <p><span class="online_animation"></span> Online</p>
@@ -101,51 +101,34 @@ $query = mysqli_query($conn, $sql);
                   <h4>General</h4>
                   <ul class="list-unstyled components">
                      <li class="active">
-                        <a href="#dashboard" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-dashboard yellow_color"></i> <span>Dashboard</span></a>
-                        <ul class="collapse list-unstyled" id="dashboard">
-                           <li>
-                              <a href="dashboard.html">> <span>Default Dashboard</span></a>
-                           </li>
-                           <li>
-                              <a href="dashboard_2.html">> <span>Dashboard style 2</span></a>
-                           </li>
-                        </ul>
+                        <a href="index.php"><i class="fa fa-dashboard yellow_color"></i> <span>Dashboard</span></a>
                      </li>
-                     <li><a href="widgets.html"><i class="fa fa-clock-o orange_color"></i> <span>Widgets</span></a></li>
                      <li>
                         <a href="#element" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-diamond purple_color"></i> <span>Elements</span></a>
                         <ul class="collapse list-unstyled" id="element">
-                           <li><a href="general_elements.html">> <span>General Elements</span></a></li>
-                           <li><a href="media_gallery.html">> <span>Media Gallery</span></a></li>
                            <li><a href="icons.php">> <span>Icons</span></a></li>
-                           <li><a href="invoice.html">> <span>Invoice</span></a></li>
                         </ul>
                      </li>
                      <li><a href="tables.php"><i class="fa fa-table purple_color2"></i> <span>Tables</span></a></li>
+                     <li><a href="feedback.php"><i class="fa fa-comment yellow_color"></i> <span>Feedback</span></a></li>
                      <li>
                         <a href="#apps" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-object-group blue2_color"></i> <span>Apps</span></a>
-                        <ul class="collapse list-unstyled" id="apps">
-                           <li><a href="email.html">> <span>Email</span></a></li>
+                        <ul class="collapse list-unstyled" id="apps">               
                            <li><a href="calendar.php">> <span>Calendar</span></a></li>
-                           <li><a href="media_gallery.html">> <span>Media Gallery</span></a></li>
                         </ul>
                      </li>
-                     <li><a href="price.html"><i class="fa fa-briefcase blue1_color"></i> <span>Pricing Tables</span></a></li>
                      <li>
                         <a href="contact.php">
-                        <i class="fa fa-paper-plane red_color"></i> <span>Users</span></a>
+                        <i class="fa fa-paper-plane red_color"></i> <span>Get in touch</span></a>
                      </li>
                      <li class="active">
                         <a href="#additional_page" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-clone yellow_color"></i> <span>Additional Pages</span></a>
                         <ul class="collapse list-unstyled" id="additional_page">
                            <li>
-                              <a href="profile.html">> <span>Profile</span></a>
-                           </li>
-                           <li>
                               <a href="products.php">> <span>Products</span></a>
                            </li>
                            <li>
-                              <a href="login.html">> <span>Login</span></a>
+                              <a href="contact1.php">> <span>User</span></a>
                            </li>
                            <li>
                               <a href="404_error.php">> <span>404 Error</span></a>
@@ -156,8 +139,6 @@ $query = mysqli_query($conn, $sql);
                         </ul>
                      </li>
                      <li><a href="map.php"><i class="fa fa-map purple_color2"></i> <span>Map</span></a></li>
-                     <li><a href="charts.php"><i class="fa fa-bar-chart-o green_color"></i> <span>Charts</span></a></li>
-                     <li><a href="settings.html"><i class="fa fa-cog yellow_color"></i> <span>Settings</span></a></li>
                   </ul>
                </div>
             </nav>
@@ -221,17 +202,15 @@ $query = mysqli_query($conn, $sql);
                                         <div class="contact_blog">
                                             <div class="contact_inner">
                                                 <div class="left">
-                                                    <h3><?= $user['firstName'] ?> <?= $user['lastName'] ?></h3>
                                                     <ul class="list-unstyled">
 													<li><i class="fa fa-envelope-o"></i> : <a href="<?= 'mailto:' . $user['email'] ?>"><?= $user['email'] ?></a></li>
-													<li><i class="fa fa-phone"></i> <a href="tel:<?= $user['phoneNumber'] ?>">tel: <?= $user['phoneNumber'] ?></a></li>
                                                     <li><i class="fa fa-lock"></i> Password: <?= htmlspecialchars($user['passWord']) ?></li>
 
 
                                                     </ul>
                                                 </div>
                                                 <div class="bottom_list">
-												<a href="../phpConnect/deleteUser.php?customerID=<?= $user['customerID'] ?>">
+												<a href="../phpConnect/deleteUser.php?email=<?= $user['email'] ?>">
 													<button type="button" class="btn btn-danger btn-xs">
 														<i class="fa fa-trash mr-2"> </i> Delete
 													</button>

@@ -9,7 +9,10 @@ if (isset($_POST['register_btn'])) {
     $check_email_query_run = mysqli_query($conn,$check_email_query);
 
     if (mysqli_num_rows($check_email_query_run)>0) {
-        $_SESSION['status'] = "Email already exists";
+        echo '<script>';
+            echo 'alert("Email already exists");';
+            echo 'window.location.href = "../freshshop/signin.php";'; 
+            echo '</script>';
     }
     else {
         $query = "INSERT INTO user (email,password) VALUES ('$email','$pass')";

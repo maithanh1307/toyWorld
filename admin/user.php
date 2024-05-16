@@ -1,10 +1,7 @@
-<!-- php -->
 <?php
    require_once ('../phpConnect/connectData.php');
-
-   $sql = "SELECT * from feedbacks";
+   $sql = "SELECT * from user";
    $query = mysqli_query($conn, $sql);
-
 ?>
 
 <!DOCTYPE html>
@@ -54,7 +51,7 @@
       <meta name="description" content="">
       <meta name="author" content="">
       <!-- site icon -->
-      <link rel="icon" href="../freshshop/images/logo.png" type="image/png" />
+      <link rel="icon" href="../freshshop/images/logo01.png" type="image/png" />
       <!-- bootstrap css -->
       <link rel="stylesheet" href="css/bootstrap.min.css" />
       <!-- site css -->
@@ -69,6 +66,8 @@
       <link rel="stylesheet" href="css/perfect-scrollbar.css" />
       <!-- custom css -->
       <link rel="stylesheet" href="css/custom.css" />
+      <link rel="shortcut icon" href="../freshshop/images/logo01.png" type="image/x-icon">
+
       <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -88,7 +87,7 @@
                   <div class="sidebar_user_info">
                      <div class="icon_setting"></div>
                      <div class="user_profle_side">
-                        <div class="user_img"><img class="img-responsive" src="../freshshop/images/logo01.png" alt="#" /></div>
+                     <div class="user_img"><img class="img-responsive" src="../freshshop/images/logo01.png" alt="#" /></div>
                         <div class="user_info">
                            <h6>Miniature World - Admin</h6>
                            <p><span class="online_animation"></span> Online</p>
@@ -134,6 +133,7 @@
                            </li>
                            <li>
                               <a href="checkout.php">> <span>Check out</span></a>
+
                            </li>
                         </ul>
                      </li>
@@ -161,7 +161,7 @@
                               </ul>
                               <ul class="user_profile_dd">
                                  <li>
-                                    <a class="dropdown-toggle" data-toggle="dropdown"><img class="img-responsive rounded-circle" src="../freshshop/images/logo.png" alt="#" /><span class="name_user">Miniature World - Admin</span></a>
+                                    <a class="dropdown-toggle" data-toggle="dropdown"><img class="img-responsive rounded-circle" src="../freshshop/images/logo01.png" alt="#" /><span class="name_user">Miniature World - Admin</span></a>
                                     <div class="dropdown-menu">
                                        <a class="dropdown-item" href="index.php">Home</a>
                                        <a class="dropdown-item" href="#"><span>Log Out</span> <i class="fa fa-sign-out"></i></a>
@@ -180,7 +180,7 @@
                      <div class="row column_title">
                         <div class="col-md-12">
                            <div class="page_title">
-                              <h2>Feedbacks</h2>
+                              <h2>Login / Sign up</h2>
                            </div>
                         </div>
                      </div>
@@ -190,58 +190,17 @@
                            <div class="white_shd full margin_bottom_30">
                               <div class="full graph_head">
                                  <div class="heading1 margin_0">
-                                    <h2>List of feedbacks</h2>
+                                    <h2>List of user</h2>
                                  </div>
                               </div>
                               <div class="full price_table padding_infor_info">
                                  <div class="row">
-                                    <div class="col-lg-12">
-                                       <div class="table-responsive-sm">
-                                          <table class="table table-striped projects">
-                                             <thead class="thead-dark">
-                                                <tr>
-                                                   <th style="width: 2%">No</th>
-                                                   <th style="text-align: center">Email</th>
-                                                   <th style="text-align: center">Comments</th>
-                                                </tr>
-                                             </thead>
-                                             <tbody>
-                                                <!-- <tr>
-                                                   <td>1</td>
-                                                   <td>
-                                                      <img style="width: 60px" src="../freshshop/images/bunnyToy.jpg" class="img-fluid">
-                                                   </td>
-                                                   <td>
-                                                      <p class="mt-4">Bunny Rabbit</p>
-                                                   </td>
-                                                   <td>
-                                                      <p class="mt-4">Teddy Bear</p>
-                                                   </td>
-                                                   <td>
-                                                      <p class="mt-4">This is a toy for all ages</p>
-                                                   </td>
-                                                   <td>
-                                                      <p class="mt-4">$8.00</p>
-                                                   </td>
-                                                   <td>
-                                                      <a href="#">
-                                                         <i class="fa-light fa-trash-o fa-xl yellow_color"></i>
-                                                      </a>
-                                                      <i class="fa-light fa-pipe fa-xl"></i>
-                                                      <a href="#">
-                                                         <i class="fa-light fa-pencil fa-xl yellow_color"></i>
-                                                      </a>
-                                                   </td>
-                                                </tr> -->
-                                                <?php
-                                                   include ("../phpConnect/feedback.php");
-                                                ?>
-                                             </tbody>
-                                          </table>
-                                       </div>
-                                    </div>
+                                    <!-- column contact --> 
+                                    <?php
+                                       include("../phpConnect/userAdmin.php");
+                                    ?>
+                                    <!-- end column contact blog -->
                                  </div>
-                                 
                               </div>
                            </div>
                         </div>
@@ -263,13 +222,6 @@
       <script src="js/jquery.min.js"></script>
       <script src="js/popper.min.js"></script>
       <script src="js/bootstrap.min.js"></script>
-
-      <!-- delete -->
-      <script>
-		function deleteProduct(id){
-			window.location.href = 'products.php?delete_product=' + id;
-		}
-	   </script>
       <!-- wow animation -->
       <script src="js/animate.js"></script>
       <!-- select country -->
@@ -290,5 +242,6 @@
       <script src="js/custom.js"></script>
       <!-- calendar file css -->     
       <script src="js/semantic.min.js"></script>
+      <script></script>
    </body>
 </html>

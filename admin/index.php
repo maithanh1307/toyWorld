@@ -127,6 +127,9 @@ $query = mysqli_query($conn, $sql);
                               <a href="products.php">> <span>Products</span></a>
                            </li>
                            <li>
+                              <a href="contact1.php">> <span>User</span></a>
+                           </li>
+                           <li>
                               <a href="404_error.php">> <span>404 Error</span></a>
                            </li>
                            <li>
