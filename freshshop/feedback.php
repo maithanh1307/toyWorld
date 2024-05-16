@@ -55,7 +55,7 @@ if(isset($_POST['feedback_btn'])) {
     <meta name="author" content="">
 
     <!-- Site Icons -->
-    <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="images/logo01.png" type="image/x-icon">
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 
     <!-- Bootstrap CSS -->
@@ -81,12 +81,12 @@ if(isset($_POST['feedback_btn'])) {
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                    <div class="custom-select-box">
+					<div class="custom-select-box">
                         <select id="basic" class="selectpicker show-tick form-control" data-placeholder="$ USD">
-                            <option>¥ JPY</option>
-                            <option>$ USD</option>
-                            <option>€ EUR</option>
-                        </select>
+							
+							<option>$ USD</option>
+							
+						</select>
                     </div>
                     <div class="right-phone-box">
                         <p>Call US :- <a href="tel:028 3775 5052"> 028 3775 5052</a></p>
@@ -95,16 +95,19 @@ if(isset($_POST['feedback_btn'])) {
                         <ul>
                             <li><a href="#"><i class="fa fa-user s_color fa-beat"></i> My Account</a></li>
                             <!-- <li><a href=""><i class="fas fa-location-arrow"></i> Our location</a></li> -->
-                            <li><a href="contact-us.html"><i class="fas fa-headset fa-beat"></i> Contact Us</a></li>
+                            <li><a href="contact-us.php"><i class="fas fa-headset fa-beat"></i> Contact Us</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                    <div class="login-box">
-                        <select id="basic" class="selectpicker show-tick form-control" data-placeholder="Sign In">
-                            <option>Register Here</option>
-                            <option>Sign In</option>
-                        </select>
+					<div class="login-box selectpicker show-tick form-control " >
+						<!-- <select id="basic" class="selectpicker show-tick form-control" data-pollacehder="Sign In">
+							<option value="1">Register Here</option>
+							<option value="2" data-url="signin.html">Sign In</option>
+						</select>
+					</div>  -->
+                        <i class="fa-duotone fa-right-to-bracket fa-fade"></i>
+                        <a href="signin.php" class="btn2 btn-primary2 mt-1"><b>Logout</b></a>
                     </div>
                     <div class="text-slid-box">
                         <div id="offer-box" class="carouselTicker">
@@ -131,7 +134,7 @@ if(isset($_POST['feedback_btn'])) {
                                     <i class="fab fa-opencart"></i> 20% off Entire Purchase Promo code: offT30
                                 </li>
                                 <li>
-                                    <i class="fab fa-opencart"></i> Off 50%! Shop Now
+                                    <i class="fab fa-opencart"></i> Off 50%! Shop Now 
                                 </li>
                             </ul>
                         </div>
@@ -149,32 +152,31 @@ if(isset($_POST['feedback_btn'])) {
             <div class="container">
                 <!-- Start Header Navigation -->
                 <div class="navbar-header">
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu"
-                        aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
                         <i class="fa fa-bars"></i>
                     </button>
-                    <a class="navbar-brand" href="index.html"><img src="images/logo.png" class="logo" alt="logo"></a>
+                    <a class="navbar-brand" href="index.php"><img src="images/logo01.png" class="logo" alt="logo"><b>Miniature World</b></a>
                 </div>
                 <!-- End Header Navigation -->
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="navbar-menu">
                     <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
-                        <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                        <li class="nav-item active"><a class="nav-link" href="index.php">Home</a></li>
+                        <li class="nav-item"><a class="nav-link " href="about.php">About Us</a></li>
                         <li class="dropdown">
                             <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">SHOP</a>
                             <ul class="dropdown-menu">
-                                <li><a href="shop.html">Sidebar Shop</a></li>
-                                <!-- <li><a href="shop-detail.html">Shop Detail</a></li> -->
-                                <li><a href="cart.html">Cart</a></li>
-                                <li><a href="checkout.html">Checkout</a></li>
+								<li><a href="shop.php">Sidebar Shop</a></li>
+								<!-- <li><a href="shop-detail.html">Shop Detail</a></li> -->
+                                <li><a href="cart.php">Cart</a></li>
+                                <li><a href="checkout.php">Checkout</a></li>
                                 <!-- <li><a href="my-account.html">My Account</a></li> -->
-                                <li><a href="wishlist.html">Wishlist</a></li>
+                                <li><a href="wishlist.php">Wishlist</a></li>
                             </ul>
                         </li>
                         <!-- <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li> -->
-                        <li class="nav-item"><a class="nav-link" href="contact-us.html">Contact Us</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact-us.php">Contact Us</a></li>
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->
@@ -182,13 +184,14 @@ if(isset($_POST['feedback_btn'])) {
                 <!-- Start Atribute Navigation -->
                 <div class="attr-nav">
                     <ul>
-                        <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
+                        <!-- <li class="search"><a href="#"><i class="fa fa-search"></i></a></li> -->
                         <li class="side-menu">
-                            <a href="cart.html">
-                                <i class="fa fa-shopping-bag"></i>
-                                <p>My Cart</p>
-                            </a>
-                        </li>
+							<a href="cart.php">
+								<i class="fa fa-shopping-bag"></i>
+								
+								<p>My Cart</p>
+							</a>
+						</li>
                     </ul>
                 </div>
                 <!-- End Atribute Navigation -->
@@ -383,7 +386,7 @@ if(isset($_POST['feedback_btn'])) {
     </div>
     <!-- End copyright  -->
 
-    <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
+    <a href="#" id="back-to-top" title="Back to top" style="display: none;"><i class="fa-solid fa-circle-up fa-shake"></i></a>
 
     <!-- ALL JS FILES -->
     <script src="https://kit.fontawesome.com/4a0046fff5.js" crossorigin="anonymous"></script>

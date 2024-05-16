@@ -476,8 +476,8 @@ $query = mysqli_query($conn, $sql);
                                  </div>
                               </div>
                            </div>
-                     <!-- row -->
-                  </div>
+                        <!-- row -->
+                         </div>
                         <!-- end progress bar -->
                      </div>
                      <!-- <div class="row column4 graph">
@@ -594,6 +594,7 @@ $query = mysqli_query($conn, $sql);
       <script src="js/jquery.fancybox.min.js"></script>
       <!-- custom js -->
       <script src="js/custom.js"></script>
+      <script src="js/chart_custom_style1.js"></script>
       <!-- calendar file css -->    
       <script src="js/semantic.min.js"></script>
    </body>

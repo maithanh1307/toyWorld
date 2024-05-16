@@ -97,9 +97,9 @@
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
 					<div class="custom-select-box">
                         <select id="basic" class="selectpicker show-tick form-control" data-placeholder="$ USD">
-							<option>¥ JPY</option>
+							
 							<option>$ USD</option>
-							<option>€ EUR</option>
+							
 						</select>
                     </div>
                     <div class="right-phone-box">
