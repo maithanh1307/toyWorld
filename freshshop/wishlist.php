@@ -196,6 +196,8 @@
                         ?>
                     </ul>
                 </li>
+                <button type="submit" class="btn btn-success btnUpdate mt-3" name="update_cart_btn"><a href="cart.php">View Cart</a></button>
+
             </div>
             <!-- End Side Menu -->
         </nav>
